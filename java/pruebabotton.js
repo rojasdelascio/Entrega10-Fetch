@@ -64,3 +64,12 @@ function resultado(planeta, regente) {
     alert(`La colocación de ${planeta} en ${regente} significa: ${calcularPenR(planeta,regente)} `);
 
 }
+
+function limpiarVariables() {
+
+    planeta = '';
+    regente = '';
+    PenR = '';
+    alert('Se limpiaron las variables. Comienza de nuevo');
+
+}

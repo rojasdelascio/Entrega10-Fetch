@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html class="root__element" lang=”en”>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AstroCalcu</title>
+    <link rel="stylesheet" href="../Proyecto Final/css/styles.css">
+
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Astro Calcu</h1>
+        <h3>P.D.: Para utilizar este calculador, debe conocer su carta natal</h3>
+
+    </header>
+
+    <main>
+        <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"> 
+            <option value="">Select</option> 
+            <option value="./pages/aspectos.html">Aspectos</option> 
+            <option value="./pages/regentes.html">Regentes</option> 
+            <option value="./pages/numerologia.html">Numero de vida</option> 
+        </select>
+
+
+
+    </main>
+
+    <script src="../30315RojasDelascio/java/index.js">
+    </script>
+
+</body>
+
+</html>

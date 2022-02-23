@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html class="root__element" lang=”en”>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aspectos</title>
+    <link rel="stylesheet" href="">
+
+</head>
+
+<body>
+
+
+    <header>
+        <h1>Aspectos</h1>
+        <h3>Instrucciones: Seleccione dos planetas, y el aspecto entre estos mismos. La calculadora le indicará el significado de dicho aspecto</h3>
+
+    </header>
+
+    <main>
+        <h4>Planetas</h4>
+        <h3>Seleccione planeta 1</h3>
+        <button onclick="seleccionarP1('Marte')" value="Marte">Marte</button>
+        <button onclick="seleccionarP1('Venus')" value="Venus">Venus</button>
+        <button onclick="seleccionarP1('Mercurio')" value="Mercurio">Mercurio</button>
+        <button onclick="seleccionarP1('Saturno')" value="Saturno">Saturno</button>
+        <h3>Seleccione planeta 2</h3>
+        <button onclick="seleccionarP2('Marte')" value="Marte">Marte</button>
+        <button onclick="seleccionarP2('Venus')" value="Venus">Venus</button>
+        <button onclick="seleccionarP2('Mercurio')" value="Mercurio">Mercurio</button>
+        <button onclick="seleccionarP2('Saturno')" value="Saturno">Saturno</button>
+        <h4>Aspectos</h4>
+        <h3>Seleccione un aspecto entre los 2 planetas seleccionados</h3>
+        <button onclick="seleccionarAspecto('Conjuncion')" value="Conjuncion">Conjuncion</button>
+        <button onclick="seleccionarAspecto('Oposicion')" value="Oposicion">Oposicion</button>
+        <h4>Imprimir variables en logs</h4>
+        <button onclick="imprimir(planeta1, planeta2, aspecto)" value="">Imprimir</button>
+        <h4>Resultado</h4>
+        <button onclick="resultado(planeta1,planeta2,aspecto)" value="">Resultado</button>
+
+    </main>
+
+    <script src="../java/aspectos.js">
+    </script>
+</body>
+
+</html>

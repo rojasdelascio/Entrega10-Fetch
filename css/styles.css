@@ -1,0 +1,17 @@
+.pizarra__signo {
+  width: 50px;
+  height: 50px;
+  background-color: aqua; }
+
+.pizarra__aspecto {
+  width: 50px;
+  height: 50px;
+  background-color: fuchsia; }
+
+.pizarra__planetas__div {
+  display: flex;
+  flex-direction: row; }
+  .pizarra__planetas__div__planeta {
+    width: 50px;
+    height: 50px;
+    background-color: coral; }

@@ -2,26 +2,23 @@ let planeta = ''
 let regente = ''
 let PenR = ''
 
+//las funciones de abajo asignaran valores a las variables al cliquear los botones
 function seleccionarRegente(btn) {
-
     regente = btn;
     return regente;
-
 }
 
 function seleccionarPlaneta(btn2) {
-
     planeta = btn2;
     return planeta;
-
 }
 
+//la funcion de abajo imprimira en los logs los valores seleccionados a las variables
 function imprimir(planeta, regente) {
     console.log(`${seleccionarRegente(regente)} + ${seleccionarPlaneta(planeta)}`)
-
 }
 
-
+//la funcion de abajo calculara el resultado dependiento del planeta y regente elegidos anteriormente
 function calcularPenR(planeta, regente) {
     console.log(planeta + regente)
     switch (planeta) {
@@ -62,7 +59,7 @@ function calcularPenR(planeta, regente) {
     return PenR;
 }
 
-
+//la funcion de abajo imprimira el resultado en una alerta
 function resultado(planeta, regente) {
     alert(`La colocación de ${planeta} en ${regente} significa: ${calcularPenR(planeta,regente)} `);
 

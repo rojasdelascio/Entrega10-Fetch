@@ -15,18 +15,23 @@
 
     <header>
         <h1>Astro Calcu</h1>
-        <h3>P.D.: Para utilizar este calculador, debe conocer su carta natal</h3>
+
 
     </header>
 
     <main>
-        <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"> 
+
+        <section>
+            <h2>¿Desea saber que significa su carta astral; o desea conocer su número de vida?</h2>
+            <h5>P.D.: Para utilizar este calculador, debe conocer su carta natal</h5>
+            <p>¡Seleccione la opción correspondiente en el desplegable de abajo!</p>
+
+            <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);"> 
             <option value="">Select</option> 
-            <option value="./pages/aspectos.html">Aspectos</option> 
-            <option value="./pages/regentes.html">Regentes</option> 
+            <option value="./pages/calculadorAvanzado.html">Sobre tu carta astral</option> 
             <option value="./pages/numerologia.html">Numero de vida</option> 
         </select>
-
+        </section>
 
 
     </main>

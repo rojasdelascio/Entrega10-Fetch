@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aspectos</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Número de Vida</title>
     <link rel="stylesheet" href="">
 
 </head>
@@ -15,17 +16,52 @@
 
     <header>
         <h1>Numerologia</h1>
-        <h3>Instrucciones: Ingrese su fecha de nacimiento y descubra qué significa su número de vida</h3>
+        <h4>Instrucciones: Ingrese su fecha de nacimiento y descubra qué significa su número de vida</h4>
     </header>
 
     <main>
+        <label for="fecha">Fecha de nacimiento:</label>
+        <input type="date" id="fechanacimiento" name="trip-start" value="2018-07-22" min="1900-01-01" max="2050-12-31">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" onclick="calcular()  ">¿Qué significa mi número de vida?</button>
+
+        <section>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Resultado</h5>
+                            <button type="button" onclick="calcular()" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+                        </div>
+                        <div id="numerodevida__resultado" class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
 
 
     </main>
 
-    <script src="../java/numerodevida.js">
-    </script>
+
 </body>
 <h4>Volver a Home</h4>
 <a href="../index.html">Atrás</button>
+    <script src="../java/numerodevida.js">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
 </html>

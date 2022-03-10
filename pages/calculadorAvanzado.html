@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/styles.css">
     <title>Traductor Astral</title>
 </head>
 
@@ -112,6 +113,7 @@
         <button class="" onclick="arraysPlanetasCasas() ">Calcular Arrays los planetas en cada Casa</button>
         <button class="" onclick="infoSaturno(); infoMarte(); infoVenus()">Calcular objetos con signo, casa y grado de cada planeta</button> -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" onclick="total() ">Resultado Final: ¿Qué significan los aspectos, regentes y ubicación de los planetas de mi carta?</button>
+
         </form>
     </section>
     <section>
@@ -126,7 +128,8 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Resultado</h5>
-                        <button type="button" onclick="total() " class="close" data-dismiss="modal" aria-label="Close">
+                        <button type="button" onclick="total()" class="close" data-dismiss="modal" aria-label="Close">
+                            
             <span aria-hidden="true">&times;</span>
           </button>
                     </div>
@@ -141,8 +144,20 @@
             </div>
         </div>
 
-
-
+        <!-- entrega 9 de marzo, dibujar tabla con boton -->
+        <br>
+        <div>
+            <table id="tablaplanetas">
+                <tr>
+                    <th>Planeta</th>
+                    <th>Grado</th>
+                    <th>Casa</th>
+                    <th>Regente</th>
+                </tr>
+            </table>
+        </div>
+        <button type="button" onclick="dibujarTabla()">Dibujar tabla</button>
+        <!-- hasta aca llega entrega 9 de marzo -->
     </section>
     <footer>
         <br>

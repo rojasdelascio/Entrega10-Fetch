@@ -5,10 +5,12 @@ var planetascasa4 = [];
 
 class planetas {
     //funcion constructora de objetos con regentes, grados y casas de los 3 planetas usados ahora
-    constructor(lord, degree, house) {
+    constructor(lord, degree, house, name) {
+        this.nombre = name;
         this.regente = lord;
         this.grado = parseInt(degree);
         this.casa = house;
+
     }
 
 }
@@ -18,7 +20,8 @@ function infoMarte() {
     var signo = document.getElementById("regenteMarte").value;
     var casa = document.getElementById("marte").value;
     var grado = document.getElementById("gradoMarte").value;
-    var infoMarte = new planetas(signo, grado, casa);
+    var nombre = 'Marte';
+    var infoMarte = new planetas(signo, grado, casa, nombre);
     //crear nuevo objeto con la funcion constructora, ingresando los valores..
     //..obtenidos del HTML
     // console.log("Objeto Marte: ", infoMarte);
@@ -29,9 +32,10 @@ function infoVenus() {
     var signo2 = document.getElementById("regenteVenus").value;
     var casa2 = document.getElementById("venus").value;
     var grado2 = document.getElementById("gradoVenus").value;
+    var nombre2 = 'Venus';
     //crear nuevo objeto con la funcion constructora, ingresando los valores..
     //..obtenidos del HTML
-    var infoVenus = new planetas(signo2, grado2, casa2);
+    var infoVenus = new planetas(signo2, grado2, casa2, nombre2);
     // console.log("Objeto Venus: ", infoVenus);
     return infoVenus;
 }
@@ -40,12 +44,70 @@ function infoSaturno() {
     var signo3 = document.getElementById("regenteSaturno").value;
     var casa3 = document.getElementById("saturno").value;
     var grado3 = document.getElementById("gradoSaturno").value;
+    var nombre3 = 'Saturno';
     //crear nuevo objeto con la funcion constructora, ingresando los valores..
     //..obtenidos del HTML
-    var infoSaturno = new planetas(signo3, grado3, casa3);
+    var infoSaturno = new planetas(signo3, grado3, casa3, nombre3);
     // console.log("Objeto Saturno: ", infoSaturno);
     return infoSaturno;
 }
+
+
+
+function arrayObjetosPlanetas() {
+    var arrayObjetosPlanetas = [];
+
+    console.log(infoMarte(), infoMarte(), infoMarte());
+    arrayObjetosPlanetas.push(infoMarte());
+    arrayObjetosPlanetas.push(infoVenus());
+    arrayObjetosPlanetas.push(infoSaturno());
+
+    return arrayObjetosPlanetas;
+}
+
+
+///Entrega 9 de marzo --- Dibujar tabla con boton
+
+var cont = 0;
+
+function dibujarTabla() {
+
+    const AOP = arrayObjetosPlanetas();
+    console.log(AOP);
+
+
+    if (cont === 0) {
+
+        AOP.forEach(planeta => console.log(planeta.regente));
+        const root = document.getElementById('tablaplanetas');
+        AOP.forEach(planeta => {
+
+            const nombrePlaneta = document.createElement('td');
+            nombrePlaneta.innerText = `${planeta.nombre}`;
+            root.append(nombrePlaneta);
+
+            const gradoNuevoPlaneta = document.createElement('td');
+            gradoNuevoPlaneta.innerText = `${planeta.grado}`
+            root.append(gradoNuevoPlaneta);
+
+            const casaNuevoPlaneta = document.createElement('td');
+            casaNuevoPlaneta.innerText = `${planeta.casa}`;
+            root.append(casaNuevoPlaneta);
+
+            const signoNuevoPlaneta = document.createElement('td');
+            signoNuevoPlaneta.innerText = `${planeta.regente}`;
+            root.append(signoNuevoPlaneta);
+
+            const salto = document.createElement('tr');
+            root.append(salto);
+        })
+
+    }
+    cont = 1;
+}
+
+//hasta aca llega entrega 9 de marzo
+
 
 
 function arraysPlanetasCasas() {
@@ -394,4 +456,12 @@ function total() {
 
     document.getElementById("texto__resultado").innerHTML = `${resultado}`;
     console.log(resultado);
+}
+
+function tabla() {
+
+
+
+
+
 }

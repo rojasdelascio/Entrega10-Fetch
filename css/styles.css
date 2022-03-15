@@ -1,6 +1,50 @@
-#tablaplanetas,
-#tablaplanetas.tr.td,
-#tablaplanetas.tr.th,
-#tablaplanetas.tr {
-    border: 1px solid black;
-}
+#grilla1CA {
+  display: grid;
+  grid-template-areas: "header" "mainCA" "footer";
+  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-columns: 100%; }
+
+#mainCA {
+  grid-area: mainCA; }
+
+#header {
+  grid-area: header; }
+
+#footer {
+  grid-area: footer; }
+
+.formcasas__lista {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; }
+  .formcasas__lista__marte {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__venus {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__saturno {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__mercurio {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__luna {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__sol {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__jupiter {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__urano {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__neptuno {
+    border: solid 1px black;
+    padding: 3%; }
+  .formcasas__lista__pluton {
+    border: solid 1px black;
+    padding: 3%; }

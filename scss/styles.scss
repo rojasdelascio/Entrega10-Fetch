@@ -1,23 +1,87 @@
-.pizarra {
-    &__signo {
-        width: 50px;
-        height: 50px;
-        background-color: aqua;
-    }
-    &__aspecto {
-        width: 50px;
-        height: 50px;
-        background-color: fuchsia;
-    }
-    &__planetas {
-        &__div {
-            display: flex;
-            flex-direction: row;
-            &__planeta {
-                width: 50px;
-                height: 50px;
-                background-color: coral;
-            }
+#grilla1CA {
+    display: grid;
+    grid-template-areas: "header" "mainCA" "footer";
+    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-columns: 100%;
+}
+
+#mainCA {
+    grid-area: mainCA;
+}
+
+#header {
+    grid-area: header;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+.formcasas {
+    &__lista {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &__marte {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectsignos {}
+            &__selectcasas {}
+        }
+        &__venus {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasas {}
+            &__selectsignos {}
+        }
+        &__saturno {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasas {}
+            &__selectsignos {}
+        }
+        &__mercurio {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasas {}
+            &__selectsignos {}
+        }
+        &__luna {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasas {}
+            &__selectsignos {}
+        }
+        &__sol {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasas {}
+            &__selectsignos {}
+        }
+        &__jupiter {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasas {}
+            &__selectsignos {}
+        }
+        &__urano {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasas {}
+            &__selectsignos {}
+        }
+        &__neptuno {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasas {}
+            &__selectsignos {}
+        }
+        &__pluton {
+            border: solid 1px black;
+            padding: 3%;
+            &__selectcasa {}
+            &__selectsignos {}
         }
     }
 }

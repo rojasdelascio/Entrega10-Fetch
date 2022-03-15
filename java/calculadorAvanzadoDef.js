@@ -146,6 +146,7 @@ function arrayObjetosPlanetas() {
     arrayObjetosPlanetas.push(infoUrano());
     arrayObjetosPlanetas.push(infoNeptuno());
     arrayObjetosPlanetas.push(infoPluton());
+    arrayObjetosPlanetas.push(infoJupiter());
     return arrayObjetosPlanetas;
 }
 
@@ -189,9 +190,9 @@ var cambioCasaPl = document.getElementById("pluton");
 var cambioGradoPl = document.getElementById("gradoPluton");
 var cambioRegentePl = document.getElementById("regentePluton");
 
-var cambioCasaJ = document.getElementById("pluton");
-var cambioGradoJ = document.getElementById("gradoPluton");
-var cambioRegenteJ = document.getElementById("regentePluton");
+var cambioCasaJ = document.getElementById("jupiter");
+var cambioGradoJ = document.getElementById("gradoJupiter");
+var cambioRegenteJ = document.getElementById("regenteJupiter");
 
 
 //ahora, se añadira un eventListener a cada uno de los inputs de cada planeta, para que si hay algun cambio en...
@@ -203,7 +204,7 @@ cambioCasaPl.addEventListener("change", function() {
 cambioGradoPl.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaPl.addEventListener("change", function() {
+cambioRegentePl.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -213,7 +214,7 @@ cambioCasaM.addEventListener("change", function() {
 cambioGradoM.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaM.addEventListener("change", function() {
+cambioRegenteM.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -223,7 +224,7 @@ cambioCasaS.addEventListener("change", function() {
 cambioGradoS.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaS.addEventListener("change", function() {
+cambioRegenteS.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -233,7 +234,7 @@ cambioCasaL.addEventListener("change", function() {
 cambioGradoL.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaL.addEventListener("change", function() {
+cambioRegenteL.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -243,7 +244,7 @@ cambioCasaMe.addEventListener("change", function() {
 cambioGradoMe.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaMe.addEventListener("change", function() {
+cambioRegenteMe.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -253,7 +254,7 @@ cambioCasaSo.addEventListener("change", function() {
 cambioGradoSo.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaSo.addEventListener("change", function() {
+cambioRegenteSo.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -263,7 +264,7 @@ cambioCasaV.addEventListener("change", function() {
 cambioGradoV.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaV.addEventListener("change", function() {
+cambioRegenteV.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -273,7 +274,7 @@ cambioCasaN.addEventListener("change", function() {
 cambioGradoN.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaN.addEventListener("change", function() {
+cambioRegenteN.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -283,7 +284,7 @@ cambioCasaU.addEventListener("change", function() {
 cambioGradoU.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaU.addEventListener("change", function() {
+cambioRegenteU.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -293,7 +294,7 @@ cambioCasaJ.addEventListener("change", function() {
 cambioGradoJ.addEventListener("change", function() {
     cont = 0;
 });
-cambioCasaJ.addEventListener("change", function() {
+cambioRegenteJ.addEventListener("change", function() {
     cont = 0;
 });
 
@@ -302,7 +303,6 @@ const dibTabla = document.getElementById("dibujartabla");
 //el script de abajo ejecutara la función cuando perciba un click en el boton con id "dibujartabla"
 dibTabla.addEventListener('click', function() { dibujarTabla(); });
 
-//fin entrega 15 marzo 2022
 function dibujarTabla() {
     const AOP = arrayObjetosPlanetas();
     console.log(AOP);
@@ -314,7 +314,33 @@ function dibujarTabla() {
         var borrador = document.getElementById("tablaplanetas");
         var nodoTexto = borrador.childNodes[0];
         borrador.textContent = nodoTexto.textContent;
-        //
+
+
+        //creando los headers de la tabla nuevamente para que aparezcan cuando hayan cambios
+        const header = document.createElement('th');
+        header.innerText = 'Planeta';
+        const root1 = document.getElementById('tablaplanetas');
+        root1.append(header);
+
+        const header2 = document.createElement('th');
+        header2.innerText = 'Grado';
+        const root2 = document.getElementById('tablaplanetas');
+        root2.append(header2);
+
+        const header3 = document.createElement('th');
+        header3.innerText = 'Casa';
+        const root3 = document.getElementById('tablaplanetas');
+        root3.append(header3);
+
+        const header4 = document.createElement('th');
+        header4.innerText = 'Regente';
+        const root4 = document.getElementById('tablaplanetas');
+        root4.append(header4);
+
+        const header5 = document.createElement('tr');
+        const root5 = document.getElementById('tablaplanetas');
+        root5.append(header5);
+
 
         AOP.forEach(planeta => console.log(planeta.regente));
         const root = document.getElementById('tablaplanetas');
@@ -371,6 +397,7 @@ function arraysPlanetasCasas() {
     var casaUrano = parseInt(document.getElementById("urano").value);
     var casaNeptuno = parseInt(document.getElementById("neptuno").value);
     var casaPluton = parseInt(document.getElementById("pluton").value);
+    var casaJupiter = parseInt(document.getElementById("jupiter").value);
 
     //El switch de abajo ingresa al array de la casa correspondiente, el planeta correspondiente
     switch (casaMarte) {
@@ -722,6 +749,45 @@ function arraysPlanetasCasas() {
             break;
         case 12:
             planetasCasa12.push('pluton');
+            break;
+    }
+
+    switch (casaJupiter) {
+        case 1:
+            planetasCasa1.push('jupiter');
+            break;
+        case 2:
+            planetasCasa2.push('jupiter');
+            break;
+        case 3:
+            planetasCasa3.push('jupiter');
+            break;
+        case 4:
+            planetasCasa4.push('jupiter');
+            break;
+        case 5:
+            planetasCasa5.push('jupiter');
+            break;
+        case 6:
+            planetasCasa6.push('jupiter');
+            break;
+        case 7:
+            planetasCasa7.push('jupiter');
+            break;
+        case 8:
+            planetasCasa8.push('jupiter');
+            break;
+        case 9:
+            planetasCasa9.push('jupiter');
+            break;
+        case 10:
+            planetasCasa10.push('jupiter');
+            break;
+        case 11:
+            planetasCasa11.push('jupiter');
+            break;
+        case 12:
+            planetasCasa12.push('jupiter');
             break;
     }
 

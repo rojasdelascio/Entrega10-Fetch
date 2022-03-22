@@ -1,87 +1,606 @@
+$titulos-planetas-font: 'Montserrat',
+sans-serif;
+$contenido-planetas-font: 'Work Sans',
+sans-serif;
+$headyfoot-font: 'Bitter',
+serif;
+$nombreyapellido-font: 'Work Sans',
+sans-serif;
+$tabla-contenido: 'Mulish',
+sans-serif;
+$tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, headyfoot:6rem, nombreyapellido:2rem, intro:2rem, p:2.3rem, tabla:3rem, boton:3rem);
+.root__element {
+    font-size: 6px;
+    overflow-x: hidden;
+}
+
 #grilla1CA {
     display: grid;
-    grid-template-areas: "header" "mainCA" "footer";
-    grid-template-rows: 1fr 5fr 1fr;
+    grid-template-areas: "h" "mainCA" "f";
+    grid-template-rows: 0.1fr 0.5fr 0.1fr;
     grid-template-columns: 100%;
 }
 
 #mainCA {
+    height: 100%;
     grid-area: mainCA;
+    display: grid;
+    grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "tablaplanetas" "resultado" "resultadosanteriores";
+    grid-template-rows: 0.15fr 0.3fr 3fr auto 0.1fr 0.6fr;
+    grid-template-columns: 100%;
 }
 
-#header {
-    grid-area: header;
+.resultadosanteriores {
+    overflow: scroll;
+    grid-area: resultadosanteriores;
+    font-family: $contenido-planetas-font;
+    font-size: map-get($tam-letra, p);
+    font-weight: 900;
+    input,
+    h5 {
+        font-size: map-get($tam-letra, p);
+        font-weight: 900;
+    }
 }
 
-#footer {
-    grid-area: footer;
+@mixin casillasPlanetas($background-color) {
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 3%;
+    background-color: $background-color;
+    width: 30%;
+}
+
+@mixin titulos {
+    font-family: $headyfoot-font;
+    font-size: map-get($tam-letra, titulos);
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue;
+}
+
+header {
+    grid-area: h;
+    background-color: #002f6d;
+    height: auto;
+    &__titulo {
+        font-family: $headyfoot-font;
+        font-size: map-get($tam-letra, headyfoot);
+    }
+    img {
+        width: 30%;
+        height: 60%;
+    }
+}
+
+.resultadosAnterioresBusqueda {
+    color: blue;
+    font-size: 10px;
+    font-style: italic;
+}
+
+.intro {
+    grid-area: intro;
+    background-color: darkgray;
+    p,
+    a {
+        font-family: $contenido-planetas-font;
+        font-size: map-get($tam-letra, intro);
+        font-weight: 900;
+        width: 80%;
+        position: relative;
+        right: -10%;
+    }
+}
+
+.nombreapellidoyfecha {
+    grid-area: nombreapellidoyfecha;
+    background-color: #002f6dd4;
+    font-family: $nombreyapellido-font;
+    font-size: map-get($tam-letra, nombreyapellido);
+    font-weight: 900;
+    &__titulo {
+        @include titulos;
+    }
+    &__div {
+        padding: 20px;
+        display: flex;
+        flex-direction: row;
+        input {
+            font-size: map-get($tam-letra, nombreyapellido);
+            font-weight: 900;
+            padding: 10px;
+        }
+        p {
+            padding: 10px;
+        }
+    }
+}
+
+.titulotradu {
+    font-family: $headyfoot-font;
+    font-size: map-get($tam-letra, titulos);
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue;
+}
+
+.ptradu {
+    padding: 3px;
+    width: 85%;
+    position: relative;
+    right: -10%;
+    color: aliceblue;
+}
+
+footer {
+    grid-area: f;
+    background-color: bisque;
+    font-family: $headyfoot-font;
+    font-size: map-get($tam-letra, headyfoot);
+}
+
+.estilotabla {
+    border: 1px solid;
+    background-color: bisque;
+    padding: 8px;
+}
+
+.estilotabla:hover {
+    background-color: aquamarine;
+    border: 2px solid;
+}
+
+.tablaplanetas {
+    grid-area: tablaplanetas;
+    background-color: burlywood;
+    font-family: $tabla-contenido;
+    font-size: map-get($tam-letra, tabla);
+    padding: 10px;
+    &__tabla {
+        padding: 5px;
+        position: relative;
+        right: -20%;
+    }
+}
+
+.resultado {
+    grid-area: resultado;
+}
+
+#botoncalculofinal {
+    position: relative;
+    right: -40%;
+    padding: 8px;
+    margin: 10px;
 }
 
 .formcasas {
+    grid-area: formcasas;
+    background-color: rgba(6, 0, 58, 0.987);
+    p {
+        font-family: $contenido-planetas-font;
+        font-size: map-get($tam-letra, p);
+        font-weight: 900;
+    }
     &__lista {
+        padding: 2rem;
         list-style: none;
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        position: relative;
+        right: -5%;
         &__marte {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectsignos {}
-            &__selectcasas {}
+            @include casillasPlanetas(rgba(252, 30, 30, 0.659));
+            width: p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__venus {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasas {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(255, 1, 225, 0.549));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__saturno {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasas {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(43, 153, 0, 0.583));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__mercurio {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasas {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(15, 191, 255, 0.727));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__luna {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasas {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(255, 255, 255, 0.727));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__sol {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasas {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(255, 226, 11, 0.727));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__jupiter {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasas {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(0, 60, 255, 0.987));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__urano {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasas {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(113, 24, 255, 0.623));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__neptuno {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasas {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(7, 168, 255, 0.837));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
         &__pluton {
-            border: solid 1px black;
-            padding: 3%;
-            &__selectcasa {}
-            &__selectsignos {}
+            @include casillasPlanetas(rgba(89, 89, 89, 0.576));
+            p {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, p);
+                font-weight: 900;
+            }
+            &__titulo {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__regente {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__grado {
+                font-family: $titulos-planetas-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+                font-weight: 900;
+            }
+            &__gradoinput {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectsignos {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
+            &__selectcasas {
+                font-family: $contenido-planetas-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+                font-weight: 900;
+            }
         }
     }
+}
+
+.resultadosanteriores {
+    background-color: #000844;
+    &__p1 {
+        color: aliceblue;
+    }
+    &__div1 {
+        display: flex;
+        flex-direction: row;
+        &__nombre {
+            color: aliceblue;
+        }
+        &__apellido {
+            color: aliceblue;
+        }
+        &__inputnombre {}
+        &__inputapellido {}
+    }
+    &__titulo {
+        @include titulos;
+    }
+    &__div {
+        padding: 20px;
+        &__titulo1 {
+            color: aliceblue;
+            text-decoration: underline;
+        }
+        &__titulo2 {
+            color: aliceblue;
+            text-decoration: underline;
+        }
+        &__titulo3 {
+            color: aliceblue;
+            text-decoration: underline;
+        }
+        &__titulo4 {
+            color: aliceblue;
+            text-decoration: underline;
+        }
+    }
+}
+
+#resultadosanteriores__button {
+    font-size: map-get($tam-letra, boton);
+}
+
+#botoncalculofinal {
+    font-size: map-get($tam-letra, boton);
+    padding: 2px;
 }

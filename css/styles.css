@@ -1,50 +1,505 @@
+.root__element {
+  font-size: 6px;
+  overflow-x: hidden; }
+
 #grilla1CA {
   display: grid;
-  grid-template-areas: "header" "mainCA" "footer";
-  grid-template-rows: 1fr 5fr 1fr;
+  grid-template-areas: "h" "mainCA" "f";
+  grid-template-rows: 0.1fr 0.5fr 0.1fr;
   grid-template-columns: 100%; }
 
 #mainCA {
-  grid-area: mainCA; }
+  height: 100%;
+  grid-area: mainCA;
+  display: grid;
+  grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "tablaplanetas" "resultado" "resultadosanteriores";
+  grid-template-rows: 0.15fr 0.3fr 3fr auto 0.1fr 0.6fr;
+  grid-template-columns: 100%; }
 
-#header {
-  grid-area: header; }
+.resultadosanteriores {
+  overflow: scroll;
+  grid-area: resultadosanteriores;
+  font-family: "Work Sans", sans-serif;
+  font-size: 2.3rem;
+  font-weight: 900; }
+  .resultadosanteriores input,
+  .resultadosanteriores h5 {
+    font-size: 2.3rem;
+    font-weight: 900; }
 
-#footer {
-  grid-area: footer; }
+header {
+  grid-area: h;
+  background-color: #002f6d;
+  height: auto; }
+  header__titulo {
+    font-family: "Bitter", serif;
+    font-size: 6rem; }
+  header img {
+    width: 30%;
+    height: 60%; }
 
-.formcasas__lista {
-  list-style: none;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-  .formcasas__lista__marte {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__venus {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__saturno {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__mercurio {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__luna {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__sol {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__jupiter {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__urano {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__neptuno {
-    border: solid 1px black;
-    padding: 3%; }
-  .formcasas__lista__pluton {
-    border: solid 1px black;
-    padding: 3%; }
+.resultadosAnterioresBusqueda {
+  color: blue;
+  font-size: 10px;
+  font-style: italic; }
+
+.intro {
+  grid-area: intro;
+  background-color: darkgray; }
+  .intro p,
+  .intro a {
+    font-family: "Work Sans", sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    width: 80%;
+    position: relative;
+    right: -10%; }
+
+.nombreapellidoyfecha {
+  grid-area: nombreapellidoyfecha;
+  background-color: #002f6dd4;
+  font-family: "Work Sans", sans-serif;
+  font-size: 2rem;
+  font-weight: 900; }
+  .nombreapellidoyfecha__titulo {
+    font-family: "Bitter", serif;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue; }
+  .nombreapellidoyfecha__div {
+    padding: 20px;
+    display: flex;
+    flex-direction: row; }
+    .nombreapellidoyfecha__div input {
+      font-size: 2rem;
+      font-weight: 900;
+      padding: 10px; }
+    .nombreapellidoyfecha__div p {
+      padding: 10px; }
+
+.titulotradu {
+  font-family: "Bitter", serif;
+  font-size: 5rem;
+  padding: 5px;
+  position: relative;
+  right: -35%;
+  color: aliceblue; }
+
+.ptradu {
+  padding: 3px;
+  width: 85%;
+  position: relative;
+  right: -10%;
+  color: aliceblue; }
+
+footer {
+  grid-area: f;
+  background-color: bisque;
+  font-family: "Bitter", serif;
+  font-size: 6rem; }
+
+.estilotabla {
+  border: 1px solid;
+  background-color: bisque;
+  padding: 8px; }
+
+.estilotabla:hover {
+  background-color: aquamarine;
+  border: 2px solid; }
+
+.tablaplanetas {
+  grid-area: tablaplanetas;
+  background-color: burlywood;
+  font-family: "Mulish", sans-serif;
+  font-size: 3rem;
+  padding: 10px; }
+  .tablaplanetas__tabla {
+    padding: 5px;
+    position: relative;
+    right: -20%; }
+
+.resultado {
+  grid-area: resultado; }
+
+#botoncalculofinal {
+  position: relative;
+  right: -40%;
+  padding: 8px;
+  margin: 10px; }
+
+.formcasas {
+  grid-area: formcasas;
+  background-color: rgba(6, 0, 58, 0.987); }
+  .formcasas p {
+    font-family: "Work Sans", sans-serif;
+    font-size: 2.3rem;
+    font-weight: 900; }
+  .formcasas__lista {
+    padding: 2rem;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    right: -5%; }
+    .formcasas__lista__marte {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(252, 30, 30, 0.659);
+      width: 30%;
+      width: p;
+        width-font-family: "Work Sans", sans-serif;
+        width-font-size: 2.3rem;
+        width-font-weight: 900; }
+      .formcasas__lista__marte__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__marte__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__marte__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__marte__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__marte__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__marte__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__venus {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(255, 1, 225, 0.549);
+      width: 30%; }
+      .formcasas__lista__venus p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__venus__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__venus__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__venus__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__venus__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__venus__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__venus__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__saturno {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(43, 153, 0, 0.583);
+      width: 30%; }
+      .formcasas__lista__saturno p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__saturno__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__saturno__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__saturno__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__saturno__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__saturno__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__saturno__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__mercurio {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(15, 191, 255, 0.727);
+      width: 30%; }
+      .formcasas__lista__mercurio p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__mercurio__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__mercurio__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__mercurio__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__mercurio__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__mercurio__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__mercurio__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__luna {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(255, 255, 255, 0.727);
+      width: 30%; }
+      .formcasas__lista__luna p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__luna__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__luna__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__luna__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__luna__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__luna__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__luna__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__sol {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(255, 226, 11, 0.727);
+      width: 30%; }
+      .formcasas__lista__sol p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__sol__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__sol__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__sol__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__sol__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__sol__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__sol__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__jupiter {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(0, 60, 255, 0.987);
+      width: 30%; }
+      .formcasas__lista__jupiter p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__jupiter__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__jupiter__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__jupiter__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__jupiter__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__jupiter__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__jupiter__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__urano {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(113, 24, 255, 0.623);
+      width: 30%; }
+      .formcasas__lista__urano p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__urano__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__urano__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__urano__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__urano__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__urano__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__urano__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__neptuno {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(7, 168, 255, 0.837);
+      width: 30%; }
+      .formcasas__lista__neptuno p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__neptuno__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__neptuno__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__neptuno__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__neptuno__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__neptuno__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__neptuno__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+    .formcasas__lista__pluton {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(89, 89, 89, 0.576);
+      width: 30%; }
+      .formcasas__lista__pluton p {
+        font-family: "Work Sans", sans-serif;
+        font-size: 2.3rem;
+        font-weight: 900; }
+      .formcasas__lista__pluton__titulo {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__pluton__regente {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem; }
+      .formcasas__lista__pluton__grado {
+        font-family: "Montserrat", sans-serif;
+        font-size: 4rem;
+        font-weight: 900; }
+      .formcasas__lista__pluton__gradoinput {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__pluton__selectsignos {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+      .formcasas__lista__pluton__selectcasas {
+        font-family: "Work Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 900; }
+
+.resultadosanteriores {
+  background-color: #000844; }
+  .resultadosanteriores__p1 {
+    color: aliceblue; }
+  .resultadosanteriores__div1 {
+    display: flex;
+    flex-direction: row; }
+    .resultadosanteriores__div1__nombre {
+      color: aliceblue; }
+    .resultadosanteriores__div1__apellido {
+      color: aliceblue; }
+  .resultadosanteriores__titulo {
+    font-family: "Bitter", serif;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue; }
+  .resultadosanteriores__div {
+    padding: 20px; }
+    .resultadosanteriores__div__titulo1 {
+      color: aliceblue;
+      text-decoration: underline; }
+    .resultadosanteriores__div__titulo2 {
+      color: aliceblue;
+      text-decoration: underline; }
+    .resultadosanteriores__div__titulo3 {
+      color: aliceblue;
+      text-decoration: underline; }
+    .resultadosanteriores__div__titulo4 {
+      color: aliceblue;
+      text-decoration: underline; }
+
+#resultadosanteriores__button {
+  font-size: 3rem; }
+
+#botoncalculofinal {
+  font-size: 3rem;
+  padding: 2px; }

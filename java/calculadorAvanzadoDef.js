@@ -10,9 +10,7 @@ class planetas {
         this.regente = lord;
         this.grado = parseInt(degree);
         this.casa = house;
-
     }
-
 }
 
 
@@ -129,6 +127,7 @@ function infoPluton() {
     //..obtenidos del HTML
     var infoPluton = new planetas(signo10, grado10, casa10, nombre10);
     return infoPluton;
+    sessionStorage.setItem('Pluton', infoPluton);
 }
 
 
@@ -150,7 +149,7 @@ function arrayObjetosPlanetas() {
     return arrayObjetosPlanetas;
 }
 
-//===========entrega 14 de marzo 2022
+
 //contador e inputs de planetas; para que se pueda monitorear si la tabla debe ser re-dibujada
 //se crean variables por cada input de cada planeta: casa, grado y signo regente
 var cont = 0;
@@ -303,6 +302,7 @@ const dibTabla = document.getElementById("dibujartabla");
 //el script de abajo ejecutara la función cuando perciba un click en el boton con id "dibujartabla"
 dibTabla.addEventListener('click', function() { dibujarTabla(); });
 
+//==============FUNCION QUE DIBUJA LA TABLA===============
 function dibujarTabla() {
     const AOP = arrayObjetosPlanetas();
     console.log(AOP);
@@ -311,7 +311,7 @@ function dibujarTabla() {
     //..precisamente el if de abajo corriese si hubo cambios
     if (cont === 0) {
         //este script reemplazará la tabla actual por una vacia, para que no se repita y agreguen 2 tablas
-        var borrador = document.getElementById("tablaplanetas");
+        var borrador = document.getElementById("tablaplanetas__tabla");
         var nodoTexto = borrador.childNodes[0];
         borrador.textContent = nodoTexto.textContent;
 
@@ -319,47 +319,55 @@ function dibujarTabla() {
         //creando los headers de la tabla nuevamente para que aparezcan cuando hayan cambios
         const header = document.createElement('th');
         header.innerText = 'Planeta';
-        const root1 = document.getElementById('tablaplanetas');
+        header.className = "estilotabla"
+        const root1 = document.getElementById('tablaplanetas__tabla');
         root1.append(header);
 
         const header2 = document.createElement('th');
         header2.innerText = 'Grado';
-        const root2 = document.getElementById('tablaplanetas');
+        header2.className = "estilotabla"
+        const root2 = document.getElementById('tablaplanetas__tabla');
         root2.append(header2);
 
         const header3 = document.createElement('th');
         header3.innerText = 'Casa';
-        const root3 = document.getElementById('tablaplanetas');
+        header3.className = "estilotabla"
+        const root3 = document.getElementById('tablaplanetas__tabla');
         root3.append(header3);
 
         const header4 = document.createElement('th');
         header4.innerText = 'Regente';
-        const root4 = document.getElementById('tablaplanetas');
+        header4.className = "estilotabla"
+        const root4 = document.getElementById('tablaplanetas__tabla');
         root4.append(header4);
 
         const header5 = document.createElement('tr');
-        const root5 = document.getElementById('tablaplanetas');
+        const root5 = document.getElementById('tablaplanetas__tabla');
         root5.append(header5);
 
 
         AOP.forEach(planeta => console.log(planeta.regente));
-        const root = document.getElementById('tablaplanetas');
+        const root = document.getElementById('tablaplanetas__tabla');
         AOP.forEach(planeta => {
 
             const nombrePlaneta = document.createElement('td');
             nombrePlaneta.innerText = `${planeta.nombre}`;
+            nombrePlaneta.className = "estilotabla"
             root.append(nombrePlaneta);
 
             const gradoNuevoPlaneta = document.createElement('td');
             gradoNuevoPlaneta.innerText = `${planeta.grado}`
+            gradoNuevoPlaneta.className = "estilotabla"
             root.append(gradoNuevoPlaneta);
 
             const casaNuevoPlaneta = document.createElement('td');
             casaNuevoPlaneta.innerText = `${planeta.casa}`;
+            casaNuevoPlaneta.className = "estilotabla"
             root.append(casaNuevoPlaneta);
 
             const signoNuevoPlaneta = document.createElement('td');
             signoNuevoPlaneta.innerText = `${planeta.regente}`;
+            signoNuevoPlaneta.className = "estilotabla"
             root.append(signoNuevoPlaneta);
 
             const salto = document.createElement('tr');
@@ -371,8 +379,8 @@ function dibujarTabla() {
 }
 
 
-//FIN entrega 14 de marzo 2022===========
 
+//============FUNCION QUE ARROJA ARRAY OF ARRAYS CON TODOS LOS PLANETAS Y CASAS=======
 function arraysPlanetasCasas() {
     var planetasCasa1 = [];
     var planetasCasa2 = [];
@@ -814,7 +822,7 @@ function arraysPlanetasCasas() {
 }
 
 //esta funcion buscara si hay conjuncion entre dos planetas (es decir si 2 estan en la misma casa), y dirá que significa esto
-
+//============FUNCION QUE ARROJA ARRAY CON CONJUNCIONES===========
 
 function resultadosAspectos() {
     //la funcion arraysPlanetasCasas() traera consigo un array de arrays
@@ -833,6 +841,8 @@ function resultadosAspectos() {
     var arraysPlanetasCasasLocalCasa11 = arraysPlanetasCasasLocal[10];
     var arraysPlanetasCasasLocalCasa12 = arraysPlanetasCasasLocal[11];
     var arrayConjunciones = [];
+
+    ///ME FALTA: ABAJO REVISAR QUE ESTE JUPITER EN LA 1 Y COLOCARLA EN EL RESTO DE LAS CASASLUEGO PROBAR
 
     //============la propiedad include verificara cada planeta esta en Casa 1 y proseguira acorde=======
     if (arraysPlanetasCasasLocalCasa1.includes('marte')) {
@@ -868,6 +878,10 @@ function resultadosAspectos() {
             // console.log('Hay una conjuncion de Marte y Pluton en casa 1. ');
             arrayConjunciones.push('MP1');
         }
+        if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Marte y Pluton en casa 1. ');
+            arrayConjunciones.push('MJ1');
+        }
 
         if (arraysPlanetasCasasLocalCasa1.length == 1)
             console.log('Marte esta solo en esta casa. No hay conjuncion ');
@@ -902,6 +916,10 @@ function resultadosAspectos() {
             // console.log('Hay una conjuncion de Venus y Neptuno en casa 1.');
             arrayConjunciones.push('VP1');
         }
+        if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Venus y Neptuno en casa 1.');
+            arrayConjunciones.push('VJ1');
+        }
         if (arraysPlanetasCasasLocalCasa1.length == 1)
             console.log('Venus esta solo en esta casa. No hay conjuncion ');
     }
@@ -931,6 +949,10 @@ function resultadosAspectos() {
             // console.log('Hay una conjuncion de Saturno y Neptuno en casa 1.');
             arrayConjunciones.push('SN1');
         }
+        if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Saturno y Neptuno en casa 1.');
+            arrayConjunciones.push('SJ1');
+        }
         if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
             // console.log('Hay una conjuncion de Saturno y Pluton en casa 1.');
             arrayConjunciones.push('SP1');
@@ -939,6 +961,7 @@ function resultadosAspectos() {
         if (arraysPlanetasCasasLocalCasa1.length == 1) {
             console.log('Saturno esta solo en esta casa (1). No hay conjuncion ');
         }
+
     }
 
     if (arraysPlanetasCasasLocalCasa1.includes('mercurio')) {
@@ -967,6 +990,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('MeP1');
         }
 
+        if (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Mercurio y Pluton en casa 1.');
+            arrayConjunciones.push('MeJ1');
+        }
+
         if (arraysPlanetasCasasLocalCasa1.length == 1) {
             console.log('Mercurio esta solo en esta casa (1). No hay conjuncion ');
         }
@@ -993,6 +1021,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('LP1');
         }
 
+        if (arraysPlanetasCasasLocalCasa1.includes('luna') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Luna y Pluton oen casa 1.');
+            arrayConjunciones.push('LJ1');
+        }
+
         if (arraysPlanetasCasasLocalCasa1.length == 1) {
             console.log('La Luna esta sola en esta casa (1). No hay conjuncion ');
         }
@@ -1015,6 +1048,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('SoP1');
         }
 
+        if (arraysPlanetasCasasLocalCasa1.includes('sol') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de el Sol y Pluton en casa 1.');
+            arrayConjunciones.push('SoJ1');
+        }
+
         if (arraysPlanetasCasasLocalCasa1.length == 1) {
             console.log('El Sol esta solo en esta casa (1). No hay conjuncion ');
         }
@@ -1031,6 +1069,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('UP1');
         }
 
+        if (arraysPlanetasCasasLocalCasa1.includes('urano') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Urano y Pluton en casa 1.');
+            arrayConjunciones.push('UJ1');
+        }
+
         if (arraysPlanetasCasasLocalCasa1.length == 1) {
             console.log('Urano esta solo en esta casa (1). No hay conjuncion ');
         }
@@ -1041,6 +1084,10 @@ function resultadosAspectos() {
             // console.log('Hay una conjuncion de Neptuno y Pluton en casa 1.');
             arrayConjunciones.push('NP1');
         }
+        if (arraysPlanetasCasasLocalCasa1.includes('neptuno') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Neptuno y Pluton en casa 1.');
+            arrayConjunciones.push('NJ1');
+        }
 
         if (arraysPlanetasCasasLocalCasa1.length == 1) {
             console.log('Neptuno esta solo en esta casa (1). No hay conjuncion ');
@@ -1049,10 +1096,17 @@ function resultadosAspectos() {
 
     if (arraysPlanetasCasasLocalCasa1.includes('pluton')) {
 
+        if (arraysPlanetasCasasLocalCasa1.includes('pluton') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Pluton y Jupiter en casa 1.');
+            arrayConjunciones.push('PJ1');
+        }
+
+
         if (arraysPlanetasCasasLocalCasa1.length == 1) {
             console.log('Pluton esta solo en esta casa (1). No hay conjuncion ');
         }
     }
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
     //========la propiedad include verificara cada planeta esta en Casa 2 y proseguira acorde======
 
@@ -1090,6 +1144,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('MP2');
         }
 
+        if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Marte y Jupiter en casa 2. ');
+            arrayConjunciones.push('MJ2');
+        }
+
         if (arraysPlanetasCasasLocalCasa2.length == 1)
             console.log('Marte esta solo en esta casa. No hay conjuncion ');
     }
@@ -1123,6 +1182,11 @@ function resultadosAspectos() {
             // console.log('Hay una conjuncion de Venus y Neptuno en casa 2.');
             arrayConjunciones.push('VP2');
         }
+        if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Venus y Jupiter en casa 2. ');
+            arrayConjunciones.push('VJ2');
+        }
+
         if (arraysPlanetasCasasLocalCasa2.length == 1)
             console.log('Venus esta solo en esta casa. No hay conjuncion ');
     }
@@ -1157,6 +1221,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('SP2');
         }
 
+        if (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Saturno y Jupiter en casa 2. ');
+            arrayConjunciones.push('SJ2');
+        }
+
         if (arraysPlanetasCasasLocalCasa2.length == 1) {
             console.log('Saturno esta solo en esta casa (2). No hay conjuncion ');
         }
@@ -1188,6 +1257,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('MeP2');
         }
 
+        if (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Mercurio y Jupiter en casa 2. ');
+            arrayConjunciones.push('MeJ2');
+        }
+
         if (arraysPlanetasCasasLocalCasa2.length == 1) {
             console.log('Mercurio esta solo en esta casa (2). No hay conjuncion ');
         }
@@ -1214,6 +1288,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('LP2');
         }
 
+        if (arraysPlanetasCasasLocalCasa2.includes('luna') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Luna y Jupiter en casa 2. ');
+            arrayConjunciones.push('LJ2');
+        }
+
         if (arraysPlanetasCasasLocalCasa2.length == 1) {
             console.log('La Luna esta sola en esta casa (2). No hay conjuncion ');
         }
@@ -1235,6 +1314,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('SoP2');
         }
 
+        if (arraysPlanetasCasasLocalCasa2.includes('sol') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Sol y Jupiter en casa 2. ');
+            arrayConjunciones.push('SoJ2');
+        }
+
         if (arraysPlanetasCasasLocalCasa2.length == 1) {
             console.log('El Sol esta solo en esta casa (2). No hay conjuncion ');
         }
@@ -1251,6 +1335,11 @@ function resultadosAspectos() {
             arrayConjunciones.push('UP2');
         }
 
+        if (arraysPlanetasCasasLocalCasa2.includes('urano') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Urano y Jupiter en casa 2. ');
+            arrayConjunciones.push('UJ2');
+        }
+
         if (arraysPlanetasCasasLocalCasa2.length == 1) {
             console.log('Urano esta solo en esta casa (2). No hay conjuncion ');
         }
@@ -1262,12 +1351,24 @@ function resultadosAspectos() {
             arrayConjunciones.push('NP2');
         }
 
+        if (arraysPlanetasCasasLocalCasa2.includes('neptuno') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Neptuno y Jupiter en casa 2. ');
+            arrayConjunciones.push('NJ2');
+        }
+
         if (arraysPlanetasCasasLocalCasa2.length == 1) {
             console.log('Neptuno esta solo en esta casa (2). No hay conjuncion ');
         }
     }
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
+
 
     if (arraysPlanetasCasasLocalCasa2.includes('pluton')) {
+
+        if (arraysPlanetasCasasLocalCasa2.includes('pluton') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
+            // console.log('Hay una conjuncion de Pluton y Jupiter en casa 2. ');
+            arrayConjunciones.push('PJ2');
+        }
 
         if (arraysPlanetasCasasLocalCasa2.length == 1) {
             console.log('Pluton esta solo en esta casa (2). No hay conjuncion ');
@@ -1493,7 +1594,8 @@ function resultadosAspectos() {
         if (arraysPlanetasCasasLocalCasa3.length == 1) {
             console.log('Pluton esta solo en esta casa (3). No hay conjuncion ');
         }
-    }
+    } ///ME FALTA: JUPITER NO ESTA EN EL CICLO
+
 
     //========la propiedad include verificara cada planeta esta en Casa 4 y proseguira acorde=======
     if (arraysPlanetasCasasLocalCasa4.includes('marte')) {
@@ -1713,6 +1815,7 @@ function resultadosAspectos() {
             console.log('Pluton esta solo en esta casa (4). No hay conjuncion ');
         }
     }
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
     //========la propiedad include verificara cada planeta esta en Casa 5 y proseguira acorde=======
     if (arraysPlanetasCasasLocalCasa5.includes('marte')) {
@@ -1932,6 +2035,7 @@ function resultadosAspectos() {
             console.log('Pluton esta solo en esta casa (5). No hay conjuncion ');
         }
     }
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
     //========la propiedad include verificara cada planeta esta en Casa 6 y proseguira acorde=======
     if (arraysPlanetasCasasLocalCasa6.includes('marte')) {
@@ -2151,9 +2255,8 @@ function resultadosAspectos() {
             console.log('Pluton esta solo en esta casa (6). No hay conjuncion ');
         }
     }
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
-
-    //ME QUEDE ACA REVISANDO LOS Me para cambiarlos
 
     //========la propiedad include verificara cada planeta esta en Casa 7 y proseguira acorde=======
     if (arraysPlanetasCasasLocalCasa7.includes('marte')) {
@@ -2373,6 +2476,7 @@ function resultadosAspectos() {
             console.log('Pluton esta solo en esta casa (7). No hay conjuncion ');
         }
     }
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
     //========la propiedad include verificara cada planeta esta en Casa 8 y proseguira acorde=======
     if (arraysPlanetasCasasLocalCasa8.includes('marte')) {
@@ -2591,7 +2695,8 @@ function resultadosAspectos() {
         if (arraysPlanetasCasasLocalCasa8.length == 1) {
             console.log('Pluton esta solo en esta casa (8). No hay conjuncion ');
         }
-    }
+    } ///ME FALTA: JUPITER NO ESTA EN EL CICLO
+
 
     //========la propiedad include verificara cada planeta esta en Casa 9 y proseguira acorde=======
 
@@ -2812,6 +2917,7 @@ function resultadosAspectos() {
             console.log('Pluton esta solo en esta casa (9). No hay conjuncion ');
         }
     }
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
     //========la propiedad include verificara cada planeta esta en Casa 10 y proseguira acorde=======
 
@@ -3033,6 +3139,7 @@ function resultadosAspectos() {
         }
     }
 
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
     //========la propiedad include verificara cada planeta esta en Casa 11 y proseguira acorde=======
 
@@ -3253,7 +3360,7 @@ function resultadosAspectos() {
             console.log('Pluton esta solo en esta casa (11). No hay conjuncion ');
         }
     }
-
+    ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
     //========la propiedad include verificara cada planeta esta en Casa 12 y proseguira acorde=======
 
@@ -3483,6 +3590,7 @@ function resultadosAspectos() {
 const botoncalculofinal = document.getElementById("botoncalculofinal");
 botoncalculofinal.addEventListener('click', function() { total(); });
 
+//========FUNCION QUE ARROJA RESULTADO=======
 
 function total() {
     var arrayConj = resultadosAspectos();
@@ -3491,10 +3599,56 @@ function total() {
     MS = 0;
     VS = 0;
     MMe = 0;
+    MJ = 0;
+    MP = 0;
+    MU = 0;
+    MN = 0;
+    ML = 0;
+    MSo = 0;
+    SU = 0;
+    SN = 0;
+    SMe = 0;
+    SP = 0;
+    SL = 0;
+    SSo = 0;
+    VMe = 0;
+    VU = 0;
+    VN = 0;
+    VL = 0;
+    VSo = 0;
+    VP = 0;
+    MeU = 0;
+    MeN = 0;
+    MeL = 0;
+    MeSo = 0;
+    MeP = 0;
+    UL = 0;
+    USo = 0;
+    UP = 0;
+    UL = 0;
+    UN = 0;
+    NL = 0;
+    NP = 0;
+    NSo = 0;
+    LP = 0;
+    LSo = 0;
+    SoP = 0;
+    JM = 0;
+    JV = 0;
+    JS = 0;
+    JU = 0;
+    JN = 0;
+    JMe = 0;
+    JL = 0;
+    JSo = 0;
+    JP = 0;
 
     //el for de abajo recorrera el array retornado con todas las conjunciones de la funcion resultadosAspectos()..
     //..luego verificará si alguno de los elementos del array contienen MV o MS o VS y accionara de acuerdo a esto..
     for (i = 0; i < arrayConj.length; i++) {
+
+        // ======mARTE=======
+
 
         if (arrayConj[i].indexOf('MV') != -1 || arrayConj[i].indexOf('VM') != -1) {
 
@@ -3504,6 +3658,106 @@ function total() {
             }
         }
 
+        if (arrayConj[i].indexOf('MMe') != -1 || arrayConj[i].indexOf('MeM') != -1) {
+
+            if (MMe != 1) {
+                resultado = resultado + 'Hay una conjunción de Marte y Mercurio en tu carta. El significado es:--- \n';
+                MMe = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MJ') != -1 || arrayConj[i].indexOf('JM') != -1) {
+
+            if (MJ != 1) {
+                resultado = resultado + 'Hay una conjunción de Marte y Jupiter en tu carta. El significado es:--- \n';
+                MJ = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MP') != -1 || arrayConj[i].indexOf('PM') != -1) {
+
+            if (MP != 1) {
+                resultado = resultado + 'Hay una conjunción de Marte y Pluton en tu carta. El significado es:--- \n';
+                MP = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MU') != -1 || arrayConj[i].indexOf('UM') != -1) {
+
+            if (MU != 1) {
+                resultado = resultado + 'Hay una conjunción de Marte y Urano en tu carta. El significado es:--- \n';
+                MU = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MN') != -1 || arrayConj[i].indexOf('NM') != -1) {
+
+            if (MN != 1) {
+                resultado = resultado + 'Hay una conjunción de Marte y Neptuno en tu carta. El significado es:--- \n';
+                MN = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('ML') != -1 || arrayConj[i].indexOf('LM') != -1) {
+
+            if (ML != 1) {
+                resultado = resultado + 'Hay una conjunción de Marte y la Luna en tu carta. El significado es:--- \n';
+                ML = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MSo') != -1 || arrayConj[i].indexOf('SoM') != -1) {
+
+            if (MSo != 1) {
+                resultado = resultado + 'Hay una conjunción de Marte y el Sol en tu carta. El significado es:--- \n';
+                MSo = 1;
+            }
+        }
+        // ======VENUS=======
+
+        if (arrayConj[i].indexOf('VMe') != -1 || arrayConj[i].indexOf('MeV') != -1) {
+            if (VMe != 1) {
+                resultado = resultado + 'Hay una conjunción de Venus y Mercurio en tu carta. El significado es:--- \n';
+                VMe = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('VU') != -1 || arrayConj[i].indexOf('UV') != -1) {
+            if (VU != 1) {
+                resultado = resultado + 'Hay una conjunción de Venus y Urano en tu carta. El significado es:--- \n';
+                VU = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('VN') != -1 || arrayConj[i].indexOf('NV') != -1) {
+            if (VN != 1) {
+                resultado = resultado + 'Hay una conjunción de Venus y Neptuno en tu carta. El significado es:--- \n';
+                VN = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('VL') != -1 || arrayConj[i].indexOf('LV') != -1) {
+            if (VL != 1) {
+                resultado = resultado + 'Hay una conjunción de Venus y La Luna en tu carta. El significado es:--- \n';
+                VL = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('VSo') != -1 || arrayConj[i].indexOf('SoV') != -1) {
+            if (VSo != 1) {
+                resultado = resultado + 'Hay una conjunción de Venus y El Sol en tu carta. El significado es:--- \n';
+                VSo = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('VP') != -1 || arrayConj[i].indexOf('PV') != -1) {
+            if (VP != 1) {
+                resultado = resultado + 'Hay una conjunción de Venus y Pluton en tu carta. El significado es:--- \n';
+                VP = 1;
+            }
+        }
+
+        // ======SATURNO=======
         if (arrayConj[i].indexOf('SV') != -1 || arrayConj[i].indexOf('VS') != -1) {
             if (VS != 1) {
                 resultado = resultado + 'Hay una conjunción de Saturno y Venus en tu carta. El significado es:--- \n';
@@ -3518,17 +3772,230 @@ function total() {
             }
         }
 
-        if (arrayConj[i].indexOf('MMe') != -1) {
-            if (MMe != 1) {
-                resultado = resultado + 'Hay una conjunción de Mercurio y Marte en tu carta. El significado es:--- \n';
-                MM = 1;
+        if (arrayConj[i].indexOf('SMe') != -1 || arrayConj[i].indexOf('MeS') != -1) {
+            if (MeSo != 1) {
+                resultado = resultado + 'Hay una conjunción de Saturno y Mercurio en tu carta. El significado es:--- \n';
+                MeSo = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('SU') != -1 || arrayConj[i].indexOf('US') != -1) {
+            if (SU != 1) {
+                resultado = resultado + 'Hay una conjunción de Saturno y Urano en tu carta. El significado es:--- \n';
+                SU = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('SN') != -1 || arrayConj[i].indexOf('NS') != -1) {
+            if (SN != 1) {
+                resultado = resultado + 'Hay una conjunción de Saturno y Neptuno en tu carta. El significado es:--- \n';
+                SN = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('SSo') != -1 || arrayConj[i].indexOf('SoS') != -1) {
+            if (SSo != 1) {
+                resultado = resultado + 'Hay una conjunción de Saturno y el Sol en tu carta. El significado es:--- \n';
+                SSo = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('SL') != -1 || arrayConj[i].indexOf('LS') != -1) {
+            if (SL != 1) {
+                resultado = resultado + 'Hay una conjunción de Saturno y la Luna en tu carta. El significado es:--- \n';
+                SL = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('SP') != -1 || arrayConj[i].indexOf('PS') != -1) {
+            if (SP != 1) {
+                resultado = resultado + 'Hay una conjunción de Saturno y Pluton en tu carta. El significado es:--- \n';
+                SP = 1;
+            }
+        }
+
+        // ======Mercurio=======
+
+
+        if (arrayConj[i].indexOf('MeU') != -1 || arrayConj[i].indexOf('UMe') != -1) {
+            if (MeU != 1) {
+                resultado = resultado + 'Hay una conjunción de Mercurio y Urano en tu carta. El significado es:--- \n';
+                MeU = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MeN') != -1 || arrayConj[i].indexOf('NMe') != -1) {
+            if (MeN != 1) {
+                resultado = resultado + 'Hay una conjunción de Mercurio y Neptuno en tu carta. El significado es:--- \n';
+                MeN = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MeL') != -1 || arrayConj[i].indexOf('LMe') != -1) {
+            if (MeL != 1) {
+                resultado = resultado + 'Hay una conjunción de Mercurio y la Luna en tu carta. El significado es:--- \n';
+                MeL = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MeSo') != -1 || arrayConj[i].indexOf('SoMe') != -1) {
+            if (MeSo != 1) {
+                resultado = resultado + 'Hay una conjunción de Mercurio y El Sol en tu carta. El significado es:--- \n';
+                MeSo = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('MeP') != -1 || arrayConj[i].indexOf('PMe') != -1) {
+            if (MeP != 1) {
+                resultado = resultado + 'Hay una conjunción de Mercurio y Pluton en tu carta. El significado es:--- \n';
+                MeP = 1;
+            }
+        }
+
+        // ======Urano=======
+
+        if (arrayConj[i].indexOf('UL') != -1 || arrayConj[i].indexOf('LU') != -1) {
+            if (UL != 1) {
+                resultado = resultado + 'Hay una conjunción de Urano y la Luna en tu carta. El significado es:--- \n';
+                UL = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('USo') != -1 || arrayConj[i].indexOf('SoU') != -1) {
+            if (USo != 1) {
+                resultado = resultado + 'Hay una conjunción de Urano y El Sol en tu carta. El significado es:--- \n';
+                USo = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('UN') != -1 || arrayConj[i].indexOf('NU') != -1) {
+            if (UN != 1) {
+                resultado = resultado + 'Hay una conjunción de Urano y Neptuno en tu carta. El significado es:--- \n';
+                UN = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('UP') != -1 || arrayConj[i].indexOf('PU') != -1) {
+            if (UP != 1) {
+                resultado = resultado + 'Hay una conjunción de Urano y Pluton en tu carta. El significado es:--- \n';
+                UP = 1;
+            }
+        }
+
+        // ======Neptuno=======
+
+        if (arrayConj[i].indexOf('NL') != -1 || arrayConj[i].indexOf('LN') != -1) {
+            if (NL != 1) {
+                resultado = resultado + 'Hay una conjunción de Neptuno y La Luna en tu carta. El significado es:--- \n';
+                NL = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('NSo') != -1 || arrayConj[i].indexOf('SoN') != -1) {
+            if (NSo != 1) {
+                resultado = resultado + 'Hay una conjunción de Neptuno y El Sol en tu carta. El significado es:--- \n';
+                NSo = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('NP') != -1 || arrayConj[i].indexOf('PN') != -1) {
+            if (NP != 1) {
+                resultado = resultado + 'Hay una conjunción de Neptuno y Pluton en tu carta. El significado es:--- \n';
+                NP = 1;
             }
         }
 
 
+        // ======Luna=======
+
+        if (arrayConj[i].indexOf('LP') != -1 || arrayConj[i].indexOf('PL') != -1) {
+            if (LP != 1) {
+                resultado = resultado + 'Hay una conjunción de Luna y Pluton en tu carta. El significado es:--- \n';
+                LP = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('LSo') != -1 || arrayConj[i].indexOf('SoL') != -1) {
+            if (LSo != 1) {
+                resultado = resultado + 'Hay una conjunción de Luna y Sol en tu carta. El significado es:--- \n';
+                LSo = 1;
+            }
+        }
 
 
+        // ======Sol=======
 
+        if (arrayConj[i].indexOf('SoP') != -1 || arrayConj[i].indexOf('PSo') != -1) {
+            if (SoP != 1) {
+                resultado = resultado + 'Hay una conjunción de Sol y Pluton en tu carta. El significado es:--- \n';
+                SoP = 1;
+            }
+        }
+
+        //=======Jupiter=====
+
+        if (arrayConj[i].indexOf('JM') != -1 || arrayConj[i].indexOf('MJ') != -1) {
+            if (JM != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Marte en tu carta. El significado es:--- \n';
+                JM = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('JV') != -1 || arrayConj[i].indexOf('VJ') != -1) {
+            if (JV != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Venus en tu carta. El significado es:--- \n';
+                JV = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('JS') != -1 || arrayConj[i].indexOf('SJ') != -1) {
+            if (JS != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Saturno en tu carta. El significado es:--- \n';
+                JS = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('JU') != -1 || arrayConj[i].indexOf('UJ') != -1) {
+            if (JU != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Urano en tu carta. El significado es:--- \n';
+                JU = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('JMe') != -1 || arrayConj[i].indexOf('MeJ') != -1) {
+            if (JMe != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Mercurio en tu carta. El significado es:--- \n';
+                JMe = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('JN') != -1 || arrayConj[i].indexOf('NJ') != -1) {
+            if (JN != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Neptuno en tu carta. El significado es:--- \n';
+                JN = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('JL') != -1 || arrayConj[i].indexOf('LJ') != -1) {
+            if (JL != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Luna en tu carta. El significado es:--- \n';
+                JL = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('JSo') != -1 || arrayConj[i].indexOf('SoJ') != -1) {
+            if (JSo != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Sol en tu carta. El significado es:--- \n';
+                JSo = 1;
+            }
+        }
+
+        if (arrayConj[i].indexOf('JP') != -1 || arrayConj[i].indexOf('PJ') != -1) {
+            if (JP != 1) {
+                resultado = resultado + 'Hay una conjunción de Jupiter y Pluton en tu carta. El significado es:--- \n';
+                JP = 1;
+            }
+        }
 
     }
 
@@ -3539,10 +4006,39 @@ function total() {
     var arraysCasa2 = arrayCasas[1];
     var arraysCasa3 = arrayCasas[2];
     var arraysCasa4 = arrayCasas[3];
+    var arraysCasa5 = arrayCasas[4];
+    var arraysCasa6 = arrayCasas[5];
+    var arraysCasa7 = arrayCasas[6];
+    var arraysCasa8 = arrayCasas[7];
+    var arraysCasa9 = arrayCasas[8];
+    var arraysCasa10 = arrayCasas[9];
+    var arraysCasa11 = arrayCasas[10];
+    var arraysCasa12 = arrayCasas[11];
 
     var venus = infoVenus();
     var saturno = infoSaturno();
     var marte = infoMarte();
+    var jupiter = infoJupiter();
+    var mercurio = infoMercurio();
+    var urano = infoUrano();
+    var neptuno = infoNeptuno();
+    var sol = infoSol();
+    var luna = infoLuna();
+    var pluton = infoPluton();
+
+    var arrayDeinfoPlanetas = [];
+
+    arrayDeinfoPlanetas.push(venus);
+    arrayDeinfoPlanetas.push(saturno);
+    arrayDeinfoPlanetas.push(marte);
+    arrayDeinfoPlanetas.push(jupiter);
+    arrayDeinfoPlanetas.push(mercurio);
+    arrayDeinfoPlanetas.push(urano);
+    arrayDeinfoPlanetas.push(neptuno);
+    arrayDeinfoPlanetas.push(sol);
+    arrayDeinfoPlanetas.push(luna);
+    arrayDeinfoPlanetas.push(pluton);
+
 
     switch (parseInt(marte.casa)) {
         case 1:
@@ -3557,6 +4053,32 @@ function total() {
         case 4:
             resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
             break;
+        case 5:
+            resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Marte está en casa ${marte.casa}. Esto significa: ---\n`;
+            break;
+
+
     }
 
 
@@ -3573,6 +4095,31 @@ function total() {
         case 4:
             resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
             break;
+        case 5:
+            resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Venus está en casa ${venus.casa}. Esto significa: ---\n`;
+            break;
+
     }
 
     switch (parseInt(saturno.casa)) {
@@ -3588,7 +4135,306 @@ function total() {
         case 4:
             resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
             break;
+        case 5:
+            resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Saturno está en casa ${saturno.casa}. Esto significa: ---\n`;
+            break;
     }
+
+    switch (parseInt(mercurio.casa)) {
+        case 1:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 2:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 3:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 4:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 5:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Mercurio está en casa ${mercurio.casa}. Esto significa: ---\n`;
+            break;
+    }
+
+    switch (parseInt(urano.casa)) {
+        case 1:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 2:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 3:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 4:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 5:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Urano está en casa ${urano.casa}. Esto significa: ---\n`;
+            break;
+    }
+
+    switch (parseInt(neptuno.casa)) {
+        case 1:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 2:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 3:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 4:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 5:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Neptuno está en casa ${neptuno.casa}. Esto significa: ---\n`;
+            break;
+    }
+
+    switch (parseInt(luna.casa)) {
+        case 1:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 2:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 3:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 4:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 5:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Luna está en casa ${luna.casa}. Esto significa: ---\n`;
+            break;
+    }
+
+    switch (parseInt(sol.casa)) {
+        case 1:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 2:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 3:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 4:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 5:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Sol está en casa ${sol.casa}. Esto significa: ---\n`;
+            break;
+    }
+
+    switch (parseInt(jupiter.casa)) {
+        case 1:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 2:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 3:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 4:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 5:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Jupiter está en casa ${jupiter.casa}. Esto significa: ---\n`;
+            break;
+    }
+
+    switch (parseInt(pluton.casa)) {
+        case 1:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 2:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 3:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 4:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 5:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 6:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 7:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 8:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 9:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 10:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 11:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+        case 12:
+            resultado = resultado + `Pluton está en casa ${pluton.casa}. Esto significa: ---\n`;
+            break;
+    }
+
+
 
     //Los switchs de abajo agregan la informacion correspondiente al regente de cada signo a la variable resultado
 
@@ -3605,6 +4451,39 @@ function total() {
         case 'cancer':
             resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
             break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Marte es el signo ${marte.regente}. Esto significa: ---\n`;
+            break;
+
     }
 
     switch (saturno.regente) {
@@ -3620,6 +4499,87 @@ function total() {
         case 'cancer':
             resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
             break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Saturno es el signo ${saturno.regente}. Esto significa: ---\n`;
+            break;
+
+    }
+
+    switch (mercurio.regente) {
+        case 'aries':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+        case 'tauro':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+        case 'geminis':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+        case 'cancer':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Mercurio es el signo ${mercurio.regente}. Esto significa: ---\n`;
+            break;
+
     }
 
     switch (venus.regente) {
@@ -3635,11 +4595,416 @@ function total() {
         case 'cancer':
             resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
             break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Venus es el signo ${venus.regente}. Esto significa: ---\n`;
+            break;
+
     }
 
+    switch (sol.regente) {
+        case 'aries':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+        case 'tauro':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+        case 'geminis':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+        case 'cancer':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Sol es el signo ${sol.regente}. Esto significa: ---\n`;
+            break;
+
+    }
+
+    switch (luna.regente) {
+
+        case 'aries':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+        case 'tauro':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+        case 'geminis':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+        case 'cancer':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Luna es el signo ${luna.regente}. Esto significa: ---\n`;
+            break;
+    }
+
+    switch (urano.regente) {
+
+        case 'aries':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+        case 'tauro':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+        case 'geminis':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+        case 'cancer':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Urano es el signo ${urano.regente}. Esto significa: ---\n`;
+            break;
+
+    }
+
+    switch (neptuno.regente) {
+        case 'aries':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+        case 'tauro':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+        case 'geminis':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+        case 'cancer':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Neptuno es el signo ${neptuno.regente}. Esto significa: ---\n`;
+            break;
+
+    }
+
+    switch (pluton.regente) {
+        case 'aries':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+        case 'tauro':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+        case 'geminis':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+        case 'cancer':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Pluton es el signo ${pluton.regente}. Esto significa: ---\n`;
+            break;
+
+    }
+
+    switch (jupiter.regente) {
+        case 'aries':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+        case 'tauro':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+        case 'geminis':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+        case 'cancer':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'leo':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'virgo':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'libra':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'escorpio':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'sagitario':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'capricornio':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'acuario':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+        case 'piscis':
+            resultado = resultado + `El regente de Jupiter es el signo ${jupiter.regente}. Esto significa: ---\n`;
+            break;
+
+    }
+
+    //
     document.getElementById("texto__resultado").innerHTML = `${resultado}`;
     console.log(resultado);
+
+
+
+    var nombre1 = document.getElementById("nombre").value;
+    var apellido1 = document.getElementById("apellido").value;
+    var nombreyapellido1 = `${nombre1}` + ' ' + `${apellido1}`;
+    var nombreyapellido2 = nombreyapellido1.toUpperCase();
+    console.log(nombreyapellido2);
+    if (nombre1 != '' && apellido1 != '') {
+        localStorage.setItem(`${nombreyapellido2}`, JSON.stringify(resultado));
+        localStorage.setItem('Conjunciones ' + `${nombreyapellido2}`, JSON.stringify(arrayConj));
+        localStorage.setItem('Casas ' + `${nombreyapellido2}`, JSON.stringify(arraysPlanetasCasas()));
+        localStorage.setItem('Planetas ' + `${nombreyapellido2}`, JSON.stringify(arrayDeinfoPlanetas));
+        var nombre1 = '';
+        var apellido1 = '';
+
+    } else {
+        alert("ingrese un nombre y apellido para poder guardar su resultado en los logs")
+    }
 }
+
+var botonResultadosAnteriores = document.getElementById("resultadosanteriores__div1__button");
+botonResultadosAnteriores.addEventListener('click', function() { resultadosAnteriores(); });
+
+function resultadosAnteriores() {
+    let resultado2 = [];
+
+    var nombre = document.getElementById("nombrebusqueda").value;
+    var apellido = document.getElementById("apellidobusqueda").value;
+    var nombreyapellido = `${nombre}` + ' ' + `${apellido}`;
+    var nombreyapellidofinal = nombreyapellido.toUpperCase();
+    console.log(nombreyapellidofinal);
+
+    if (nombre != '' && apellido != '') {
+        var resultado = JSON.parse(localStorage.getItem(nombreyapellidofinal));
+        var StringConjunciones = JSON.parse(localStorage.getItem('Conjunciones ' + `${nombreyapellidofinal}`));
+        var StringCasas = JSON.parse(localStorage.getItem('Casas ' + `${nombreyapellidofinal}`));
+        var StringPlanetas = JSON.parse(localStorage.getItem('Planetas ' + `${nombreyapellidofinal}`));
+
+
+        // //ME QUEDA PENDIENTE IMPRIMIR LAS CONJUNCIONES CASAS Y PLANETAS BY INPUT E ESCRIBIR EL RESULTADO EN EL HTML
+        // //TAMBIEN QUEDA PENDIENTE COMPLETAR LOS PLANETAS FALTANTES ARRIBA
+        const pConj = document.getElementById("resArrayConj");
+        pConj.innerHTML = '';
+        const pCasas = document.getElementById("resArrayCas");
+        pCasas.innerHTML = '';
+        const pPlan = document.getElementById("resObjPlan");
+        pPlan.innerHTML = '';
+        const resFinal = document.getElementById("resFinal");
+        resFinal.innerHTML = '';
+
+
+        const nodo1 = document.createElement('p');
+        const nodo2 = document.createElement('p');
+        const nodo3 = document.createElement('p');
+        const nodo4 = document.createElement('p');
+        nodo1.className = "resultadosAnterioresBusqueda"
+        nodo1.textContent = StringConjunciones;
+        nodo2.className = "resultadosAnterioresBusqueda"
+        nodo2.textContent = StringCasas;
+        nodo3.className = "resultadosAnterioresBusqueda"
+        nodo3.textContent = JSON.stringify(StringPlanetas);
+        nodo4.className = "resultadosAnterioresBusqueda"
+        nodo4.textContent = resultado;
+
+
+        pConj.appendChild(nodo1);
+        pCasas.appendChild(nodo2);
+        pPlan.appendChild(nodo3);
+        resFinal.appendChild(nodo4);
+        console.log(StringPlanetas);
+
+        var nombre = '';
+        var apellido = '';
+        var nombreyapellido = '';
+        var nombreyapellidofinal = '';
+    } else {
+        alert('Ingrese un nombre y un apellido para continuar');
+    }
+}
+
+
+
 
 function tabla() {
 

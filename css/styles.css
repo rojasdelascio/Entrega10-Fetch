@@ -38,6 +38,10 @@ header {
     width: 30%;
     height: 60%; }
 
+#exampleModalLong {
+  font-family: "Mulish", sans-serif;
+  font-size: 5rem; }
+
 .resultadosAnterioresBusqueda {
   color: blue;
   font-size: 10px;

@@ -5,16 +5,35 @@
 #grilla1CA {
   display: grid;
   grid-template-areas: "h" "mainCA" "f";
-  grid-template-rows: 0.1fr 0.5fr 0.1fr;
-  grid-template-columns: 100%; }
+  grid-template-rows: 150px auto 0.1fr;
+  grid-template-columns: 100%;
+  overflow-y: hidden; }
 
 #mainCA {
   height: 100%;
   grid-area: mainCA;
   display: grid;
-  grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "tablaplanetas" "resultado" "resultadosanteriores";
-  grid-template-rows: 0.15fr 0.3fr 3fr auto 0.1fr 0.6fr;
+  grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "tablaplanetas" "resultado" "paper" "resultadosanteriores";
+  grid-template-rows: 0.15fr 0.3fr 3fr auto 0fr auto 0.8fr;
   grid-template-columns: 100%; }
+
+.dibujocarta {
+  grid-area: paper;
+  background-color: rgba(0, 0, 225, 0.392); }
+  .dibujocarta__titulo {
+    font-family: "Bitter", serif;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue; }
+  .dibujocarta #dibujarcarta {
+    font-family: "Bitter", serif;
+    font-size: 3rem;
+    position: relative;
+    right: -40%;
+    top: -0%;
+    margin: 3rem; }
 
 .resultadosanteriores {
   overflow: scroll;
@@ -22,21 +41,28 @@
   font-family: "Work Sans", sans-serif;
   font-size: 2.3rem;
   font-weight: 900; }
+  .resultadosanteriores__titulo {
+    font-family: "Bitter", serif;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue; }
   .resultadosanteriores input,
   .resultadosanteriores h5 {
     font-size: 2.3rem;
     font-weight: 900; }
 
-header {
+#header {
   grid-area: h;
   background-color: #002f6d;
   height: auto; }
-  header__titulo {
+  #header__titulo {
     font-family: "Bitter", serif;
     font-size: 6rem; }
-  header img {
-    width: 30%;
-    height: 60%; }
+  #header img {
+    width: 180px;
+    height: 180px; }
 
 #exampleModalLong {
   font-family: "Mulish", sans-serif;
@@ -63,7 +89,7 @@ header {
   grid-area: nombreapellidoyfecha;
   background-color: #002f6dd4;
   font-family: "Work Sans", sans-serif;
-  font-size: 2rem;
+  font-size: 3rem;
   font-weight: 900; }
   .nombreapellidoyfecha__titulo {
     font-family: "Bitter", serif;
@@ -77,7 +103,7 @@ header {
     display: flex;
     flex-direction: row; }
     .nombreapellidoyfecha__div input {
-      font-size: 2rem;
+      font-size: 3rem;
       font-weight: 900;
       padding: 10px; }
     .nombreapellidoyfecha__div p {
@@ -98,11 +124,18 @@ header {
   right: -10%;
   color: aliceblue; }
 
-footer {
+#footer {
   grid-area: f;
   background-color: bisque;
   font-family: "Bitter", serif;
   font-size: 6rem; }
+  #footer a {
+    font-family: "Bitter", serif;
+    font-size: 3rem;
+    position: relative;
+    right: -40%;
+    top: -0%;
+    margin: 3rem; }
 
 .estilotabla {
   border: 1px solid;
@@ -123,6 +156,20 @@ footer {
     padding: 5px;
     position: relative;
     right: -20%; }
+  .tablaplanetas__titulo {
+    font-family: "Bitter", serif;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue; }
+  .tablaplanetas #dibujartabla {
+    font-family: "Bitter", serif;
+    font-size: 3rem;
+    position: relative;
+    right: -40%;
+    top: -0%;
+    margin: 3rem; }
 
 .resultado {
   grid-area: resultado; }
@@ -485,9 +532,15 @@ footer {
     display: flex;
     flex-direction: row; }
     .resultadosanteriores__div1__nombre {
-      color: aliceblue; }
+      color: aliceblue;
+      margin: 3rem; }
     .resultadosanteriores__div1__apellido {
-      color: aliceblue; }
+      color: aliceblue;
+      margin: 3rem; }
+    .resultadosanteriores__div1__inputnombre {
+      height: 6rem; }
+    .resultadosanteriores__div1__inputapellido {
+      height: 6rem; }
   .resultadosanteriores__titulo {
     font-family: "Bitter", serif;
     font-size: 5rem;
@@ -510,8 +563,11 @@ footer {
       color: aliceblue;
       text-decoration: underline; }
 
-#resultadosanteriores__button {
-  font-size: 3rem; }
+#resultadosanteriores__div1__button {
+  font-family: "Bitter", serif;
+  font-size: 3rem;
+  margin-left: 3rem;
+  height: 6rem; }
 
 #botoncalculofinal {
   font-size: 3rem;

@@ -8,47 +8,10 @@ $nombreyapellido-font: 'Work Sans',
 sans-serif;
 $tabla-contenido: 'Mulish',
 sans-serif;
-$tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, headyfoot:6rem, nombreyapellido:2rem, intro:2rem, p:2.3rem, tabla:3rem, boton:3rem);
+$tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, headyfoot:6rem, nombreyapellido:3rem, intro:2rem, p:2.3rem, tabla:3rem, boton:3rem);
 .root__element {
     font-size: 6px;
     overflow-x: hidden;
-}
-
-#grilla1CA {
-    display: grid;
-    grid-template-areas: "h" "mainCA" "f";
-    grid-template-rows: 0.1fr 0.5fr 0.1fr;
-    grid-template-columns: 100%;
-}
-
-#mainCA {
-    height: 100%;
-    grid-area: mainCA;
-    display: grid;
-    grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "tablaplanetas" "resultado" "resultadosanteriores";
-    grid-template-rows: 0.15fr 0.3fr 3fr auto 0.1fr 0.6fr;
-    grid-template-columns: 100%;
-}
-
-.resultadosanteriores {
-    overflow: scroll;
-    grid-area: resultadosanteriores;
-    font-family: $contenido-planetas-font;
-    font-size: map-get($tam-letra, p);
-    font-weight: 900;
-    input,
-    h5 {
-        font-size: map-get($tam-letra, p);
-        font-weight: 900;
-    }
-}
-
-@mixin casillasPlanetas($background-color) {
-    border: solid 1px black;
-    border-radius: 5px;
-    padding: 3%;
-    background-color: $background-color;
-    width: 30%;
 }
 
 @mixin titulos {
@@ -60,7 +23,64 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
     color: aliceblue;
 }
 
-header {
+@mixin casillasPlanetas($background-color) {
+    border: solid 1px black;
+    border-radius: 5px;
+    padding: 3%;
+    background-color: $background-color;
+    width: 30%;
+}
+
+#grilla1CA {
+    display: grid;
+    grid-template-areas: "h" "mainCA" "f";
+    grid-template-rows: 150px auto 0.1fr;
+    grid-template-columns: 100%;
+    overflow-y: hidden;
+}
+
+#mainCA {
+    height: 100%;
+    grid-area: mainCA;
+    display: grid;
+    grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "tablaplanetas" "resultado" "paper" "resultadosanteriores";
+    grid-template-rows: 0.15fr 0.3fr 3fr auto 0fr auto 0.8fr;
+    grid-template-columns: 100%;
+}
+
+.dibujocarta {
+    grid-area: paper;
+    background-color: rgba(0, 0, 225, 0.392);
+    &__titulo {
+        @include titulos;
+    }
+    #dibujarcarta {
+        font-family: $headyfoot-font;
+        font-size: map-get($tam-letra, boton);
+        position: relative;
+        right: -40%;
+        top: -0%;
+        margin: 3rem;
+    }
+}
+
+.resultadosanteriores {
+    overflow: scroll;
+    grid-area: resultadosanteriores;
+    font-family: $contenido-planetas-font;
+    font-size: map-get($tam-letra, p);
+    font-weight: 900;
+    &__titulo {
+        @include titulos;
+    }
+    input,
+    h5 {
+        font-size: map-get($tam-letra, p);
+        font-weight: 900;
+    }
+}
+
+#header {
     grid-area: h;
     background-color: #002f6d;
     height: auto;
@@ -69,8 +89,8 @@ header {
         font-size: map-get($tam-letra, headyfoot);
     }
     img {
-        width: 30%;
-        height: 60%;
+        width: 180px;
+        height: 180px;
     }
 }
 
@@ -140,11 +160,19 @@ header {
     color: aliceblue;
 }
 
-footer {
+#footer {
     grid-area: f;
     background-color: bisque;
     font-family: $headyfoot-font;
     font-size: map-get($tam-letra, headyfoot);
+    a {
+        font-family: $headyfoot-font;
+        font-size: map-get($tam-letra, boton);
+        position: relative;
+        right: -40%;
+        top: -0%;
+        margin: 3rem;
+    }
 }
 
 .estilotabla {
@@ -168,6 +196,17 @@ footer {
         padding: 5px;
         position: relative;
         right: -20%;
+    }
+    &__titulo {
+        @include titulos;
+    }
+    #dibujartabla {
+        font-family: $headyfoot-font;
+        font-size: map-get($tam-letra, boton);
+        position: relative;
+        right: -40%;
+        top: -0%;
+        margin: 3rem;
     }
 }
 
@@ -576,12 +615,18 @@ footer {
         flex-direction: row;
         &__nombre {
             color: aliceblue;
+            margin: 3rem;
         }
         &__apellido {
             color: aliceblue;
+            margin: 3rem;
         }
-        &__inputnombre {}
-        &__inputapellido {}
+        &__inputnombre {
+            height: 6rem;
+        }
+        &__inputapellido {
+            height: 6rem;
+        }
     }
     &__titulo {
         @include titulos;
@@ -607,8 +652,11 @@ footer {
     }
 }
 
-#resultadosanteriores__button {
+#resultadosanteriores__div1__button {
+    font-family: $headyfoot-font;
     font-size: map-get($tam-letra, boton);
+    margin-left: 3rem;
+    height: 6rem;
 }
 
 #botoncalculofinal {

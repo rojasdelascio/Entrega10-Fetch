@@ -5253,6 +5253,8 @@ function casaMasGrados(p) {
     var gradoPorCasa = cuspPlacement();
     console.log('grado por casa es: ' + gradoPorCasa);
     return function(g) {
+
+
         switch (p) {
             case '1':
                 gradoTotal = gradoPorCasa[0] + g;
@@ -5298,9 +5300,11 @@ function casaMasGrados(p) {
 //LIBRERIAS ENTREGA 28 DE MARZO 2022
 
 function dibujarCarta() {
+    var borrador = document.getElementById("paper");
+    var nodoTexto = borrador.childNodes;
+    borrador.textContent = nodoTexto.textContent;
 
     cuspidesLocal = cuspPlacement();
-
 
     function totales(f) {
         var gradoCasa = casaMasGrados(f.casa);
@@ -5310,26 +5314,17 @@ function dibujarCarta() {
 
     var arrayDeObjetosPlanetas = [infoMarte(), infoVenus(), infoSaturno(), infoMercurio(), infoLuna(), infoSol(), infoUrano(), infoNeptuno(), infoPluton(), infoJupiter()];
 
-
-
     var data = {
         "planets": { "Pluto": totales(infoPluton()), "Neptune": totales(infoNeptuno()), "Uranus": totales(infoUrano()), "Saturn": totales(infoSaturno()), "Jupiter": totales(infoJupiter()), "Mars": totales(infoMarte()), "Moon": totales(infoLuna()), "Sun": totales(infoSol()), "Mercury": totales(infoMercurio()), "Venus": totales(infoVenus()) },
         "cusps": cuspPlacement()
     };
 
-
     var radix = new astrology.Chart('paper', 600, 600).radix(data);
-
 
     radix.addPointsOfInterest({ "As": [data.cusps[0]], "Ic": [data.cusps[3]], "Ds": [data.cusps[6]], "Mc": [data.cusps[9]] });
     radix.aspects();
 
     astrology.SVG(paper, 300, 300);
-
-
-
-
-
 
 
 }

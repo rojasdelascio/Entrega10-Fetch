@@ -18,7 +18,8 @@
 </head>
 
 <body id="grilla1CA">
-    <header>
+
+    <header id="header">
         <img src="../images/logo.png">
     </header>
 
@@ -103,7 +104,7 @@
             </select>
                     <h3 class="formcasas__lista__marte__grado">Grado</h3>
                     <p>Indique el grado del planeta Marte en su carta</p>
-                    <input class="formcasas__lista__marte__gradoinput" id="gradoMarte" type="number" min=0 max=29>
+                    <input class="formcasas__lista__marte__gradoinput" id="gradoMarte" type="number" value=0 min=0 max=29>
                 </li>
 
                 <br>
@@ -144,7 +145,7 @@
                 </select>
                     <h3 class="formcasas__lista__venus__grado">Grado</h3>
                     <p>Indique el grado del planeta Venus en su carta</p>
-                    <input class="formcasas__lista__venus__gradoinput" id="gradoVenus" type="number" min=0 max=29>
+                    <input class="formcasas__lista__venus__gradoinput" id="gradoVenus" type="number" value=0 min=0 max=29>
                 </li>
                 <br>
                 <!-- <button class="" onclick=" ">¿Qué significa Venus en esta casa, con este signo regente y este grado?</button> -->
@@ -185,7 +186,7 @@
                 </select>
                     <h3 class="formcasas__lista__saturno__grado">Grado</h3>
                     <p>Indique el grado del planeta Saturno en su carta</p>
-                    <input class="formcasas__lista__saturno__gradoinput" id="gradoSaturno" type="number" min=0 max=29>
+                    <input class="formcasas__lista__saturno__gradoinput" id="gradoSaturno" type="number" value=0 min=0 max=29>
                 </li>
 
                 <!-- Mercurio -->
@@ -224,7 +225,8 @@
                 </select>
                     <h3 class="formcasas__lista__mercurio__grado">Grado</h3>
                     <p>Indique el grado del planeta Mercurio en su carta</p>
-                    <input class="formcasas__lista__mercurio__gradoinput" id="gradoMercurio" type="number" min=0 max=29>
+
+                    <input class="formcasas__lista__mercurio__gradoinput" id="gradoMercurio" type="number" min=0 max=29 value=0>
                 </li>
 
                 <!-- Luna -->
@@ -263,7 +265,7 @@
                 </select>
                     <h3 class="formcasas__lista__luna__grado">Grado</h3>
                     <p>Indique el grado del planeta Luna en su carta</p>
-                    <input class="formcasas__lista__luna__gradoinput" id="gradoLuna" type="number" min=0 max=29>
+                    <input class="formcasas__lista__luna__gradoinput" id="gradoLuna" type="number" value=0 min=0 max=29>
                 </li>
                 <!-- Sol -->
                 <li class="formcasas__lista__sol">
@@ -301,7 +303,7 @@
                 </select>
                     <h3 class="formcasas__lista__sol__grado">Grado</h3>
                     <p>Indique el grado del planeta Sol en su carta</p>
-                    <input class="formcasas__lista__sol__gradoinput" id="gradoSol" type="number" min=0 max=29>
+                    <input class="formcasas__lista__sol__gradoinput" id="gradoSol" type="number" value=0 min=0 max=29>
                 </li>
 
 
@@ -341,7 +343,7 @@
                 </select>
                     <h3 class="formcasas__lista__jupiter__grado">Grado</h3>
                     <p>Indique el grado del planeta Jupiter en su carta</p>
-                    <input class="formcasas__lista__jupiter__gradoinput" id="gradoJupiter" type="number" min=0 max=29>
+                    <input class="formcasas__lista__jupiter__gradoinput" id="gradoJupiter" type="number" value=0 min=0 max=29>
                 </li>
 
 
@@ -381,7 +383,7 @@
                 </select>
                     <h3 class="formcasas__lista__urano__grado">Grado</h3>
                     <p>Indique el grado del planeta Urano en su carta</p>
-                    <input class="formcasas__lista__urano__gradoinput" id="gradoUrano" type="number" min=0 max=29>
+                    <input class="formcasas__lista__urano__gradoinput" id="gradoUrano" type="number" value=0 min=0 max=29>
                 </li>
 
                 <!-- Neptuno -->
@@ -420,7 +422,7 @@
                 </select>
                     <h3 class="formcasas__lista__neptuno__grado">Grado</h3>
                     <p>Indique el grado del planeta Neptuno en su carta</p>
-                    <input class="formcasas__lista__neptuno__gradoinput" id="gradoNeptuno" type="number" min=0 max=29>
+                    <input class="formcasas__lista__neptuno__gradoinput" id="gradoNeptuno" type="number" value=0 min=0 max=29>
                 </li>
 
                 <!-- Pluton -->
@@ -459,7 +461,7 @@
                 </select>
                     <h3 class="formcasas__lista__pluton__grado">Grado</h3>
                     <p>Indique el grado del planeta Pluton en su carta</p>
-                    <input class="formcasas__lista__pluton__gradoinput" id="gradoPluton" type="number" min=0 max=29>
+                    <input class="formcasas__lista__pluton__gradoinput" id="gradoPluton" type="number" value=0 min=0 max=29>
                 </li>
             </ul>
             <button type="button" id="botoncalculofinal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Resultado Final</button>
@@ -492,6 +494,7 @@
 
 
         <section class="tablaplanetas">
+            <h3 class="tablaplanetas__titulo">Tabla Planetas/Grados/Casas</h3>
             <table id="tablaplanetas__tabla">
                 <tr>
                     <th>Planeta</th>
@@ -500,7 +503,7 @@
                     <th>Regente</th>
                 </tr>
             </table>
-            <button class="tablaplanetas__boton" id="dibujartabla" type="button">Dibujar tabla</button>
+            <button id="dibujartabla" type="button" class="btn btn-primary">Dibujar tabla</button>
         </section>
 
         <section class="resultadosanteriores">
@@ -528,17 +531,18 @@
 
             </div>
         </section>
-        <section id="paper">
-
+        <section class="dibujocarta" id="paper1">
+            <h3 class="dibujocarta__titulo">Carta Natal</h3>
+            <div class="dibujocarta__dibujo" id="paper"></div>
             <button onclick="dibujarCarta()" type="button" id="dibujarcarta" class="btn btn-primary">Dibujar Carta</button>
-            <button type="button" id="icp" class="btn btn-primary">imprimir cp</button>
         </section>
     </main>
 
-    <footer>
-        <br>
-        <a href="../index.html">Volver a Home</a>
+    <footer id="footer">
+
+        <a href="../index.html" class="btn btn-dark">Volver a Home</a>
     </footer>
+
 
 </body>
 

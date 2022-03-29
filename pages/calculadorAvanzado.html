@@ -11,6 +11,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;400&family=Montserrat:wght@300&family=Mulish:wght@200;400&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
     <title>Traductor Astral</title>
+
+    <script src="../AstroChart-master/project/build/astrochart.js"></script>
+    <script src="../AstroChart-master/project/build/astrochart.min.js"></script>
+
 </head>
 
 <body id="grilla1CA">
@@ -33,15 +37,36 @@
                 <p> Nombre </p><input id="nombre" class="nombreapellidoyfecha__nombre" type="text">
                 <p>Apellido </p><input id="apellido" class="nombreapellidoyfecha__apellido" type="text">
                 <p>Fecha de Nacimiento</p>
-                <input id="fecha" class="nombreapellidoyfecha__fecha" type="date">
+                <input id="fecha" class="nombreapellidoyfecha__fecha" type="date" disabled>
+
             </div>
         </section>
 
         <form class="formcasas" name="formcasas" action="" method=post onSubmit=''>
             <h3 class="titulotradu">Planetas</h3>
-            <p class="ptradu">Seleccione los planetas con los que desea trabajar, la casa, regente y grado de los mismos. Luego haga click en "resultado" para saber qué significa esto</p>
+            <p class="ptradu">Seleccione su ascendente y los planetas con los que desea trabajar, la casa, regente y grado de los mismos. Luego haga click en "resultado" para saber qué significa esto</p>
 
             <ul class="formcasas__lista">
+                <!--Ascendente-->
+                <li class="formcasas__lista__ascendente">
+                    <input class="formcasas__lista__ascendente__box" type="checkbox" name="ascendente">
+                    <h3 class="formcasas__lista__ascendente__titulo">Ascendente</h3>
+                    <p>El ascendente es el signo en casa 1</p>
+                    <select class="formcasas__lista__ascendente__selectcasas" id="ascendente" name="ascendente">
+                    <option value="aries">Aries</option>
+                    <option value="tauro">Tauro</option>
+                    <option value="geminis">Geminis</option>
+                    <option value="cancer">Cancer</option>
+                    <option value="leo">Leo</option>
+                    <option value="virgo">Virgo</option>
+                    <option value="libra">Libra</option>
+                    <option value="escorpio">Escorpio</option>
+                    <option value="sagitario">Sagitario</option>
+                    <option value="capricornio">Capricornio</option>
+                    <option value="acuario">Acuario</option>
+                    <option value="piscis">Piscis</option>
+                  </select>
+                </li>
                 <!-- Marte -->
                 <li class="formcasas__lista__marte">
                     <input class="formcasas__lista__marte__box" type="checkbox" name="marte">
@@ -61,8 +86,8 @@
                     <option value="12">Casa 12</option>
                   </select>
                     <h3 class="formcasas__lista__marte__regente">Regente</h3>
-                    <p> Indique el signo regente de Marte</p>
-                    <select class="formcasas__lista__marte__selectsignos" id="regenteMarte" name="regenteMarte">
+
+                    <select class="formcasas__lista__marte__selectsignos" id="regenteMarte" name="regenteMarte" disabled>
                 <option value="aries">Aries</option>
                 <option value="tauro" >Tauro</option>
                 <option value="geminis">Geminis</option>
@@ -102,8 +127,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__venus__regente">Regente</h3>
-                    <p> Indique el signo regente de Venus</p>
-                    <select class="formcasas__lista__venus__selectsignos" id="regenteVenus" name="regenteVenus">
+
+                    <select class="formcasas__lista__venus__selectsignos" id="regenteVenus" name="regenteVenus" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -143,8 +168,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__saturno__regente">Regente</h3>
-                    <p> Indique el signo regente de Saturno</p>
-                    <select class="formcasas__lista__saturno__selectsignos" id="regenteSaturno" name="regenteSaturno">
+
+                    <select class="formcasas__lista__saturno__selectsignos" id="regenteSaturno" name="regenteSaturno" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -182,8 +207,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__mercurio__regente">Regente</h3>
-                    <p> Indique el signo regente de Mercurio</p>
-                    <select class="formcasas__lista__mercurio__selectsignos" id="regenteMercurio" name="regenteMercurio">
+
+                    <select class="formcasas__lista__mercurio__selectsignos" id="regenteMercurio" name="regenteMercurio" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -221,8 +246,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__luna__regente">Regente</h3>
-                    <p> Indique el signo regente de Luna</p>
-                    <select class="formcasas__lista__luna__selectsignos" id="regenteLuna" name="regenteLuna">
+
+                    <select class="formcasas__lista__luna__selectsignos" id="regenteLuna" name="regenteLuna" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -259,8 +284,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__sol__regente">Regente</h3>
-                    <p> Indique el signo regente de Sol</p>
-                    <select class="formcasas__lista__sol__selectsignos" id="regenteSol" name="regenteSol">
+
+                    <select class="formcasas__lista__sol__selectsignos" id="regenteSol" name="regenteSol" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -299,8 +324,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__jupiter__regente">Regente</h3>
-                    <p> Indique el signo regente de Jupiter</p>
-                    <select class="formcasas__lista__jupiter__selectsignos" id="regenteJupiter" name="regenteJupiter">
+
+                    <select class="formcasas__lista__jupiter__selectsignos" id="regenteJupiter" name="regenteJupiter" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -339,8 +364,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__urano__regente">Regente</h3>
-                    <p> Indique el signo regente de Urano</p>
-                    <select class="formcasas__lista__urano__selectsignos" id="regenteUrano" name="regenteUrano">
+
+                    <select class="formcasas__lista__urano__selectsignos" id="regenteUrano" name="regenteUrano" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -378,8 +403,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__neptuno__regente">Regente</h3>
-                    <p> Indique el signo regente de Neptuno</p>
-                    <select class="formcasas__lista__neptuno__selectsignos" id="regenteNeptuno" name="regenteNeptuno">
+
+                    <select class="formcasas__lista__neptuno__selectsignos" id="regenteNeptuno" name="regenteNeptuno" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -417,8 +442,8 @@
                             <option value="12">Casa 12</option>
                 </select>
                     <h3 class="formcasas__lista__pluton__regente">Regente</h3>
-                    <p> Indique el signo regente de Pluton</p>
-                    <select class="formcasas__lista__pluton__selectsignos" id="regentePluton" name="regentePluton">
+
+                    <select class="formcasas__lista__pluton__selectsignos" id="regentePluton" name="regentePluton" disabled>
                             <option value="aries">Aries</option>
                             <option value="tauro" >Tauro</option>
                             <option value="geminis">Geminis</option>
@@ -502,6 +527,11 @@
                 <div id="resFinal"></div>
 
             </div>
+        </section>
+        <section id="paper">
+
+            <button onclick="dibujarCarta()" type="button" id="dibujarcarta" class="btn btn-primary">Dibujar Carta</button>
+            <button type="button" id="icp" class="btn btn-primary">imprimir cp</button>
         </section>
     </main>
 

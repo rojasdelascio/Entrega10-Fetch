@@ -198,11 +198,17 @@ footer {
         flex-wrap: wrap;
         position: relative;
         right: -5%;
+        &__ascendente {
+            @include casillasPlanetas(rgba(208, 167, 3, 0.659));
+            font-family: $titulos-planetas-font;
+            font-size: map-get($tam-letra, p);
+            font-weight: 900;
+        }
         &__marte {
             @include casillasPlanetas(rgba(252, 30, 30, 0.659));
             width: p {
                 font-family: $contenido-planetas-font;
-                font-size: map-get($tam-letra, p);
+                font-size: map-get($tam-letra, titulos-planetas);
                 font-weight: 900;
             }
             &__titulo {

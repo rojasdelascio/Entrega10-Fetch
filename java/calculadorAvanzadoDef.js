@@ -139,6 +139,7 @@ function arrayObjetosPlanetas() {
     console.log(infoMarte(), infoMarte(), infoMarte());
     arrayObjetosPlanetas.push(infoMarte());
     arrayObjetosPlanetas.push(infoVenus());
+    arrayObjetosPlanetas.push(infoSaturno());
     arrayObjetosPlanetas.push(infoMercurio());
     arrayObjetosPlanetas.push(infoLuna());
     arrayObjetosPlanetas.push(infoSol());
@@ -5217,7 +5218,12 @@ function resultadosAnteriores() {
         nodo2.textContent = StringCasas;
         nodo3.className = "resultadosAnterioresBusqueda"
 
-        nodo3.textContent = JSON.stringify(StringPlanetas);
+        // nodo3.textContent = JSON.stringify(StringPlanetas);
+
+        Object.values(StringPlanetas).forEach(i => { console.log(JSON.stringify(i)); })
+
+        console.log(Object.values(StringPlanetas));
+
         nodo4.className = "resultadosAnterioresBusqueda"
         nodo4.textContent = resultado;
 
@@ -5226,7 +5232,7 @@ function resultadosAnteriores() {
 
         pConj.appendChild(nodo1);
         pCasas.appendChild(nodo2);
-        pPlan.appendChild(nodo3);
+        // pPlan.appendChild(nodo3);
         resFinal.appendChild(nodo4);
         console.log(StringPlanetas);
 
@@ -5240,11 +5246,243 @@ function resultadosAnteriores() {
 }
 
 
+//Funcion de alto nivel para calcular el grado total, que consistira en el grado inicial correspondiente a la casa MAS el ingresado por el usuario
+function casaMasGrados(p) {
+
+    var gradoTotal = 0;
+    var gradoPorCasa = cuspPlacement();
+    console.log('grado por casa es: ' + gradoPorCasa);
+    return function(g) {
+        switch (p) {
+            case '1':
+                gradoTotal = gradoPorCasa[0] + g;
+                return gradoTotal;
+            case '2':
+                gradoTotal = gradoPorCasa[1] + g;
+                return gradoTotal;
+            case '3':
+                gradoTotal = gradoPorCasa[2] + g;
+                return gradoTotal;
+            case '4':
+                gradoTotal = gradoPorCasa[3] + g;
+                return gradoTotal;
+            case '5':
+                gradoTotal = gradoPorCasa[4] + g;
+                return gradoTotal;
+            case '6':
+                gradoTotal = gradoPorCasa[5] + g;
+                return gradoTotal;
+            case '7':
+                gradoTotal = gradoPorCasa[6] + g;
+                return gradoTotal;
+            case '8':
+                gradoTotal = gradoPorCasa[7] + g;
+                return gradoTotal + g;
+            case '9':
+                gradoTotal = gradoPorCasa[8] + g;
+                return gradoTotal;
+            case '10':
+                gradoTotal = gradoPorCasa[9] + g;
+                return gradoTotal;
+            case '11':
+                gradoTotal = gradoPorCasa[10] + g;
+                return gradoTotal;
+            case '12':
+                gradoTotal = gradoPorCasa[11] + g;
+                return gradoTotal;
+        }
+    }
+}
 
 
-function tabla() {
+//LIBRERIAS ENTREGA 28 DE MARZO 2022
+
+function dibujarCarta() {
+
+    cuspidesLocal = cuspPlacement();
 
 
+    function totales(f) {
+        var gradoCasa = casaMasGrados(f.casa);
+        var gradoTotal = [gradoCasa(f.grado)];
+        return gradoTotal;
+    }
+
+    var arrayDeObjetosPlanetas = [infoMarte(), infoVenus(), infoSaturno(), infoMercurio(), infoLuna(), infoSol(), infoUrano(), infoNeptuno(), infoPluton(), infoJupiter()];
+
+
+
+    var data = {
+        "planets": { "Pluto": totales(infoPluton()), "Neptune": totales(infoNeptuno()), "Uranus": totales(infoUrano()), "Saturn": totales(infoSaturno()), "Jupiter": totales(infoJupiter()), "Mars": totales(infoMarte()), "Moon": totales(infoLuna()), "Sun": totales(infoSol()), "Mercury": totales(infoMercurio()), "Venus": totales(infoVenus()) },
+        "cusps": cuspPlacement()
+    };
+
+
+    var radix = new astrology.Chart('paper', 600, 600).radix(data);
+
+
+    radix.addPointsOfInterest({ "As": [data.cusps[0]], "Ic": [data.cusps[3]], "Ds": [data.cusps[6]], "Mc": [data.cusps[9]] });
+    radix.aspects();
+
+    astrology.SVG(paper, 300, 300);
+
+
+
+
+
+
+
+}
+
+function cuspPlacement() {
+    var cuspides = [];
+    var ascendenteLocal = document.getElementById("ascendente").value;
+    console.log(ascendenteLocal);
+    switch (ascendenteLocal) {
+        case "aries":
+            cuspides = [0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330];
+            return cuspides;
+        case "tauro":
+            cuspides = [30, 60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 0];
+            return cuspides;
+        case "geminis":
+            cuspides = [60, 90, 120, 150, 180, 210, 240, 270, 300, 330, 0, 30];
+            return cuspides;
+        case "cancer":
+            cuspides = [90, 120, 150, 180, 210, 240, 270, 300, 330, 0, 30, 60];
+            return cuspides;
+        case "leo":
+            cuspides = [120, 150, 180, 210, 240, 270, 300, 330, 0, 30, 60, 90];
+            return cuspides;
+        case "virgo":
+            cuspides = [150, 180, 210, 240, 270, 300, 330, 0, 30, 60, 90, 120];
+            return cuspides;
+        case "libra":
+            cuspides = [180, 210, 240, 270, 300, 330, 0, 30, 60, 90, 120, 150];
+            return cuspides;
+        case "escorpio":
+            cuspides = [210, 240, 270, 300, 330, 0, 30, 60, 90, 120, 150, 180];
+            return cuspides;
+        case "sagitario":
+            cuspides = [240, 270, 300, 330, 0, 30, 60, 90, 120, 150, 180, 210];
+            return cuspides;
+        case "capricornio":
+            cuspides = [270, 300, 330, 0, 30, 60, 90, 120, 150, 180, 210, 240];
+            return cuspides;
+        case "acuario":
+            cuspides = [300, 330, 0, 30, 60, 90, 120, 150, 180, 210, 240, 270];
+            return cuspides;
+        case "piscis":
+            cuspides = [330, 0, 30, 60, 90, 120, 150, 180, 210, 240, 270, 300];
+            return cuspides;
+    }
+
+
+}
+
+
+function asignacionSignos() {
+
+    var cuspides = cuspPlacement();
+    var cuspide1 = cuspides[0];
+    console.log(cuspide1);
+    var arraySignos = [];
+
+
+    switch (cuspide1) {
+
+        case 0:
+            arraySignos = ["aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis"];
+            return arraySignos;
+        case 30:
+            arraySignos = ["tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries"];
+            return arraySignos;
+        case 60:
+            arraySignos = ["geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro"];
+            return arraySignos;
+        case 90:
+            arraySignos = ["cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis"];
+            return arraySignos;
+        case 120:
+            arraySignos = ["leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer"];
+            return arraySignos;
+        case 150:
+            arraySignos = ["virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo"];
+            return arraySignos;
+        case 180:
+            arraySignos = ["libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo"];
+            return arraySignos;
+        case 210:
+            arraySignos = ["escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra"];
+            return arraySignos;
+        case 240:
+            arraySignos = ["sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio"];
+            return arraySignos;
+        case 270:
+            arraySignos = ["capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario"];
+            return arraySignos;
+        case 300:
+            arraySignos = ["acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio"];
+            return arraySignos;
+        case 330:
+            arraySignos = ["piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario"];
+            return arraySignos;
+    }
+}
+
+var rectificarCasaMarte = document.getElementById("marte");
+rectificarCasaMarte.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaSaturno = document.getElementById("saturno");
+rectificarCasaSaturno.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaVenus = document.getElementById("venus");
+rectificarCasaVenus.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaMercurio = document.getElementById("mercurio");
+rectificarCasaMercurio.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaUrano = document.getElementById("urano");
+rectificarCasaUrano.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaNeptuno = document.getElementById("neptuno");
+rectificarCasaNeptuno.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaLuna = document.getElementById("luna");
+rectificarCasaLuna.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaSol = document.getElementById("sol");
+rectificarCasaSol.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaPluton = document.getElementById("pluton");
+rectificarCasaPluton.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaJupiter = document.getElementById("jupiter");
+rectificarCasaJupiter.addEventListener('change', function() { cambiarValores() });
+var rectificarCasaJupiter = document.getElementById("jupiter");
+rectificarCasaJupiter.addEventListener('change', function() { cambiarValores() });
+var rectificarOnAscendente = document.getElementById("ascendente");
+rectificarOnAscendente.addEventListener('change', function() { cambiarValores() });
+
+function cambiarValores() {
+    arrayDeObjetosLocal = arrayObjetosPlanetas();
+    arraySignosLocal = asignacionSignos();
+
+    idSignoMarteLocal = parseInt((arrayDeObjetosLocal[0].casa)) - 1;
+    idSignoVenusLocal = parseInt((arrayDeObjetosLocal[1].casa)) - 1;
+    idSignoSaturnoLocal = parseInt((arrayDeObjetosLocal[2].casa)) - 1;
+    idSignoMercurioLocal = parseInt((arrayDeObjetosLocal[3].casa)) - 1;
+    idSignoLunaLocal = parseInt((arrayDeObjetosLocal[4].casa)) - 1;
+    idSignoSolLocal = parseInt((arrayDeObjetosLocal[5].casa)) - 1;
+    idSignoUranoLocal = parseInt((arrayDeObjetosLocal[6].casa)) - 1;
+    idSignoNeptunoLocal = parseInt((arrayDeObjetosLocal[7].casa)) - 1;
+    idSignoPlutonLocal = parseInt((arrayDeObjetosLocal[8].casa)) - 1;
+    idSignoJupiterLocal = parseInt((arrayDeObjetosLocal[9].casa)) - 1;
+
+    console.log('EL SIGNO DE MARTE ES' + arraySignosLocal[idSignoMarteLocal]);
+
+
+    document.getElementById("regenteMarte").value = arraySignosLocal[idSignoMarteLocal];
+    document.getElementById("regenteVenus").value = arraySignosLocal[idSignoVenusLocal];
+    document.getElementById("regenteSaturno").value = arraySignosLocal[idSignoSaturnoLocal];
+    document.getElementById("regenteMercurio").value = arraySignosLocal[idSignoMercurioLocal];
+    document.getElementById("regenteUrano").value = arraySignosLocal[idSignoUranoLocal];
+    document.getElementById("regenteNeptuno").value = arraySignosLocal[idSignoNeptunoLocal];
+    document.getElementById("regenteLuna").value = arraySignosLocal[idSignoLunaLocal];
+    document.getElementById("regenteSol").value = arraySignosLocal[idSignoSolLocal];
+    document.getElementById("regentePluton").value = arraySignosLocal[idSignoPlutonLocal];
+    document.getElementById("regenteJupiter").value = arraySignosLocal[idSignoJupiterLocal];
 
 
 

@@ -148,6 +148,15 @@ footer {
     flex-wrap: wrap;
     position: relative;
     right: -5%; }
+    .formcasas__lista__ascendente {
+      border: solid 1px black;
+      border-radius: 5px;
+      padding: 3%;
+      background-color: rgba(208, 167, 3, 0.659);
+      width: 30%;
+      font-family: "Montserrat", sans-serif;
+      font-size: 2.3rem;
+      font-weight: 900; }
     .formcasas__lista__marte {
       border: solid 1px black;
       border-radius: 5px;
@@ -156,7 +165,7 @@ footer {
       width: 30%;
       width: p;
         width-font-family: "Work Sans", sans-serif;
-        width-font-size: 2.3rem;
+        width-font-size: 4rem;
         width-font-weight: 900; }
       .formcasas__lista__marte__titulo {
         font-family: "Montserrat", sans-serif;

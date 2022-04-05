@@ -862,45 +862,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('neptuno')) && arrayConjunciones.push('MN1');
         (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('pluton')) && arrayConjunciones.push('MP1');
         (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) && arrayConjunciones.push('MJ1');
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('venus')) {
-        //     // console.log('Hay una conjuncion de Marte y Venus en casa 1.');
-        //     arrayConjunciones.push('MV1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('saturno')) {
-        //     // console.log('Hay una conjuncion de Marte y Saturno en casa 1. ');
-        //     arrayConjunciones.push('MS1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('mercurio')) {
-        //     // console.log('Hay una conjuncion de Marte y Mercurio en casa 1. ');
-        //     arrayConjunciones.push('MMe1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('luna')) {
-        //     // console.log('Hay una conjuncion de Marte y Luna en casa 1. ');
-        //     arrayConjunciones.push('ML1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Marte y Sol en casa 1. ');
-        //     arrayConjunciones.push('MSo1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Marte y Urano en casa 1. ');
-        //     arrayConjunciones.push('MU1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Marte y Urano en casa 1. ');
-        //     arrayConjunciones.push('MN1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Marte y Pluton en casa 1. ');
-        //     arrayConjunciones.push('MP1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('marte') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Marte y Pluton en casa 1. ');
-        //     arrayConjunciones.push('MJ1');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa1.length == 1)
-        //     console.log('Marte esta solo en esta casa. No hay conjuncion ');
     }
 
     if (arraysPlanetasCasasLocalCasa1.includes('venus')) {
@@ -913,40 +875,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('pluton')) && arrayConjunciones.push('VP1');
         (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) && arrayConjunciones.push('VJ1');
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('saturno')) {
-        //     // console.log('Hay una conjuncion de Venus y Saturno en casa 1.');
-        //     arrayConjunciones.push('VS1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('mercurio')) {
-        //     // console.log('Hay una conjuncion de Venus y Mercurio en casa 1.');
-        //     arrayConjunciones.push('VMe1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('luna')) {
-        //     // console.log('Hay una conjuncion de Venus y Luna en casa 1.');
-        //     arrayConjunciones.push('VL1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Venus y Sol en casa 1.');
-        //     arrayConjunciones.push('VSo1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Venus y Urano en casa 1.');
-        //     arrayConjunciones.push('VU1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Venus y Neptuno en casa 1.');
-        //     arrayConjunciones.push('VN1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Venus y Neptuno en casa 1.');
-        //     arrayConjunciones.push('VP1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('venus') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Venus y Neptuno en casa 1.');
-        //     arrayConjunciones.push('VJ1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.length == 1)
-        //     console.log('Venus esta solo en esta casa. No hay conjuncion ');
+
     }
 
     if (arraysPlanetasCasasLocalCasa1.includes('saturno')) {
@@ -961,43 +890,6 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('mercurio')) && arrayConjunciones.push('SMe1');
 
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('mercurio')) {
-        //     // console.log('Hay una conjuncion de Saturno y Mercurio en casa 1.');
-        //     arrayConjunciones.push('SMe1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('luna')) {
-        //     // console.log('Hay una conjuncion de Saturno y Luna en casa 1.');
-        //     arrayConjunciones.push('SL1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Saturno y Sol en casa 1.');
-        //     arrayConjunciones.push('SSo1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Saturno y Urano en casa 1.');
-        //     arrayConjunciones.push('SU1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Saturno y Neptuno en casa 1.');
-        //     arrayConjunciones.push('SN1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Saturno y Neptuno en casa 1.');
-        //     arrayConjunciones.push('SJ1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('saturno') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Saturno y Pluton en casa 1.');
-        //     arrayConjunciones.push('SP1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.length == 1) {
-        //     console.log('Saturno esta solo en esta casa (1). No hay conjuncion ');
-        // }
-
     }
 
     if (arraysPlanetasCasasLocalCasa1.includes('mercurio')) {
@@ -1009,39 +901,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('pluton')) && arrayConjunciones.push('MeP1');
         (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) && arrayConjunciones.push('MeJ1');
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('luna')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Luna en casa 1.');
-        //     arrayConjunciones.push('MeL1');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Sol en casa 1.');
-        //     arrayConjunciones.push('MeSo1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Urano en casa 1.');
-        //     arrayConjunciones.push('MeU1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Neptuno en casa 1.');
-        //     arrayConjunciones.push('MeN1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Pluton en casa 1.');
-        //     arrayConjunciones.push('MeP1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('mercurio') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Pluton en casa 1.');
-        //     arrayConjunciones.push('MeJ1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.length == 1) {
-        //     console.log('Mercurio esta solo en esta casa (1). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa1.includes('luna')) {
@@ -1051,34 +911,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa1.includes('luna') && arraysPlanetasCasasLocalCasa1.includes('pluton')) && arrayConjunciones.push('LP1');
         (arraysPlanetasCasasLocalCasa1.includes('luna') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) && arrayConjunciones.push('LJ1');
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('luna') && arraysPlanetasCasasLocalCasa1.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Luna y Sol en casa 1.');
-        //     arrayConjunciones.push('LSo1');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('luna') && arraysPlanetasCasasLocalCasa1.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Luna y Urano en casa 1.');
-        //     arrayConjunciones.push('LU1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('luna') && arraysPlanetasCasasLocalCasa1.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Luna y Neptuno en casa 1.');
-        //     arrayConjunciones.push('LN1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('luna') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Luna y Pluton oen casa 1.');
-        //     arrayConjunciones.push('LP1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('luna') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Luna y Pluton oen casa 1.');
-        //     arrayConjunciones.push('LJ1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.length == 1) {
-        //     console.log('La Luna esta sola en esta casa (1). No hay conjuncion ');
-        // }
     }
 
 
@@ -1089,29 +922,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa1.includes('sol') && arraysPlanetasCasasLocalCasa1.includes('pluton')) && arrayConjunciones.push('SoP1');
         (arraysPlanetasCasasLocalCasa1.includes('sol') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) && arrayConjunciones.push('SoJ1');
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('sol') && arraysPlanetasCasasLocalCasa1.includes('urano')) {
-        //     // console.log('Hay una conjuncion de el Sol y Urano en casa 1.');
-        //     arrayConjunciones.push('SoU1');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('sol') && arraysPlanetasCasasLocalCasa1.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de el Sol y Neptuno en casa 1.');
-        //     arrayConjunciones.push('SoN1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('sol') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de el Sol y Pluton en casa 1.');
-        //     arrayConjunciones.push('SoP1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('sol') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de el Sol y Pluton en casa 1.');
-        //     arrayConjunciones.push('SoJ1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.length == 1) {
-        //     console.log('El Sol esta solo en esta casa (1). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa1.includes('urano')) {
@@ -1121,24 +932,7 @@ function resultadosAspectos() {
 
 
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('urano') && arraysPlanetasCasasLocalCasa1.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Urano y Neptuno en casa 1.');
-        //     arrayConjunciones.push('UN1');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('urano') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Urano y Pluton en casa 1.');
-        //     arrayConjunciones.push('UP1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.includes('urano') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Urano y Pluton en casa 1.');
-        //     arrayConjunciones.push('UJ1');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa1.length == 1) {
-        //     console.log('Urano esta solo en esta casa (1). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa1.includes('neptuno')) {
@@ -1147,31 +941,12 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa1.includes('neptuno') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) && arrayConjunciones.push('NJ1');
 
 
-        // if (arraysPlanetasCasasLocalCasa1.includes('neptuno') && arraysPlanetasCasasLocalCasa1.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Neptuno y Pluton en casa 1.');
-        //     arrayConjunciones.push('NP1');
-        // }
-        // if (arraysPlanetasCasasLocalCasa1.includes('neptuno') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Neptuno y Pluton en casa 1.');
-        //     arrayConjunciones.push('NJ1');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa1.length == 1) {
-        //     console.log('Neptuno esta solo en esta casa (1). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa1.includes('pluton')) {
         (arraysPlanetasCasasLocalCasa1.includes('pluton') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) && arrayConjunciones.push('PJ1');
-        // if (arraysPlanetasCasasLocalCasa1.includes('pluton') && arraysPlanetasCasasLocalCasa1.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Pluton y Jupiter en casa 1.');
-        //     arrayConjunciones.push('PJ1');
-        // }
 
-
-        // if (arraysPlanetasCasasLocalCasa1.length == 1) {
-        //     console.log('Pluton esta solo en esta casa (1). No hay conjuncion ');
-        // }
     }
     ///ME FALTA: JUPITER NO ESTA EN EL CICLO
 
@@ -1188,47 +963,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) && arrayConjunciones.push('MN2');
         (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('pluton')) && arrayConjunciones.push('MP2');
         (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) && arrayConjunciones.push('MJ2');
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('venus')) {
-        //     // console.log('Hay una conjuncion de Marte y Venus en casa 2.');
-        //     arrayConjunciones.push('MV2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('saturno')) {
-        //     // console.log('Hay una conjuncion de Marte y Saturno en casa 2. ');
-        //     arrayConjunciones.push('MS2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('mercurio')) {
-        //     // console.log('Hay una conjuncion de Marte y Mercurio en casa 2. ');
-        //     arrayConjunciones.push('MMe2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('luna')) {
-        //     // console.log('Hay una conjuncion de Marte y Luna en casa 2. ');
-        //     arrayConjunciones.push('ML2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Marte y Sol en casa 2. ');
-        //     arrayConjunciones.push('MSo2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Marte y Urano en casa 2. ');
-        //     arrayConjunciones.push('MU2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Marte y Urano en casa 2. ');
-        //     arrayConjunciones.push('MN2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Marte y Pluton en casa 2. ');
-        //     arrayConjunciones.push('MP2');
-        // }
 
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('marte') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Marte y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('MJ2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.length == 1)
-        //     console.log('Marte esta solo en esta casa. No hay conjuncion ');
     }
 
     if (arraysPlanetasCasasLocalCasa2.includes('venus')) {
@@ -1241,41 +976,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('pluton')) && arrayConjunciones.push('VP2');
         (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) && arrayConjunciones.push('VJ2');
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('saturno')) {
-        //     // console.log('Hay una conjuncion de Venus y Saturno en casa 2.');
-        //     arrayConjunciones.push('VS2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('mercurio')) {
-        //     // console.log('Hay una conjuncion de Venus y Mercurio en casa 2.');
-        //     arrayConjunciones.push('VMe2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('luna')) {
-        //     // console.log('Hay una conjuncion de Venus y Luna en casa 2.');
-        //     arrayConjunciones.push('VL2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Venus y Sol en casa 2.');
-        //     arrayConjunciones.push('VSo2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Venus y Urano en casa 2.');
-        //     arrayConjunciones.push('VU2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Venus y Neptuno en casa 2.');
-        //     arrayConjunciones.push('VN2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Venus y Neptuno en casa 2.');
-        //     arrayConjunciones.push('VP2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('venus') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Venus y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('VJ2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.length == 1)
-        //     console.log('Venus esta solo en esta casa. No hay conjuncion ');
     }
 
     if (arraysPlanetasCasasLocalCasa2.includes('saturno')) {
@@ -1288,43 +989,8 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('pluton')) && arrayConjunciones.push('SP2');
         (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) && arrayConjunciones.push('SJ2');
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('mercurio')) {
-        //     // console.log('Hay una conjuncion de Saturno y Mercurio en casa 2.');
-        //     arrayConjunciones.push('SMe2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('luna')) {
-        //     // console.log('Hay una conjuncion de Saturno y Luna en casa 2.');
-        //     arrayConjunciones.push('SL2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Saturno y Sol en casa 2.');
-        //     arrayConjunciones.push('SSo2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Saturno y Urano en casa 2.');
-        //     arrayConjunciones.push('SU2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Saturno y Neptuno en casa 2.');
-        //     arrayConjunciones.push('SN2');
-        // }
-        // if (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Saturno y Pluton en casa 2.');
-        //     arrayConjunciones.push('SP2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('saturno') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Saturno y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('SJ2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.length == 1) {
-        //     console.log('Saturno esta solo en esta casa (2). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa2.includes('mercurio')) {
@@ -1334,39 +1000,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) && arrayConjunciones.push('MeN2');
         (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('pluton')) && arrayConjunciones.push('MeP2');
         (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) && arrayConjunciones.push('MeJ2');
-        // if (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('luna')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Luna en casa 2.');
-        //     arrayConjunciones.push('MeL2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Sol en casa 2.');
-        //     arrayConjunciones.push('MeSo2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Urano en casa 2.');
-        //     arrayConjunciones.push('MeU2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Neptuno en casa 2.');
-        //     arrayConjunciones.push('MeN2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Pluton en casa 2.');
-        //     arrayConjunciones.push('MeP2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('mercurio') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Mercurio y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('MeJ2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.length == 1) {
-        //     console.log('Mercurio esta solo en esta casa (2). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa2.includes('luna')) {
@@ -1376,34 +1010,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa2.includes('luna') && arraysPlanetasCasasLocalCasa2.includes('pluton')) && arrayConjunciones.push('LP2');
         (arraysPlanetasCasasLocalCasa2.includes('luna') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) && arrayConjunciones.push('LJ2');
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('luna') && arraysPlanetasCasasLocalCasa2.includes('sol')) {
-        //     // console.log('Hay una conjuncion de Luna y Sol en casa 2.');
-        //     arrayConjunciones.push('LSo2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('luna') && arraysPlanetasCasasLocalCasa2.includes('urano')) {
-        //     // console.log('Hay una conjuncion de Luna y Urano en casa 2.');
-        //     arrayConjunciones.push('LU2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('luna') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Luna y Neptuno en casa 2.');
-        //     arrayConjunciones.push('LN2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('luna') && arraysPlanetasCasasLocalCasa2.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Luna y Pluton oen casa 2.');
-        //     arrayConjunciones.push('LP2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('luna') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Luna y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('LJ2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.length == 1) {
-        //     console.log('La Luna esta sola en esta casa (2). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa2.includes('sol')) {
@@ -1413,29 +1020,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa2.includes('sol') && arraysPlanetasCasasLocalCasa2.includes('pluton')) && arrayConjunciones.push('SoP2');
         (arraysPlanetasCasasLocalCasa2.includes('sol') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) && arrayConjunciones.push('SoJ2');
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('sol') && arraysPlanetasCasasLocalCasa2.includes('urano')) {
-        //     // console.log('Hay una conjuncion de el Sol y Urano en casa 2.');
-        //     arrayConjunciones.push('SoU2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('sol') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de el Sol y Neptuno en casa 2.');
-        //     arrayConjunciones.push('SoN2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('sol') && arraysPlanetasCasasLocalCasa2.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de el Sol y Pluton en casa 2.');
-        //     arrayConjunciones.push('SoP2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('sol') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Sol y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('SoJ2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.length == 1) {
-        //     console.log('El Sol esta solo en esta casa (2). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa2.includes('urano')) {
@@ -1444,24 +1029,7 @@ function resultadosAspectos() {
         (arraysPlanetasCasasLocalCasa2.includes('urano') && arraysPlanetasCasasLocalCasa2.includes('pluton')) && arrayConjunciones.push('UP2');
         (arraysPlanetasCasasLocalCasa2.includes('urano') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) && arrayConjunciones.push('UJ2');
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('urano') && arraysPlanetasCasasLocalCasa2.includes('neptuno')) {
-        //     // console.log('Hay una conjuncion de Urano y Neptuno en casa 2.');
-        //     arrayConjunciones.push('UN2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('urano') && arraysPlanetasCasasLocalCasa2.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Urano y Pluton en casa 2.');
-        //     arrayConjunciones.push('UP2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.includes('urano') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Urano y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('UJ2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.length == 1) {
-        //     console.log('Urano esta solo en esta casa (2). No hay conjuncion ');
-        // }
     }
 
     if (arraysPlanetasCasasLocalCasa2.includes('neptuno')) {
@@ -1470,19 +1038,7 @@ function resultadosAspectos() {
 
 
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('neptuno') && arraysPlanetasCasasLocalCasa2.includes('pluton')) {
-        //     // console.log('Hay una conjuncion de Neptuno y Pluton en casa 2.');
-        //     arrayConjunciones.push('NP2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('neptuno') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Neptuno y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('NJ2');
-        // }
-
-        // if (arraysPlanetasCasasLocalCasa2.length == 1) {
-        //     console.log('Neptuno esta solo en esta casa (2). No hay conjuncion ');
-        // }
     }
 
 
@@ -1492,14 +1048,7 @@ function resultadosAspectos() {
 
 
 
-        // if (arraysPlanetasCasasLocalCasa2.includes('pluton') && arraysPlanetasCasasLocalCasa2.includes('jupiter')) {
-        //     // console.log('Hay una conjuncion de Pluton y Jupiter en casa 2. ');
-        //     arrayConjunciones.push('PJ2');
-        // }
 
-        // if (arraysPlanetasCasasLocalCasa2.length == 1) {
-        //     console.log('Pluton esta solo en esta casa (2). No hay conjuncion ');
-        // }
     }
 
     //ME FALTA A PARTIR DE ABAJO EL AND

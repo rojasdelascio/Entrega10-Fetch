@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Carta Astral por API</h1>
+    <h3>Instrucciones</h3>
+    <p>Seleccione una hora, fecha y lugar de nacimiento; y haga click en "Calcular Resultados" para traer por API cómo estaban los planetas en esa fecha y lugar. Luego observe como el DOM es modificado en la parte inferior</p>
+    <p>PD: La latitud y longitud se colocarán solar en base a la región ingresada</p>
+    <label>Zona Horaria</label>
+    <select id="paises" name="select">
+        <option value="America/Argentina/Buenos_Aires">Argentina/Buenos Aires</option>
+        <option value="America/Argentina/Cordoba" selected>Argentina/Cordoba</option>
+        <option value="America/Argentina/Mendoza">Argentina/Mendoza</option>
+        <option value="America/Mexico_City" selected>Mexico/Ciudad de Mexico</option>
+        <option value="America/Monterrey">Mexico/Monterrey</option>
+        <option value="America/Montevideo" selected>Uruguay/Montevideo</option>
+        <option value="America/Caracas">Venezuela/Caracas</option>
+      </select>
+    <br>
+    <label>Ciudad</label>
+    <select id="ciudades" name="select">
+        <option value="Buenos_Aires">Buenos_Aires</option>
+        <option value="Cordoba" selected>Cordoba</option>
+        <option value="Mendoza">Mendoza</option>
+        <option value="Mexico_City" selected>Mexico_City</option>
+        <option value="Monterrey">Monterrey</option>
+        <option value="Montevideo" selected>Montevideo</option>
+        <option value="Caracas">Caracas</option>
+      </select> Latitude <input id="lat" type="number">
+    <br> Longitude <input id="long" type="number">
+    <br> Day <input type="number" id="day" value="10">
+    <br> Month <input type="number" id="month" value="5">
+    <br>Year<input type="number" id="year" value="1990">
+    <br>Hora<input type="number" id="hora" value="23">
+    <br>Minutos<input type="number" id="minutos" value="50">
+    <p>Al colocar una fecha de nacimiento y hora, deberá hacer click en "Calcular Resultados" y observará como se modifican los Select de los planetas, y también como se modifica el DOM en la parte inferior de la página, indicando qué planetas hay en cada
+        casa </p>
+    <button onclick="resultadosAPI1()">Calcular Resultados</button>
+
+    <!-- prueba carta -->
+
+
+    <!-- planetas -->
+
+    <form class="formcasas" name="formcasas" action="" method=post onSubmit=''>
+        <h3 class="titulotradu">Planetas</h3>
+        <p class="ptradu">Seleccione su ascendente y los planetas con los que desea trabajar, la casa, regente y grado de los mismos. Luego haga click en "resultado" para saber qué significa esto</p>
+
+        <ul class="formcasas__lista">
+            <!--Ascendente-->
+            <li class="formcasas__lista__ascendente">
+
+                <h3 class="formcasas__lista__ascendente__titulo">Ascendente</h3>
+                <p>El ascendente es el signo en casa 1</p>
+                <select class="formcasas__lista__ascendente__selectcasas" id="ascendente1" name="ascendente" disabled>
+                  <option value="Ari">Aries</option>
+                  <option value="Tau" >Tauro</option>
+                  <option value="Gem">Geminis</option>
+                  <option value="Can">Cancer</option>
+                  <option value="Leo">Leo</option>
+                  <option value="Vir">Virgo</option>
+                  <option value="Lib">Libra</option>
+                  <option value="Sco">Escorpio</option>
+                  <option value="Sag">Sagitario</option>
+                  <option value="Cap">Capricornio</option>
+                  <option value="Aqu">Acuario</option>
+                  <option value="Pis">Piscis</option>
+        </select>
+            </li>
+            <!-- Marte -->
+            <li class="formcasas__lista__marte">
+
+                <h3 class="formcasas__lista__marte__titulo">Marte</h3>
+                <select class="formcasas__lista__marte__selectcasas" id="marte1" name="marte" disabled>
+          <option value="1st House">Casa 1</option>
+          <option value="2nd House">Casa 2</option>
+          <option value="3rd House">Casa 3</option>
+          <option value="4th House">Casa 4</option>
+          <option value="5th House">Casa 5</option>
+          <option value="6th House">Casa 6</option>
+          <option value="7th House">Casa 7</option>
+          <option value="8th House">Casa 8</option>
+          <option value="9th House">Casa 9</option>
+          <option value="10th House">Casa 10</option>
+          <option value="11th House">Casa 11</option>
+          <option value="12th House">Casa 12</option>
+        </select>
+                <h3 class="formcasas__lista__marte__regente">Regente</h3>
+
+                <select class="formcasas__lista__marte__selectsignos" id="regenteMarte1" name="regenteMarte" disabled>
+      <option value="Ari">Aries</option>
+      <option value="Tau" >Tauro</option>
+      <option value="Gem">Geminis</option>
+      <option value="Can">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Vir">Virgo</option>
+      <option value="Lib">Libra</option>
+      <option value="Sco">Escorpio</option>
+      <option value="Sag">Sagitario</option>
+      <option value="Cap">Capricornio</option>
+      <option value="Aqu">Acuario</option>
+      <option value="Pis">Piscis</option>
+  </select>
+                <h3 class="formcasas__lista__marte__grado">Grado</h3>
+                <p>Indique el grado del planeta Marte en su carta</p>
+                <input class="formcasas__lista__marte__gradoinput" id="gradoMarte1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+
+            <br>
+            <!-- <button class="" onclick=" ">¿Qué significa Marte en esta casa, con este signo regente y este grado?</button> -->
+            <!-- Venus -->
+            <li class="formcasas__lista__venus">
+                <h3 class="formcasas__lista__venus__titulo">Venus</h3>
+                <select class="formcasas__lista__venus__selectcasas" id="venus1" name="venus" disabled>
+                  <option value="1st House">Casa 1</option>
+                  <option value="2nd House">Casa 2</option>
+                  <option value="3rd House">Casa 3</option>
+                  <option value="4th House">Casa 4</option>
+                  <option value="5th House">Casa 5</option>
+                  <option value="6th House">Casa 6</option>
+                  <option value="7th House">Casa 7</option>
+                  <option value="8th House">Casa 8</option>
+                  <option value="9th House">Casa 9</option>
+                  <option value="10th House">Casa 10</option>
+                  <option value="11th House">Casa 11</option>
+                  <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__venus__regente">Regente</h3>
+
+                <select class="formcasas__lista__venus__selectsignos" id="regenteVenus1" name="regenteVenus" disabled>
+                  <option value="Ari">Aries</option>
+      <option value="Tau" >Tauro</option>
+      <option value="Gem">Geminis</option>
+      <option value="Can">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Vir">Virgo</option>
+      <option value="Lib">Libra</option>
+      <option value="Sco">Escorpio</option>
+      <option value="Sag">Sagitario</option>
+      <option value="Cap">Capricornio</option>
+      <option value="Aqu">Acuario</option>
+      <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__venus__grado">Grado</h3>
+                <p>Indique el grado del planeta Venus en su carta</p>
+                <input class="formcasas__lista__venus__gradoinput" id="gradoVenus1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+            <br>
+            <!-- <button class="" onclick=" ">¿Qué significa Venus en esta casa, con este signo regente y este grado?</button> -->
+
+            <!-- Saturno -->
+            <li class="formcasas__lista__saturno">
+                <h3 class="formcasas__lista__saturno__titulo">Saturno</h3>
+                <select class="formcasas__lista__saturno__selectcasas" id="saturno1" name="saturno" disabled>
+                  <option value="1st House">Casa 1</option>
+          <option value="2nd House">Casa 2</option>
+          <option value="3rd House">Casa 3</option>
+          <option value="4th House">Casa 4</option>
+          <option value="5th House">Casa 5</option>
+          <option value="6th House">Casa 6</option>
+          <option value="7th House">Casa 7</option>
+          <option value="8th House">Casa 8</option>
+          <option value="9th House">Casa 9</option>
+          <option value="10th House">Casa 10</option>
+          <option value="11th House">Casa 11</option>
+          <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__saturno__regente">Regente</h3>
+
+                <select class="formcasas__lista__saturno__selectsignos" id="regenteSaturno1" name="regenteSaturno" disabled>
+                  <option value="Ari">Aries</option>
+      <option value="Tau" >Tauro</option>
+      <option value="Gem">Geminis</option>
+      <option value="Can">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Vir">Virgo</option>
+      <option value="Lib">Libra</option>
+      <option value="Sco">Escorpio</option>
+      <option value="Sag">Sagitario</option>
+      <option value="Cap">Capricornio</option>
+      <option value="Aqu">Acuario</option>
+      <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__saturno__grado">Grado</h3>
+                <p>Indique el grado del planeta Saturno en su carta</p>
+                <input class="formcasas__lista__saturno__gradoinput" id="gradoSaturno1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+
+            <!-- Mercurio -->
+            <li class="formcasas__lista__mercurio">
+                <h3 class="formcasas__lista__mercurio__titulo">Mercurio</h3>
+                <select class="formcasas__lista__mercurio__selectcasas" id="mercurio1" name="mercurio" disabled>
+                  <option value="1st House">Casa 1</option>
+          <option value="2nd House">Casa 2</option>
+          <option value="3rd House">Casa 3</option>
+          <option value="4th House">Casa 4</option>
+          <option value="5th House">Casa 5</option>
+          <option value="6th House">Casa 6</option>
+          <option value="7th House">Casa 7</option>
+          <option value="8th House">Casa 8</option>
+          <option value="9th House">Casa 9</option>
+          <option value="10th House">Casa 10</option>
+          <option value="11th House">Casa 11</option>
+          <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__mercurio__regente">Regente</h3>
+
+                <select class="formcasas__lista__mercurio__selectsignos" id="regenteMercurio1" name="regenteMercurio" disabled>
+                  <option value="Ari">Aries</option>
+      <option value="Tau" >Tauro</option>
+      <option value="Gem">Geminis</option>
+      <option value="Can">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Vir">Virgo</option>
+      <option value="Lib">Libra</option>
+      <option value="Sco">Escorpio</option>
+      <option value="Sag">Sagitario</option>
+      <option value="Cap">Capricornio</option>
+      <option value="Aqu">Acuario</option>
+      <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__mercurio__grado">Grado</h3>
+                <p>Indique el grado del planeta Mercurio en su carta</p>
+
+                <input class="formcasas__lista__mercurio__gradoinput" id="gradoMercurio1" type="number" min=0 max=29 value=0 disabled>
+            </li>
+
+            <!-- Luna -->
+            <li class="formcasas__lista__luna">
+                <h3 class="formcasas__lista__luna__titulo">Luna</h3>
+                <select class="formcasas__lista__luna__selectcasas" id="luna1" name="luna" disabled>
+                  <option value="1st House">Casa 1</option>
+                  <option value="2nd House">Casa 2</option>
+                  <option value="3rd House">Casa 3</option>
+                  <option value="4th House">Casa 4</option>
+                  <option value="5th House">Casa 5</option>
+                  <option value="6th House">Casa 6</option>
+                  <option value="7th House">Casa 7</option>
+                  <option value="8th House">Casa 8</option>
+                  <option value="9th House">Casa 9</option>
+                  <option value="10th House">Casa 10</option>
+                  <option value="11th House">Casa 11</option>
+                  <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__luna__regente">Regente</h3>
+
+                <select class="formcasas__lista__luna__selectsignos" id="regenteLuna1" name="regenteLuna" disabled>
+                  <option value="Ari">Aries</option>
+                  <option value="Tau" >Tauro</option>
+                  <option value="Gem">Geminis</option>
+                  <option value="Can">Cancer</option>
+                  <option value="Leo">Leo</option>
+                  <option value="Vir">Virgo</option>
+                  <option value="Lib">Libra</option>
+                  <option value="Sco">Escorpio</option>
+                  <option value="Sag">Sagitario</option>
+                  <option value="Cap">Capricornio</option>
+                  <option value="Aqu">Acuario</option>
+                  <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__luna__grado">Grado</h3>
+                <p>Indique el grado del planeta Luna en su carta</p>
+                <input class="formcasas__lista__luna__gradoinput" id="gradoLuna1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+            <!-- Sol -->
+            <li class="formcasas__lista__sol">
+                <h3 class="formcasas__lista__sol__titulo">Sol</h3>
+                <select class="formcasas__lista__sol__selectcasas" id="sol1" name="sol" disabled>
+                  <option value="1st House">Casa 1</option>
+          <option value="2nd House">Casa 2</option>
+          <option value="3rd House">Casa 3</option>
+          <option value="4th House">Casa 4</option>
+          <option value="5th House">Casa 5</option>
+          <option value="6th House">Casa 6</option>
+          <option value="7th House">Casa 7</option>
+          <option value="8th House">Casa 8</option>
+          <option value="9th House">Casa 9</option>
+          <option value="10th House">Casa 10</option>
+          <option value="11th House">Casa 11</option>
+          <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__sol__regente">Regente</h3>
+
+                <select class="formcasas__lista__sol__selectsignos" id="regenteSol1" name="regenteSol" disabled>
+                  <option value="Ari">Aries</option>
+      <option value="Tau" >Tauro</option>
+      <option value="Gem">Geminis</option>
+      <option value="Can">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Vir">Virgo</option>
+      <option value="Lib">Libra</option>
+      <option value="Sco">Escorpio</option>
+      <option value="Sag">Sagitario</option>
+      <option value="Cap">Capricornio</option>
+      <option value="Aqu">Acuario</option>
+      <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__sol__grado">Grado</h3>
+                <p>Indique el grado del planeta Sol en su carta</p>
+                <input class="formcasas__lista__sol__gradoinput" id="gradoSol1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+
+
+            <!-- Jupiter -->
+            <li class="formcasas__lista__jupiter">
+                <h3 class="formcasas__lista__jupiter__titulo">Jupiter</h3>
+                <select class="formcasas__lista__jupiter__selectcasas" id="jupiter1" name="jupiter" disabled>
+                  <option value="1st House">Casa 1</option>
+          <option value="2nd House">Casa 2</option>
+          <option value="3rd House">Casa 3</option>
+          <option value="4th House">Casa 4</option>
+          <option value="5th House">Casa 5</option>
+          <option value="6th House">Casa 6</option>
+          <option value="7th House">Casa 7</option>
+          <option value="8th House">Casa 8</option>
+          <option value="9th House">Casa 9</option>
+          <option value="10th House">Casa 10</option>
+          <option value="11th House">Casa 11</option>
+          <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__jupiter__regente">Regente</h3>
+
+                <select class="formcasas__lista__jupiter__selectsignos" id="regenteJupiter1" name="regenteJupiter" disabled>
+                  <option value="Ari">Aries</option>
+      <option value="Tau" >Tauro</option>
+      <option value="Gem">Geminis</option>
+      <option value="Can">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Vir">Virgo</option>
+      <option value="Lib">Libra</option>
+      <option value="Sco">Escorpio</option>
+      <option value="Sag">Sagitario</option>
+      <option value="Cap">Capricornio</option>
+      <option value="Aqu">Acuario</option>
+      <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__jupiter__grado">Grado</h3>
+                <p>Indique el grado del planeta Jupiter en su carta</p>
+                <input class="formcasas__lista__jupiter__gradoinput" id="gradoJupiter1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+
+
+            <!-- Urano -->
+            <li class="formcasas__lista__urano">
+
+                <h3 class="formcasas__lista__urano__titulo">Urano</h3>
+                <select class="formcasas__lista__urano__selectcasas" id="urano1" name="urano" disabled>
+                  <option value="1st House">Casa 1</option>
+                  <option value="2nd House">Casa 2</option>
+                  <option value="3rd House">Casa 3</option>
+                  <option value="4th House">Casa 4</option>
+                  <option value="5th House">Casa 5</option>
+                  <option value="6th House">Casa 6</option>
+                  <option value="7th House">Casa 7</option>
+                  <option value="8th House">Casa 8</option>
+                  <option value="9th House">Casa 9</option>
+                  <option value="10th House">Casa 10</option>
+                  <option value="11th House">Casa 11</option>
+                  <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__urano__regente">Regente</h3>
+
+                <select class="formcasas__lista__urano__selectsignos" id="regenteUrano1" name="regenteUrano" disabled>
+                  <option value="Ari">Aries</option>
+      <option value="Tau" >Tauro</option>
+      <option value="Gem">Geminis</option>
+      <option value="Can">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Vir">Virgo</option>
+      <option value="Lib">Libra</option>
+      <option value="Sco">Escorpio</option>
+      <option value="Sag">Sagitario</option>
+      <option value="Cap">Capricornio</option>
+      <option value="Aqu">Acuario</option>
+      <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__urano__grado">Grado</h3>
+                <p>Indique el grado del planeta Urano en su carta</p>
+                <input class="formcasas__lista__urano__gradoinput" id="gradoUrano1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+
+            <!-- Neptuno -->
+            <li class="formcasas__lista__neptuno">
+
+                <h3 class="formcasas__lista__neptuno__titulo">Neptuno</h3>
+                <select class="formcasas__lista__neptuno__selectcasas" id="neptuno1" name="neptuno" disabled>
+                  <option value="1st House">Casa 1</option>
+                  <option value="2nd House">Casa 2</option>
+                  <option value="3rd House">Casa 3</option>
+                  <option value="4th House">Casa 4</option>
+                  <option value="5th House">Casa 5</option>
+                  <option value="6th House">Casa 6</option>
+                  <option value="7th House">Casa 7</option>
+                  <option value="8th House">Casa 8</option>
+                  <option value="9th House">Casa 9</option>
+                  <option value="10th House">Casa 10</option>
+                  <option value="11th House">Casa 11</option>
+                  <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__neptuno__regente">Regente</h3>
+
+                <select class="formcasas__lista__neptuno__selectsignos" id="regenteNeptuno1" name="regenteNeptuno" disabled>
+                  <option value="Ari">Aries</option>
+                  <option value="Tau" >Tauro</option>
+                  <option value="Gem">Geminis</option>
+                  <option value="Can">Cancer</option>
+                  <option value="Leo">Leo</option>
+                  <option value="Vir">Virgo</option>
+                  <option value="Lib">Libra</option>
+                  <option value="Sco">Escorpio</option>
+                  <option value="Sag">Sagitario</option>
+                  <option value="Cap">Capricornio</option>
+                  <option value="Aqu">Acuario</option>
+                  <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__neptuno__grado">Grado</h3>
+                <p>Indique el grado del planeta Neptuno en su carta</p>
+                <input class="formcasas__lista__neptuno__gradoinput" id="gradoNeptuno1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+
+            <!-- Pluton -->
+            <li class="formcasas__lista__pluton">
+                <h3 class="formcasas__lista__pluton__titulo">Pluton</h3>
+                <select class="formcasas__lista__pluton__selectcasas" id="pluton1" name="pluton" disabled>
+                  <option value="1st House">Casa 1</option>
+                  <option value="2nd House">Casa 2</option>
+                  <option value="3rd House">Casa 3</option>
+                  <option value="4th House">Casa 4</option>
+                  <option value="5th House">Casa 5</option>
+                  <option value="6th House">Casa 6</option>
+                  <option value="7th House">Casa 7</option>
+                  <option value="8th House">Casa 8</option>
+                  <option value="9th House">Casa 9</option>
+                  <option value="10th House">Casa 10</option>
+                  <option value="11th House">Casa 11</option>
+                  <option value="12th House">Casa 12</option>
+      </select>
+                <h3 class="formcasas__lista__pluton__regente">Regente</h3>
+
+                <select class="formcasas__lista__pluton__selectsignos" id="regentePluton1" name="regentePluton" disabled>
+                  <option value="Ari">Aries</option>
+      <option value="Tau" >Tauro</option>
+      <option value="Gem">Geminis</option>
+      <option value="Can">Cancer</option>
+      <option value="Leo">Leo</option>
+      <option value="Vir">Virgo</option>
+      <option value="Lib">Libra</option>
+      <option value="Sco">Escorpio</option>
+      <option value="Sag">Sagitario</option>
+      <option value="Cap">Capricornio</option>
+      <option value="Aqu">Acuario</option>
+      <option value="Pis">Piscis</option>
+      </select>
+                <h3 class="formcasas__lista__pluton__grado">Grado</h3>
+                <p>Indique el grado del planeta Pluton en su carta</p>
+                <input class="formcasas__lista__pluton__gradoinput" id="gradoPluton1" type="number" value=0 min=0 max=29 disabled>
+            </li>
+        </ul>
+
+    </form>
+
+    <div class="div__resultados2">
+        <h2 class="div__resultados2__titulo">Resultados</h2>
+        <h3 class="div__resultados2__subtitulocasas">Casas</h3>
+        <h3 id="casa1resultados2" class="div__resultados2__casa1">Casa 1</h3>
+        <h3 id="casa2resultados2" class="div__resultados2__casa2">Casa 2</h3>
+        <h3 id="casa3resultados2" class="div__resultados2__casa3">Casa 3</h3>
+        <h3 id="casa4resultados2" class="div__resultados2__casa4">Casa 4</h3>
+        <h3 id="casa5resultados2" class="div__resultados2__casa5">Casa 5</h3>
+        <h3 id="casa6resultados2" class="div__resultados2__casa6">Casa 6</h3>
+        <h3 id="casa7resultados2" class="div__resultados2__casa7">Casa 7</h3>
+        <h3 id="casa8resultados2" class="div__resultados2__casa8">Casa 8</h3>
+        <h3 id="casa9resultados2" class="div__resultados2__casa9">Casa 9</h3>
+        <h3 id="casa10resultados2" class="div__resultados2__casa10">Casa 10</h3>
+        <h3 id="casa11resultados2" class="div__resultados2__casa11">Casa 11</h3>
+        <h3 id="casa12resultados2" class="div__resultados2__casa12">Casa 12</h3>
+
+
+
+</body>
+<script src="../java/cartaPorAPI1.js"></script>
+<script src="../java/cartaPorAPI2.js"></script>
+
+
+
+
+</html>

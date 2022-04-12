@@ -43,7 +43,7 @@
     <br>Minutos<input type="number" id="minutos" value="50">
     <p>Al colocar una fecha de nacimiento y hora, deberá hacer click en "Calcular Resultados" y observará como se modifican los Select de los planetas, y también como se modifica el DOM en la parte inferior de la página, indicando qué planetas hay en cada
         casa </p>
-    <button onclick="resultadosAPI1()">Calcular Resultados</button>
+    <button id="resultadosAPIBoton" onclick="  resultadosAPI1(); borrarCambios()">Calcular Resultados</button>
 
     <!-- prueba carta -->
 
@@ -467,23 +467,35 @@
 
     </form>
 
-    <div class="div__resultados2">
+    <div id="resultados2" class="div__resultados2">
         <h2 class="div__resultados2__titulo">Resultados</h2>
-        <h3 class="div__resultados2__subtitulocasas">Casas</h3>
-        <h3 id="casa1resultados2" class="div__resultados2__casa1">Casa 1</h3>
-        <h3 id="casa2resultados2" class="div__resultados2__casa2">Casa 2</h3>
-        <h3 id="casa3resultados2" class="div__resultados2__casa3">Casa 3</h3>
-        <h3 id="casa4resultados2" class="div__resultados2__casa4">Casa 4</h3>
-        <h3 id="casa5resultados2" class="div__resultados2__casa5">Casa 5</h3>
-        <h3 id="casa6resultados2" class="div__resultados2__casa6">Casa 6</h3>
-        <h3 id="casa7resultados2" class="div__resultados2__casa7">Casa 7</h3>
-        <h3 id="casa8resultados2" class="div__resultados2__casa8">Casa 8</h3>
-        <h3 id="casa9resultados2" class="div__resultados2__casa9">Casa 9</h3>
-        <h3 id="casa10resultados2" class="div__resultados2__casa10">Casa 10</h3>
-        <h3 id="casa11resultados2" class="div__resultados2__casa11">Casa 11</h3>
-        <h3 id="casa12resultados2" class="div__resultados2__casa12">Casa 12</h3>
-
-
+        <h3 class="div__resultados2__div2">Casas</h3>
+        <div id="resultados2__div2" class="div__resultados2__div2"></div>
+        <h3 id="casa1resultados2" class="div__resultados2__div2__casa1">Casa 1</h3>
+        <div id="casa1resultados2div"></div>
+        <h3 id="casa2resultados2" class="div__resultados2__div2__casa2">Casa 2</h3>
+        <div id="casa2resultados2div"></div>
+        <h3 id="casa3resultados2" class="div__resultados2__div2__casa3">Casa 3</h3>
+        <div id="casa3resultados2div"></div>
+        <h3 id="casa4resultados2" class="div__resultados2__div2__casa4">Casa 4</h3>
+        <div id="casa4resultados2div"></div>
+        <h3 id="casa5resultados2" class="div__resultados2__div2__casa5">Casa 5</h3>
+        <div id="casa5resultados2div"></div>
+        <h3 id="casa6resultados2" class="div__resultados2__div2__casa6">Casa 6</h3>
+        <div id="casa6resultados2div"></div>
+        <h3 id="casa7resultados2" class="div__resultados2__div2__casa7">Casa 7</h3>
+        <div id="casa7resultados2div"></div>
+        <h3 id="casa8resultados2" class="div__resultados2__div2__casa8">Casa 8</h3>
+        <div id="casa8resultados2div"></div>
+        <h3 id="casa9resultados2" class="div__resultados2__div2__casa9">Casa 9</h3>
+        <div id="casa9resultados2div"></div>
+        <h3 id="casa10resultados2" class="div__resultados2__div2__casa10">Casa 10</h3>
+        <div id="casa10resultados2div"></div>
+        <h3 id="casa11resultados2" class="div__resultados2__div2__casa11">Casa 11</h3>
+        <div id="casa11resultados2div"></div>
+        <h3 id="casa12resultados2" class="div__resultados2__div2__casa12">Casa 12</h3>
+        <div id="casa12resultados2div"></div>
+    </div>
 
 </body>
 <script src="../java/cartaPorAPI1.js"></script>

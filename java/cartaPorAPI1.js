@@ -395,7 +395,7 @@ function resultadosAPI1() {
             var arrayIdregentes2 = ["regenteMarte1", "regenteVenus1", "regenteSaturno1", "regenteMercurio1", "regenteLuna1", "regenteSol1", "regenteUrano1", "regenteNeptuno1", "regentePluton1", "regenteJupiter1"];
             var arrayIdgrados2 = ["gradoMarte1", "gradoVenus1", "gradoSaturno1", "gradoMercurio1", "gradoLuna1", "gradoSol1", "gradoUrano1", "gradoNeptuno1", "gradoPluton1", "gradoJupiter1"];
             var idsConjunciones2 = 'resultadosExterno__div3__UL2'
-            var idsCasas2 = ['casa1resultados2div', 'casa2resultados2div', 'casa3resultados2div', 'casa4resultados2div', 'casa5resultados2div', 'casa6resultados2div', 'casa7resultados2div', 'casa8resultados2div', 'casa9resultados2div', 'casa9resultados2div', 'casa10resultados2div', 'casa11resultados2div', 'casa12resultados2div'];
+            var idsCasas2 = ['casa1resultados2div', 'casa2resultados2div', 'casa3resultados2div', 'casa4resultados2div', 'casa5resultados2div', 'casa6resultados2div', 'casa7resultados2div', 'casa8resultados2div', 'casa9resultados2div', 'casa10resultados2div', 'casa11resultados2div', 'casa12resultados2div'];
             var idsPlanetas2 = ['resultadosExterno__div3__marteUL2', 'resultadosExterno__div3__venusUL2', 'resultadosExterno__div3__saturnoUL2', 'resultadosExterno__div3__mercurioUL2', 'resultadosExterno__div3__lunaUL2', 'resultadosExterno__div3__solUL2', 'resultadosExterno__div3__uranoUL2', 'resultadosExterno__div3__neptunoUL2', 'resultadosExterno__div3__jupiterUL2', 'resultadosExterno__div3__plutonUL2'];
             var arrayIdsPlanetas2 = ["marte1", "venus1", "saturno1", "mercurio1", "luna1", "sol1", "urano1", "neptuno1", "pluton1", "jupiter1"];
             var idAscendenteL2 = 'ascendente1';

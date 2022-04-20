@@ -4,9 +4,13 @@ $contenido-planetas-font: 'Work Sans',
 sans-serif;
 $headyfoot-font: 'Bitter',
 serif;
+$titulos-alt:'Bebas Neue',
+cursive;
 $nombreyapellido-font: 'Work Sans',
 sans-serif;
 $tabla-contenido: 'Mulish',
+sans-serif;
+$contenido-alt: 'Rajdhani',
 sans-serif;
 $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, headyfoot:6rem, nombreyapellido:3rem, intro:2rem, p:2.3rem, tabla:3rem, boton:3rem);
 .root__element {
@@ -15,7 +19,7 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
 }
 
 @mixin titulos {
-    font-family: $headyfoot-font;
+    font-family: $titulos-alt;
     font-size: map-get($tam-letra, titulos);
     padding: 5px;
     position: relative;
@@ -33,43 +37,112 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
 
 .gridindex {
     display: grid;
-    grid-template-areas: "h" "main" "footer";
-    grid-template-rows: 0.1fr auto 0.1fr;
+    grid-template-areas: "headerindex" "mainindex" "footerindex";
+    grid-template-rows: 1fr auto 0.3fr;
     grid-template-columns: 100%;
     overflow-y: hidden;
 }
 
 .headerindex {
-    grid-area: h;
-    background-color: aqua;
-}
-
-.mainindex {
-    grid-area: main;
-}
-
-.intro1 {}
-
-.mainindex__section1 {
-    .mainindex__section1__div1 {
-        display: grid;
-        grid-template-areas: "uno dos";
-        grid-template-rows: 100%;
-        grid-template-columns: 1fr 1fr;
-        .mainindex__section1__div1__div2 {
-            grid-area: uno;
-            .mainindex__section1__div1__div2__descripcion {}
-            .mainindex__section1__div1__div2__p {}
-        }
-        .mainindex__section1__div1__div {
-            grid-area: dos;
-            .mainindex__section1__div1__div__descripcion {}
-            .mainindex__section1__div1__div__descripcion {}
-            .mainindex__section1__div1__div__p {}
-        }
+    grid-area: headerindex;
+    background-color: #002f6d;
+    height: auto;
+    img {
+        width: 180px;
+        height: 180px;
     }
 }
 
 .footerindex {
-    grid-area: footer;
+    grid-area: footerindex;
+    background-color: cornflowerblue;
+    color: rgb(71, 71, 71);
+    p {
+        position: relative;
+        right: -35%;
+        font-size: map-get($tam-letra, contenido-planetas);
+    }
+}
+
+.mainindex {
+    padding: 4rem;
+    background-color: rgb(161, 220, 222);
+    grid-area: mainindex;
+    &__intro {
+        &__titulo {
+            @include titulos;
+            font-size: 7rem;
+        }
+    }
+    &__section1 {
+        &__div1 {
+            display: grid;
+            grid-template-areas: "a a" "b c";
+            grid-template-rows: 1fr 2fr;
+            grid-template-columns: 50% 50%;
+            &__titulo {
+                font-family: $contenido-alt;
+                padding: 3rem;
+                grid-area: a;
+                font-size: map-get($tam-letra, titulos);
+                position: relative;
+                right: -30%;
+            }
+            &__div {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                border: 2px solid rgba(18, 68, 75, 0.668);
+                grid-area: b;
+                padding: 3rem;
+                &__p {
+                    padding: 2rem;
+                    width: 60%;
+                    font-family: $contenido-alt;
+                    color: rgb(125, 125, 125);
+                    font-size: map-get($tam-letra, tabla);
+                }
+                &__descripcion {
+                    padding: 2rem;
+                    font-size: map-get($tam-letra, titulos-planetas);
+                    font-family: $contenido-alt;
+                    button {
+                        padding: 2rem;
+                        font-size: map-get($tam-letra, boton);
+                        font-family: $contenido-alt;
+                    }
+                }
+            }
+            &__div2 {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                border: 2px solid rgba(18, 68, 75, 0.668);
+                grid-area: c;
+                padding: 3rem;
+                &__descripcion {
+                    font-family: $contenido-alt;
+                    padding: 2rem;
+                    font-size: map-get($tam-letra, titulos-planetas);
+                    button {
+                        padding: 2rem;
+                        font-size: map-get($tam-letra, boton);
+                        font-family: $contenido-alt;
+                    }
+                }
+                &__p {
+                    font-family: $contenido-alt;
+                    padding: 2rem;
+                    width: 60%;
+                    color: rgb(125, 125, 125);
+                    font-size: map-get($tam-letra, tabla);
+                }
+            }
+        }
+    }
+}
+
+#cartaporAPIboton,
+#verificarAspectos {
+    font-size: map-get($tam-letra, boton);
 }

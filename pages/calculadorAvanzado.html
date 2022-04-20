@@ -37,8 +37,8 @@
             <div class="nombreapellidoyfecha__div">
                 <p> Nombre </p><input id="nombre" class="nombreapellidoyfecha__nombre" type="text">
                 <p>Apellido </p><input id="apellido" class="nombreapellidoyfecha__apellido" type="text">
-                <p>Fecha de Nacimiento</p>
-                <input id="fecha" class="nombreapellidoyfecha__fecha" type="date" disabled>
+                <!-- <p>Fecha de Nacimiento</p>
+                <input id="fecha" class="nombreapellidoyfecha__fecha" type="date" disabled> -->
 
             </div>
         </section>
@@ -50,7 +50,7 @@
             <ul class="formcasas__lista">
                 <!--Ascendente-->
                 <li class="formcasas__lista__ascendente">
-                    <input class="formcasas__lista__ascendente__box" type="checkbox" name="ascendente">
+
                     <h3 class="formcasas__lista__ascendente__titulo">Ascendente</h3>
                     <p>El ascendente es el signo en casa 1</p>
                     <select class="formcasas__lista__ascendente__selectcasas" id="ascendente" name="ascendente">
@@ -70,10 +70,11 @@
                 </li>
                 <!-- Marte -->
                 <li class="formcasas__lista__marte">
-                    <input class="formcasas__lista__marte__box" type="checkbox" name="marte">
+                    <input class="formcasas__lista__marte__box" id="checkboxmarte" type="checkbox" name="marte">
                     <h3 class="formcasas__lista__marte__titulo">Marte</h3>
                     <select class="formcasas__lista__marte__selectcasas" id="marte" name="marte">
-                    <option value="1">Casa 1</option>
+                        <option value=""></option>
+                        <option value="1">Casa 1</option>
                     <option value="2">Casa 2</option>
                     <option value="3">Casa 3</option>
                     <option value="4">Casa 4</option>
@@ -104,17 +105,18 @@
             </select>
                     <h3 class="formcasas__lista__marte__grado">Grado</h3>
                     <p>Indique el grado del planeta Marte en su carta</p>
-                    <input class="formcasas__lista__marte__gradoinput" id="gradoMarte" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__marte__gradoinput" id="gradoMarte" type="number" min=0 max=29>
                 </li>
 
                 <br>
                 <!-- <button class="" onclick=" ">¿Qué significa Marte en esta casa, con este signo regente y este grado?</button> -->
                 <!-- Venus -->
                 <li class="formcasas__lista__venus">
-                    <input class="formcasas__lista__venus__box" type="checkbox" name="venus">
+                    <input class="formcasas__lista__venus__box" type="checkbox" id="checkboxvenus" name="venus">
                     <h3 class="formcasas__lista__venus__titulo">Venus</h3>
                     <select class="formcasas__lista__venus__selectcasas" id="venus" name="venus">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -145,17 +147,18 @@
                 </select>
                     <h3 class="formcasas__lista__venus__grado">Grado</h3>
                     <p>Indique el grado del planeta Venus en su carta</p>
-                    <input class="formcasas__lista__venus__gradoinput" id="gradoVenus" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__venus__gradoinput" id="gradoVenus" type="number" min=0 max=29>
                 </li>
                 <br>
                 <!-- <button class="" onclick=" ">¿Qué significa Venus en esta casa, con este signo regente y este grado?</button> -->
 
                 <!-- Saturno -->
                 <li class="formcasas__lista__saturno">
-                    <input class="formcasas__lista__saturno__box" type="checkbox" name="saturno">
+                    <input class="formcasas__lista__saturno__box" type="checkbox" id="checkboxsaturno" name="saturno">
                     <h3 class="formcasas__lista__saturno__titulo">Saturno</h3>
                     <select class="formcasas__lista__saturno__selectcasas" id="saturno" name="saturno">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -186,15 +189,16 @@
                 </select>
                     <h3 class="formcasas__lista__saturno__grado">Grado</h3>
                     <p>Indique el grado del planeta Saturno en su carta</p>
-                    <input class="formcasas__lista__saturno__gradoinput" id="gradoSaturno" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__saturno__gradoinput" id="gradoSaturno" type="number" min=0 max=29>
                 </li>
 
                 <!-- Mercurio -->
                 <li class="formcasas__lista__mercurio">
-                    <input class="formcasas__lista__mercurio__box" type="checkbox" name="mercurio">
+                    <input class="formcasas__lista__mercurio__box" type="checkbox" id="checkboxmercurio" name="mercurio">
                     <h3 class="formcasas__lista__mercurio__titulo">Mercurio</h3>
                     <select class="formcasas__lista__mercurio__selectcasas" id="mercurio" name="mercurio">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -226,15 +230,16 @@
                     <h3 class="formcasas__lista__mercurio__grado">Grado</h3>
                     <p>Indique el grado del planeta Mercurio en su carta</p>
 
-                    <input class="formcasas__lista__mercurio__gradoinput" id="gradoMercurio" type="number" min=0 max=29 value=0>
+                    <input class="formcasas__lista__mercurio__gradoinput" id="gradoMercurio" type="number" min=0 max=29>
                 </li>
 
                 <!-- Luna -->
                 <li class="formcasas__lista__luna">
-                    <input class="formcasas__lista__luna__box" type="checkbox" name="luna">
+                    <input class="formcasas__lista__luna__box" type="checkbox" id="checkboxluna" name="luna">
                     <h3 class="formcasas__lista__luna__titulo">Luna</h3>
                     <select class="formcasas__lista__luna__selectcasas" id="luna" name="luna">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -265,14 +270,15 @@
                 </select>
                     <h3 class="formcasas__lista__luna__grado">Grado</h3>
                     <p>Indique el grado del planeta Luna en su carta</p>
-                    <input class="formcasas__lista__luna__gradoinput" id="gradoLuna" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__luna__gradoinput" id="gradoLuna" type="number" min=0 max=29>
                 </li>
                 <!-- Sol -->
                 <li class="formcasas__lista__sol">
-                    <input class="formcasas__lista__sol__box" type="checkbox" name="sol">
+                    <input class="formcasas__lista__sol__box" type="checkbox" id="checkboxsol" name="sol">
                     <h3 class="formcasas__lista__sol__titulo">Sol</h3>
                     <select class="formcasas__lista__sol__selectcasas" id="sol" name="sol">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -303,16 +309,17 @@
                 </select>
                     <h3 class="formcasas__lista__sol__grado">Grado</h3>
                     <p>Indique el grado del planeta Sol en su carta</p>
-                    <input class="formcasas__lista__sol__gradoinput" id="gradoSol" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__sol__gradoinput" id="gradoSol" type="number" min=0 max=29>
                 </li>
 
 
                 <!-- Jupiter -->
                 <li class="formcasas__lista__jupiter">
-                    <input class="formcasas__lista__jupiter__box" type="checkbox" name="jupiter">
+                    <input class="formcasas__lista__jupiter__box" type="checkbox" id="checkboxjupiter" name="jupiter">
                     <h3 class="formcasas__lista__jupiter__titulo">Jupiter</h3>
                     <select class="formcasas__lista__jupiter__selectcasas" id="jupiter" name="jupiter">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -343,16 +350,17 @@
                 </select>
                     <h3 class="formcasas__lista__jupiter__grado">Grado</h3>
                     <p>Indique el grado del planeta Jupiter en su carta</p>
-                    <input class="formcasas__lista__jupiter__gradoinput" id="gradoJupiter" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__jupiter__gradoinput" id="gradoJupiter" type="number" min=0 max=29>
                 </li>
 
 
                 <!-- Urano -->
                 <li class="formcasas__lista__urano">
-                    <input class="formcasas__lista__urano__box" type="checkbox" name="urano">
+                    <input class="formcasas__lista__urano__box" type="checkbox" id="checkboxurano" name="urano">
                     <h3 class="formcasas__lista__urano__titulo">Urano</h3>
                     <select class="formcasas__lista__urano__selectcasas" id="urano" name="urano">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -383,15 +391,16 @@
                 </select>
                     <h3 class="formcasas__lista__urano__grado">Grado</h3>
                     <p>Indique el grado del planeta Urano en su carta</p>
-                    <input class="formcasas__lista__urano__gradoinput" id="gradoUrano" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__urano__gradoinput" id="gradoUrano" type="number" min=0 max=29>
                 </li>
 
                 <!-- Neptuno -->
                 <li class="formcasas__lista__neptuno">
-                    <input class="formcasas__lista__neptuno__box" type="checkbox" name="neptuno">
+                    <input class="formcasas__lista__neptuno__box" type="checkbox" id="checkboxneptuno" name="neptuno">
                     <h3 class="formcasas__lista__neptuno__titulo">Neptuno</h3>
                     <select class="formcasas__lista__neptuno__selectcasas" id="neptuno" name="neptuno">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -422,15 +431,16 @@
                 </select>
                     <h3 class="formcasas__lista__neptuno__grado">Grado</h3>
                     <p>Indique el grado del planeta Neptuno en su carta</p>
-                    <input class="formcasas__lista__neptuno__gradoinput" id="gradoNeptuno" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__neptuno__gradoinput" id="gradoNeptuno" type="number" min=0 max=29>
                 </li>
 
                 <!-- Pluton -->
                 <li class="formcasas__lista__pluton">
-                    <input class="formcasas__lista__pluton__box" type="checkbox" name="pluton">
+                    <input class="formcasas__lista__pluton__box" type="checkbox" id="checkboxpluton" name="pluton">
                     <h3 class="formcasas__lista__pluton__titulo">Pluton</h3>
                     <select class="formcasas__lista__pluton__selectcasas" id="pluton" name="pluton">
-                            <option value="1">Casa 1</option>
+                        <option value=""></option>    
+                        <option value="1">Casa 1</option>
                             <option value="2">Casa 2</option>
                             <option value="3">Casa 3</option>
                             <option value="4">Casa 4</option>
@@ -461,11 +471,95 @@
                 </select>
                     <h3 class="formcasas__lista__pluton__grado">Grado</h3>
                     <p>Indique el grado del planeta Pluton en su carta</p>
-                    <input class="formcasas__lista__pluton__gradoinput" id="gradoPluton" type="number" value=0 min=0 max=29>
+                    <input class="formcasas__lista__pluton__gradoinput" id="gradoPluton" type="number" min=0 max=29>
                 </li>
             </ul>
             <button type="button" id="botoncalculofinal" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Resultado Final</button>
+
+
         </form>
+
+        <section class="resultadosExternos">
+            <div id="resultadosExterno" class="resultadosExternos__div">
+                <h2 class="resultadosExternos__div__titulo">Resultados</h2>
+                <h3 class="resultadosExternos__div__titulo2">Casas</h3>
+                <div id="resultadosExterno__div2" class="resultadosExternos__div__div2">
+                    <h3 id="casa1resultadosExterno" class="resultadosExternos__div__div2__casa1">Casa 1</h3>
+                    <ul id="casa1resultadosExternoUL" class="resultadosExternos__div__div2__casa1UL"></ul>
+                    <h3 id="casa2resultadosExterno" class="resultadosExternos__div__div2__casa2">Casa 2</h3>
+                    <ul id="casa2resultadosExternoUL" class="resultadosExternos__div__div2__casa2UL"></ul>
+                    <h3 id="casa3resultadosExterno" class="resultadosExternos__div__div2__casa3">Casa 3</h3>
+                    <ul id="casa3resultadosExternoUL" class="resultadosExternos__div__div2__casa3UL"></ul>
+                    <h3 id="casa4resultadosExterno" class="resultadosExternos__div__div2__casa4">Casa 4</h3>
+                    <ul id="casa4resultadosExternoUL" class="resultadosExternos__div__div2__casa4UL"></ul>
+                    <h3 id="casa5resultadosExterno" class="resultadosExternos__div__div2__casa5">Casa 5</h3>
+                    <ul id="casa5resultadosExternoUL" class="resultadosExternos__div__div2__casa5UL"></ul>
+                    <h3 id="casa6resultadosExterno" class="resultadosExternos__div__div2__casa6">Casa 6</h3>
+                    <ul id="casa6resultadosExternoUL" class="resultadosExternos__div__div2__casa6UL"></ul>
+                    <h3 id="casa7resultadosExterno" class="resultadosExternos__div__div2__casa7">Casa 7</h3>
+                    <ul id="casa7resultadosExternoUL" class="resultadosExternos__div__div2__casa7UL"></ul>
+                    <h3 id="casa8resultadosExterno" class="resultadosExternos__div__div2__casa8">Casa 8</h3>
+                    <ul id="casa8resultadosExternoUL" class="resultadosExternos__div__div2__casa8UL"></ul>
+                    <h3 id="casa9resultadosExterno" class="resultadosExternos__div__div2__casa9">Casa 9</h3>
+                    <ul id="casa9resultadosExternoUL" class="resultadosExternos__div__div2__casa9UL"></ul>
+                    <h3 id="casa10resultadosExterno" class="resultadosExternos__div__div2__casa10">Casa 10</h3>
+                    <ul id="casa10resultadosExternoUL" class="resultadosExternos__div__div2__casa10UL"></ul>
+                    <h3 id="casa11resultadosExterno" class="resultadosExternos__div__div2__casa11">Casa 11</h3>
+                    <ul id="casa11resultadosExternoUL" class="resultadosExternos__div__div2__casa11UL"></ul>
+                    <h3 id="casa12resultadosExterno" class="resultadosExternos__div__div2__casa12">Casa 12</h3>
+                    <ul id="casa12resultadosExternoUL" class="resultadosExternos__div__div2__casa12UL"></ul>
+
+                    <div class="resultadosExternos__div__conjunciones">
+                        <h3 class="resultadosExternos__div__conjunciones__titulo">Conjunciones</h3>
+                        <div id="resultadosExterno__div3" class="resultadosExternos__div__conjunciones__div2">
+                            <ul id="resultadosExterno__div3__UL" class="resultadosExternos__div__conjunciones__div2__ul">
+                            </ul>
+                        </div>
+
+                    </div>
+
+                    <div class="resultadosExternos__div__regentes">
+                        <h3 class="resultadosExternos__div__regentes__titulo">Regentes</h3>
+                        <div id="resultadosExterno__div3" class="resultadosExternos__div__regentes__div2">
+                            <h3 id="resultadosExterno__div3__marte" class="resultadosExternos__div__regentes__div2__titulo">Marte</h3>
+                            <ul id="resultadosExterno__div3__marteUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__venus" class="resultadosExternos__div__regentes__div2__titulo">Venus</h3>
+                            <ul id="resultadosExterno__div3__venusUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__saturno" class="resultadosExternos__div__regentes__div2__titulo">Saturno</h3>
+                            <ul id="resultadosExterno__div3__saturnoUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__mercurio" class="resultadosExternos__div__regentes__div2__titulo">Mercurio</h3>
+                            <ul id="resultadosExterno__div3__mercurioUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__luna" class="resultadosExternos__div__regentes__div2__titulo">Luna</h3>
+                            <ul id="resultadosExterno__div3__lunaUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__sol" class="resultadosExternos__div__regentes__div2__titulo">Sol</h3>
+                            <ul id="resultadosExterno__div3__solUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__urano" class="resultadosExternos__div__regentes__div2__titulo">Urano</h3>
+                            <ul id="resultadosExterno__div3__uranoUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__neptuno" class="resultadosExternos__div__regentes__div2__titulo">Neptuno</h3>
+                            <ul id="resultadosExterno__div3__neptunoUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__jupiter" class="resultadosExternos__div__regentes__div2__titulo">Jupiter</h3>
+                            <ul id="resultadosExterno__div3__jupiterUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+
+                            <h3 id="resultadosExterno__div3__pluton" class="resultadosExternos__div__regentes__div2__titulo">Pluton</h3>
+                            <ul id="resultadosExterno__div3__plutonUL" class="resultadosExternos__div__regentes__div2__UL"></ul>
+                        </div>
+
+
+                    </div>
+
+
+
+
+
+        </section>
 
         <section class="resultado">
             </button>
@@ -475,7 +569,7 @@
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLongTitle">Resultado</h5>
-                            <button type="button" onclick="total()" class="close" data-dismiss="modal" aria-label="Close">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             
             <span aria-hidden="true">&times;</span>
           </button>
@@ -490,6 +584,8 @@
                     </div>
                 </div>
             </div>
+
+
         </section>
 
 
@@ -534,8 +630,11 @@
         <section class="dibujocarta" id="paper1">
             <h3 class="dibujocarta__titulo">Carta Natal</h3>
             <div class="dibujocarta__dibujo" id="paper"></div>
-            <button onclick="dibujarCarta()" type="button" id="dibujarcarta" class="btn btn-primary">Dibujar Carta</button>
+            <button onclick="" type="button" id="dibujarcarta" class="btn btn-primary">Dibujar Carta</button>
         </section>
+
+
+
     </main>
 
     <footer id="footer">
@@ -545,9 +644,11 @@
 
 
 </body>
-
 <script src="../java/calculadorAvanzadoDef.js">
 </script>
+<script src="../java/resultadosExt.js"></script>
+<script src="../java/resultadosADom.js"></script>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>

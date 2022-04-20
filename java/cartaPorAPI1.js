@@ -1,21 +1,50 @@
 //API de planetas
 var i = 0;
 //los event listeners de abajo tienen la función de borrar la información en los resultados cuando haya cambios en los inputs..
-var cambiosPaises = document.getElementById("paises");
-cambiosPaises.addEventListener('change', function() { borrarCambios() });
-var cambiosCiudades = document.getElementById("ciudades");
-cambiosCiudades.addEventListener('change', function() { borrarCambios() });
-var cambiosDia = document.getElementById("day");
-cambiosDia.addEventListener('change', function() { borrarCambios() });
-var cambiosMes = document.getElementById("month");
-cambiosMes.addEventListener('change', function() { borrarCambios() });
-var cambiosAno = document.getElementById("year");
-cambiosAno.addEventListener('change', function() { borrarCambios() });
-var cambiosHora = document.getElementById("hora");
-cambiosHora.addEventListener('change', function() { borrarCambios() });
-var cambiosMinutos = document.getElementById("minutos");
-cambiosMinutos.addEventListener('change', function() { borrarCambios() });
-//fin de event listers
+// var cambiosPaises = document.getElementById("paises");
+// cambiosPaises.addEventListener('change', function() { borrarCambios() });
+// var cambiosCiudades = document.getElementById("ciudades");
+// cambiosCiudades.addEventListener('change', function() { borrarCambios() });
+// var cambiosDia = document.getElementById("day");
+// cambiosDia.addEventListener('change', function() { borrarCambios() });
+// var cambiosMes = document.getElementById("month");
+// cambiosMes.addEventListener('change', function() { borrarCambios() });
+// var cambiosAno = document.getElementById("year");
+// cambiosAno.addEventListener('change', function() { borrarCambios() });
+// var cambiosHora = document.getElementById("hora");
+// cambiosHora.addEventListener('change', function() { borrarCambios() });
+// var cambiosMinutos = document.getElementById("minutos");
+// cambiosMinutos.addEventListener('change', function() { borrarCambios() });
+// //fin de event listers
+
+var arrayIdsPlanetas22 = ["marte1", "venus1", "saturno1", "mercurio1", "luna1", "sol1", "urano1", "neptuno1", "pluton1", "jupiter1"];
+var arrayIdregentes22 = ["regenteMarte1", "regenteVenus1", "regenteSaturno1", "regenteMercurio1", "regenteLuna1", "regenteSol1", "regenteUrano1", "regenteNeptuno1", "regentePluton1", "regenteJupiter1"];
+var arrayIdgrados22 = ["gradoMarte1", "gradoVenus1", "gradoSaturno1", "gradoMercurio1", "gradoLuna1", "gradoSol1", "gradoUrano1", "gradoNeptuno1", "gradoPluton1", "gradoJupiter1"];
+var idAscendenteL2 = "ascendente1";
+
+var rectificarCasaMarte = document.getElementById(arrayIdsPlanetas22[0]);
+rectificarCasaMarte.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+
+// rectificarCasaSaturno.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarCasaVenus = document.getElementById(arrayIdsPlanetas22[1]);
+// rectificarCasaVenus.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarCasaMercurio = document.getElementById(arrayIdsPlanetas22[3]);
+// rectificarCasaMercurio.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarCasaUrano = document.getElementById(arrayIdsPlanetas22[6]);
+// rectificarCasaUrano.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarCasaNeptuno = document.getElementById(arrayIdsPlanetas22[7]);
+// rectificarCasaNeptuno.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarCasaLuna = document.getElementById(arrayIdsPlanetas22[4]);
+// rectificarCasaLuna.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarCasaSol = document.getElementById(arrayIdsPlanetas22[5]);
+// rectificarCasaSol.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarCasaPluton = document.getElementById(arrayIdsPlanetas22[8]);
+// rectificarCasaPluton.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarCasaJupiter = document.getElementById(arrayIdsPlanetas22[9]);
+// rectificarCasaJupiter.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+// var rectificarOnAscendente = document.getElementById(idAscendenteL2);
+// rectificarOnAscendente.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
+
 
 //La funcion de abajo reseteara los cambios, para ser utilizada si el boton es clickeado más de 1 vez sin cambios...
 //..ó para borrar lo anterior si hubo cambios en los inputs
@@ -65,11 +94,27 @@ function resultadosAPI1() {
             document.getElementById("long").value = parseInt(-64.18);
             document.getElementById("ciudades").value = "Cordoba";
             break;
-        case 'America/Argentina/Mendozas':
+        case 'America/Argentina/Mendoza':
             document.getElementById("lat").value = parseInt(-32.88);
             document.getElementById("long").value = parseInt(-68.85);
             document.getElementById("ciudades").value = "Mendoza";
             break;
+        case 'America/Argentina/Catamarca':
+            document.getElementById("lat").value = parseInt(-28.416);
+            document.getElementById("long").value = parseInt(-65.80);
+            document.getElementById("ciudades").value = "Catamarca";
+            break;
+        case 'America/Argentina/Jujuy':
+            document.getElementById("lat").value = parseInt(-22.72);
+            document.getElementById("long").value = parseInt(-65.69);
+            document.getElementById("ciudades").value = "Jujuy";
+            break;
+        case 'America/Argentina/Tucuman':
+            document.getElementById("lat").value = parseInt(-26.828);
+            document.getElementById("long").value = parseInt(-65.21);
+            document.getElementById("ciudades").value = "Tucuman";
+            break;
+
         case 'America/Mexico_City':
             document.getElementById("lat").value = parseInt(19.42);
             document.getElementById("long").value = parseInt(-99.12);
@@ -79,6 +124,11 @@ function resultadosAPI1() {
             document.getElementById("lat").value = parseInt(25.67);
             document.getElementById("long").value = parseInt(-100.30);
             document.getElementById("ciudades").value = "Monterrey";
+            break;
+        case 'America/Chihuahua':
+            document.getElementById("lat").value = parseInt(29.989);
+            document.getElementById("long").value = parseInt(-107.55);
+            document.getElementById("ciudades").value = "Chihuahua";
             break;
         case 'America/Montevideo':
             document.getElementById("lat").value = parseInt(-34.90);
@@ -90,6 +140,42 @@ function resultadosAPI1() {
             document.getElementById("long").value = parseInt(-66.93);
             document.getElementById("ciudades").value = "Caracas";
             break;
+        case 'America/Bogota':
+            document.getElementById("lat").value = parseInt(4.61);
+            document.getElementById("long").value = parseInt(-74.07);
+            document.getElementById("ciudades").value = "Bogota";
+            break;
+        case 'America/El_Salvador':
+            document.getElementById("lat").value = parseInt(13.77);
+            document.getElementById("long").value = parseInt(-89.20);
+            document.getElementById("ciudades").value = "El_Salvador";
+            break;
+        case 'America/Guatemala':
+            document.getElementById("lat").value = parseInt(14.56);
+            document.getElementById("long").value = parseInt(-90.52);
+            document.getElementById("ciudades").value = "Guatemala";
+            break;
+        case 'Europe/Madrid':
+            document.getElementById("lat").value = parseInt(40.53);
+            document.getElementById("long").value = parseInt(-3.47);
+            document.getElementById("ciudades").value = "Madrid";
+            break;
+        case 'Europe/Paris':
+            document.getElementById("lat").value = parseInt(48.85);
+            document.getElementById("long").value = parseInt(2.35);
+            document.getElementById("ciudades").value = "Paris";
+            break;
+        case 'Europe/Berlin':
+            document.getElementById("lat").value = parseInt(52.52);
+            document.getElementById("long").value = parseInt(13.40);
+            document.getElementById("ciudades").value = "Berlin";
+            break;
+        case 'Europe/Rome':
+            document.getElementById("lat").value = parseInt(41.90);
+            document.getElementById("long").value = parseInt(12.49);
+            document.getElementById("ciudades").value = "Rome";
+            break;
+
     }
     //fin funcionalidad 1
 
@@ -111,7 +197,7 @@ function resultadosAPI1() {
     }
 
     //3) Funcionalidad 3. Clase con funcion constructora, para hacer objetos de cada planeta
-    class planetas {
+    class planetas1 {
         //funcion constructora de objetos con regentes, grados y casas de los 3 planetas usados ahora
         constructor(lord, degree, house, name) {
             this.nombre = name;
@@ -122,7 +208,7 @@ function resultadosAPI1() {
     }
     //funcion que crea los objetos junto con la clase y el constructor de arriba
     function crearPlanetas(signo, grado, casa, nombre) {
-        var planeta = new planetas(signo, grado, casa, nombre);
+        var planeta = new planetas1(signo, grado, casa, nombre);
         return planeta;
     }
 
@@ -156,16 +242,16 @@ function resultadosAPI1() {
         var objetoPlanetasAPI = [];
 
         //Se crea un objeto por cada planeta, sacando los resultados de los objetos nesteados de la API
-        infoMarte = new planetas(responseAPI[0].data['mars'].sign, responseAPI[0].data['mars'].position, responseAPI[0].data['mars'].house, responseAPI[0].data['mars'].name);
-        infoSaturno = new planetas(responseAPI[0].data['saturn'].sign, responseAPI[0].data['saturn'].position, responseAPI[0].data['saturn'].house, responseAPI[0].data['saturn'].name);
-        infoMercurio = new planetas(responseAPI[0].data['mercury'].sign, responseAPI[0].data['mercury'].position, responseAPI[0].data['mercury'].house, responseAPI[0].data['mercury'].name);
-        infoVenus = new planetas(responseAPI[0].data['venus'].sign, responseAPI[0].data['venus'].position, responseAPI[0].data['venus'].house, responseAPI[0].data['venus'].name);
-        infoLuna = new planetas(responseAPI[0].data['moon'].sign, responseAPI[0].data['moon'].position, responseAPI[0].data['moon'].house, responseAPI[0].data['moon'].name);
-        infoSol = new planetas(responseAPI[0].data['sun'].sign, responseAPI[0].data['sun'].position, responseAPI[0].data['sun'].house, responseAPI[0].data['sun'].name);
-        infoUrano = new planetas(responseAPI[0].data['uranus'].sign, responseAPI[0].data['uranus'].position, responseAPI[0].data['uranus'].house, responseAPI[0].data['uranus'].name);
-        infoNeptuno = new planetas(responseAPI[0].data['neptune'].sign, responseAPI[0].data['neptune'].position, responseAPI[0].data['neptune'].house, responseAPI[0].data['neptune'].name);
-        infoPluton = new planetas(responseAPI[0].data['pluto'].sign, responseAPI[0].data['pluto'].position, responseAPI[0].data['pluto'].house, responseAPI[0].data['pluto'].name);
-        infoJupiter = new planetas(responseAPI[0].data['jupiter'].sign, responseAPI[0].data['jupiter'].position, responseAPI[0].data['jupiter'].house, responseAPI[0].data['jupiter'].name);
+        infoMarte = new planetas1(responseAPI[0].data['mars'].sign, responseAPI[0].data['mars'].position, responseAPI[0].data['mars'].house, responseAPI[0].data['mars'].name);
+        infoSaturno = new planetas1(responseAPI[0].data['saturn'].sign, responseAPI[0].data['saturn'].position, responseAPI[0].data['saturn'].house, responseAPI[0].data['saturn'].name);
+        infoMercurio = new planetas1(responseAPI[0].data['mercury'].sign, responseAPI[0].data['mercury'].position, responseAPI[0].data['mercury'].house, responseAPI[0].data['mercury'].name);
+        infoVenus = new planetas1(responseAPI[0].data['venus'].sign, responseAPI[0].data['venus'].position, responseAPI[0].data['venus'].house, responseAPI[0].data['venus'].name);
+        infoLuna = new planetas1(responseAPI[0].data['moon'].sign, responseAPI[0].data['moon'].position, responseAPI[0].data['moon'].house, responseAPI[0].data['moon'].name);
+        infoSol = new planetas1(responseAPI[0].data['sun'].sign, responseAPI[0].data['sun'].position, responseAPI[0].data['sun'].house, responseAPI[0].data['sun'].name);
+        infoUrano = new planetas1(responseAPI[0].data['uranus'].sign, responseAPI[0].data['uranus'].position, responseAPI[0].data['uranus'].house, responseAPI[0].data['uranus'].name);
+        infoNeptuno = new planetas1(responseAPI[0].data['neptune'].sign, responseAPI[0].data['neptune'].position, responseAPI[0].data['neptune'].house, responseAPI[0].data['neptune'].name);
+        infoPluton = new planetas1(responseAPI[0].data['pluto'].sign, responseAPI[0].data['pluto'].position, responseAPI[0].data['pluto'].house, responseAPI[0].data['pluto'].name);
+        infoJupiter = new planetas1(responseAPI[0].data['jupiter'].sign, responseAPI[0].data['jupiter'].position, responseAPI[0].data['jupiter'].house, responseAPI[0].data['jupiter'].name);
         //Se empuja cada objeto individual a un objeto Macro llamado objetoPlanetasAPI
         objetoPlanetasAPI.push(infoMarte);
         objetoPlanetasAPI.push(infoVenus);
@@ -196,23 +282,9 @@ function resultadosAPI1() {
     }
     //fin funcionalidad 4
 
-
-
     //El if de abajo borra los resultados si ya se han ejecutado 1 vez.
     if (i > 0) {
         borrarCambios();
-        // document.getElementById("casa1resultados2div").innerHTML = "";
-        // document.getElementById("casa2resultados2div").innerHTML = "";
-        // document.getElementById("casa3resultados2div").innerHTML = "";
-        // document.getElementById("casa4resultados2div").innerHTML = "";
-        // document.getElementById("casa5resultados2div").innerHTML = "";
-        // document.getElementById("casa6resultados2div").innerHTML = "";
-        // document.getElementById("casa7resultados2div").innerHTML = "";
-        // document.getElementById("casa8resultados2div").innerHTML = "";
-        // document.getElementById("casa9resultados2div").innerHTML = "";
-        // document.getElementById("casa10resultados2div").innerHTML = "";
-        // document.getElementById("casa11resultados2div").innerHTML = "";
-        // document.getElementById("casa12resultados2div").innerHTML = "";
     }
     //fin del if
 
@@ -234,12 +306,44 @@ function resultadosAPI1() {
             console.log(response);
             //Abajo se toma la repsuesta de la API y la envia a la funcion tomarVariable
             var arrayDeObjetosCore = tomarVariable(response);
-            //Abajo se llama a la funcion arrayDeObjetosCore que esta en cartaPorAPI2.js
+            //Funcionalidad 6) Abajo se llama a la funcion arrayDeObjetosCore que esta en cartaPorAPI2.js
             ResPlanetasCasas(arrayDeObjetosCore);
             i++;
         })
-
-    .catch(err => console.error(err));
+        .then(function() {
+            var arrayIdregentes2 = ["regenteMarte1", "regenteVenus1", "regenteSaturno1", "regenteMercurio1", "regenteLuna1", "regenteSol1", "regenteUrano1", "regenteNeptuno1", "regentePluton1", "regenteJupiter1"];
+            var arrayIdgrados2 = ["gradoMarte1", "gradoVenus1", "gradoSaturno1", "gradoMercurio1", "gradoLuna1", "gradoSol1", "gradoUrano1", "gradoNeptuno1", "gradoPluton1", "gradoJupiter1"];
+            var idsConjunciones2 = 'resultadosExterno__div3__UL2'
+            var idsCasas2 = ['casa1resultados2div', 'casa2resultados2div', 'casa3resultados2div', 'casa4resultados2div', 'casa5resultados2div', 'casa6resultados2div', 'casa7resultados2div', 'casa8resultados2div', 'casa9resultados2div', 'casa9resultados2div', 'casa10resultados2div', 'casa11resultados2div', 'casa12resultados2div'];
+            var idsPlanetas2 = ['resultadosExterno__div3__marteUL2', 'resultadosExterno__div3__venusUL2', 'resultadosExterno__div3__saturnoUL2', 'resultadosExterno__div3__mercurioUL2', 'resultadosExterno__div3__lunaUL2', 'resultadosExterno__div3__solUL2', 'resultadosExterno__div3__uranoUL2', 'resultadosExterno__div3__neptunoUL2', 'resultadosExterno__div3__jupiterUL2', 'resultadosExterno__div3__plutonUL2'];
+            var arrayIdsPlanetas2 = ["marte1", "venus1", "saturno1", "mercurio1", "luna1", "sol1", "urano1", "neptuno1", "pluton1", "jupiter1"];
+            var idAscendenteL2 = 'ascendente1';
+            total(idsConjunciones2, idsPlanetas2, idsCasas2, arrayIdsPlanetas2, arrayIdregentes2, arrayIdgrados2);
+            cambiarValores(arrayIdregentes2, arrayIdsPlanetas2, arrayIdgrados2, idAscendenteL2);
+        })
+        .catch(err => console.error(err));
 }
 //Fin funcionalidad 5.
 //Fin funcion total
+
+const dibTabla1 = document.getElementById("dibujarcarta2");
+//el script de abajo ejecutara la función cuando perciba un click en el boton con id "dibujartabla"
+dibTabla1.addEventListener('click', function() {
+    var arrayIdsPlanetas2 = ["marte1", "venus1", "saturno1", "mercurio1", "luna1", "sol1", "urano1", "neptuno1", "pluton1", "jupiter1"];
+    var arrayIdregentes2 = ["regenteMarte1", "regenteVenus1", "regenteSaturno1", "regenteMercurio1", "regenteLuna1", "regenteSol1", "regenteUrano1", "regenteNeptuno1", "regentePluton1", "regenteJupiter1"];
+    var arrayIdgrados2 = ["gradoMarte1", "gradoVenus1", "gradoSaturno1", "gradoMercurio1", "gradoLuna1", "gradoSol1", "gradoUrano1", "gradoNeptuno1", "gradoPluton1", "gradoJupiter1"];
+    var idTabla = "tablaplanetas__tabla2";
+
+    dibujarTabla(arrayIdregentes2, arrayIdsPlanetas2, arrayIdgrados2, idTabla);
+});
+
+const dibCarta1 = document.getElementById("dibujarcarta2");
+//el script de abajo ejecutara la función cuando perciba un click en el boton con id "dibujartabla"
+dibCarta1.addEventListener('click', function() {
+    var arrayIdsPlanetas3 = ["marte1", "venus1", "saturno1", "mercurio1", "luna1", "sol1", "urano1", "neptuno1", "pluton1", "jupiter1"];
+    var arrayIdregentes3 = ["regenteMarte1", "regenteVenus1", "regenteSaturno1", "regenteMercurio1", "regenteLuna1", "regenteSol1", "regenteUrano1", "regenteNeptuno1", "regentePluton1", "regenteJupiter1"];
+    var arrayIdgrados3 = ["gradoMarte1", "gradoVenus1", "gradoSaturno1", "gradoMercurio1", "gradoLuna1", "gradoSol1", "gradoUrano1", "gradoNeptuno1", "gradoPluton1", "gradoJupiter1"];
+    var idascendente3 = 'ascendente1';
+    var paperid3 = "paper3";
+    dibujarCarta(paperid3, arrayIdregentes3, arrayIdsPlanetas3, arrayIdgrados3, idascendente3);
+});

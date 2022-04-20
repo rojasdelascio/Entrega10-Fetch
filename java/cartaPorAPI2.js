@@ -1,7 +1,5 @@
 function ResPlanetasCasas(planetas, i) {
 
-
-
     console.log('Cuando recien llega a resultados arraydeobjcore llega asi:');
     console.log(planetas);
 
@@ -11,1047 +9,585 @@ function ResPlanetasCasas(planetas, i) {
     console.log(arrayObjPlanetas);
     var cont = 0;
 
-
-
+    //El forEach de abajo tiene la funcion de 
     arrayObjPlanetas.forEach(element => {
-
-
         console.log('En cada iteracion sale asi:');
         console.log(element);
 
-        nuevosCondicionales(element, i);
+        // nuevosCondicionales(element, i);
         modificarPlanetasDom(element);
 
     })
-
-
-    // borrador(cont, i);
 }
-
-
-
-
-// function borrador(cont, i) {
-
-//     if (cont === 1) {
-
-//         var borrador = document.getElementById("resultados2__div2");
-//         var nodoTexto = borrador.childNodes[0];
-
-//     }
-
-//     if (i = 2) {
-
-//         borrador.innerText = nodoTexto.innerText;
-//     }
-
-// }
-
-var botonClick = document.getElementById("resultadosAPIBoton");
-botonClick.addEventListener('click', function() {
-
-
-});
-
-// botonClick.addEventListener('click', function() {
-//     cont++;
-
-// var cont = 0;
-
-
-// const reiniciarCont1 = document.getElementById("paises");
-// const reiniciarCont2 = document.getElementById("ciudades");
-// const reiniciarCont3 = document.getElementById("day");
-// const reiniciarCont4 = document.getElementById("month");
-// const reiniciarCont5 = document.getElementById("hora");
-// const reiniciarCont6 = document.getElementById("minutos");
-
-// reiniciarCont1.addEventListener('click', function() { reiniciarCont(); });
-// reiniciarCont2.addEventListener('click', function() { reiniciarCont(); });
-// reiniciarCont3.addEventListener('click', function() { reiniciarCont(); });
-// reiniciarCont4.addEventListener('click', function() { reiniciarCont(); });
-// reiniciarCont5.addEventListener('click', function() { reiniciarCont(); });
-// reiniciarCont6.addEventListener('click', function() { reiniciarCont(); });
-
-
-// cont = window.onload = function() {
-//     var cont = 0;
-//     return cont;
-// }
-// console.log(`CONT ESSSSSSS  ${cont}`)
-
-// var botonClick = document.getElementById("resultadosAPIBoton");
-// botonClick.addEventListener('click', function() {
-//     cont++;
-
-// });
-
-
-function nuevosCondicionales(array, i) {
-
-
-    //si se cliquea al boton ObtenerResultados por 2da vez, y no han habido cambios, entonces cont sera.. 
-    //..mayor que 10 y dara un error a propósito para que no se repitan resultados
-
-
-    console.log('ASI LLEGA A NUEVOS CONDICIONALES')
-    var arrayLocal = {...array }
-    console.log(arrayLocal);
-    var arrayLocalNombre = JSON.stringify(arrayLocal.nombre);
-    console.log(arrayLocalNombre);
-
-
-
-
-    if (arrayLocal.casa == "1st House") {
-        //========CASA 1=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div2');
-            elemento12.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento12 = document.getElementById('casa1resultados2div');
-            elemento12.append(elemento1);
-        }
-
-    }
-    if (arrayLocal.casa == "2nd House") {
-        //========CASA 2=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento1 = document.createElement('p');
-            elemento1.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento21 = document.getElementById('casa2resultados2div');
-            elemento21.append(elemento1);
-        }
-
-    }
-    if (arrayLocal.casa == "3rd House") {
-        //========CASA 3=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento3 = document.createElement('p');
-            elemento3.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento23 = document.getElementById('casa3resultados2div');
-            elemento23.append(elemento3);
-        }
-
-    }
-
-    if (arrayLocal.casa == "4th House") {
-        //========CASA 4=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento4 = document.createElement('p');
-            elemento4.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento24 = document.getElementById('casa4resultados2div');
-            elemento24.append(elemento4);
-        }
-
-    }
-
-    if (arrayLocal.casa == "5th House") {
-        //========CASA 5=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento5 = document.createElement('p');
-            elemento5.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento25 = document.getElementById('casa5resultados2div');
-            elemento25.append(elemento5);
-        }
-
-    }
-    if (arrayLocal.casa == "6th House") {
-        //========CASA 6=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento6 = document.createElement('p');
-            elemento6.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento26 = document.getElementById('casa6resultados2div');
-            elemento26.append(elemento6);
-        }
-
-    }
-
-    if (arrayLocal.casa == "7th House") {
-        //========CASA 7=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div2');
-            elemento27.append(elemento7);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento7 = document.createElement('p');
-            elemento7.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento27 = document.getElementById('casa7resultados2div');
-            elemento27.append(elemento7);
-        }
-
-    }
-    if (arrayLocal.casa == "8th House") {
-        //========CASA 8=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento = document.createElement('p');
-            elemento.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento2 = document.getElementById('casa8resultados2div');;
-            elemento2.append(elemento);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento8 = document.createElement('p');
-            elemento8.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento28 = document.getElementById('casa8resultados2div');
-            elemento28.append(elemento8);
-        }
-
-    } else if (arrayLocal.casa == "9th House") {
-        //========CASA 9=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento9 = document.createElement('p');
-            elemento9.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento29 = document.getElementById('casa9resultados2div');
-            elemento29.append(elemento9);
-        }
-
-    } else if (arrayLocal.casa === "10th House") {
-        //========CASA 10=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento10 = document.createElement('p');
-            elemento10.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento210 = document.getElementById('casa10resultados2div');
-            elemento210.append(elemento10);
-        }
-
-    } else if (arrayLocal.casa === "11th House") {
-        //========CASA 11=========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento11 = document.createElement('p');
-            elemento11.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento211 = document.getElementById('casa11resultados2div');
-            elemento211.append(elemento11);
-        }
-
-    } else if (arrayLocal.casa === "12th House") {
-        //========CASA 12==========================================================================
-        if (arrayLocal.nombre == "Mars") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Venus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Saturn") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Mercury") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Sun") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Moon") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Uranus") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Neptune") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Pluto") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-
-        } else if (arrayLocal.nombre == "Jupiter") {
-            console.log(`Este ciclo de  ${arrayLocal.nombre} se ejecuto`);
-            var elemento12 = document.createElement('p');
-            elemento12.innerText = `${arrayLocal.nombre} está en ${arrayLocal.casa}. Esto significa: ----`;
-            var elemento212 = document.getElementById('casa12resultados2div');
-            elemento212.append(elemento12);
-        }
-    }
-
-}
-
-
-
 
 function modificarPlanetasDom(arrayLocal2) {
 
+    console.log(`array local 2 es: `);
+    console.log(arrayLocal2);
     if (arrayLocal2.nombre == "Mars") {
         document.getElementById("marte1").value = `${arrayLocal2.casa}`;
         document.getElementById("regenteMarte1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoMarte1").value = `${arrayLocal2.grado}`;
-
+        document.getElementById("gradoMarte1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Venus") {
-
-
+        document.getElementById("venus1").value = `${arrayLocal2.casa}`;
+        document.getElementById("regenteVenus1").value = `${arrayLocal2.regente}`;
+        document.getElementById("gradoVenus1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Saturn") {
-
         document.getElementById("saturno1").value = `${arrayLocal2.casa}`;
         document.getElementById("regenteSaturno1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoSaturno1").value = `${arrayLocal2.grado}`;
-
+        document.getElementById("gradoSaturno1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Mercury") {
         document.getElementById("mercurio1").value = `${arrayLocal2.casa}`;
         document.getElementById("regenteMercurio1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoMercurio1").value = `${arrayLocal2.grado}`;
-
-
+        document.getElementById("gradoMercurio1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Sun") {
         document.getElementById("sol1").value = `${arrayLocal2.casa}`;
         document.getElementById("regenteSol1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoSol1").value = `${arrayLocal2.grado}`;
-
-
+        document.getElementById("gradoSol1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Moon") {
         document.getElementById("luna1").value = `${arrayLocal2.casa}`;
         document.getElementById("regenteLuna1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoLuna1").value = `${arrayLocal2.grado}`;
-
-
+        document.getElementById("gradoLuna1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Uranus") {
-
         document.getElementById("urano1").value = `${arrayLocal2.casa}`;
         document.getElementById("regenteUrano1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoUrano1").value = `${arrayLocal2.grado}`;
-
+        document.getElementById("gradoUrano1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Neptune") {
-
         document.getElementById("neptuno1").value = `${arrayLocal2.casa}`;
         document.getElementById("regenteNeptuno1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoNeptuno1").value = `${arrayLocal2.grado}`;
-
+        document.getElementById("gradoNeptuno1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Pluto") {
         document.getElementById("pluton1").value = `${arrayLocal2.casa}`;
         document.getElementById("regentePluton1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoPluton1").value = `${arrayLocal2.grado}`;
-
-
+        document.getElementById("gradoPluton1").value = parseInt(arrayLocal2.grado);
     } else if (arrayLocal2.nombre == "Jupiter") {
         document.getElementById("jupiter1").value = `${arrayLocal2.casa}`;
         document.getElementById("regenteJupiter1").value = `${arrayLocal2.regente}`;
-        document.getElementById("gradoJupiter1").value = `${arrayLocal2.grado}`;
-
+        document.getElementById("gradoJupiter1").value = parseInt(arrayLocal2.grado);
     }
 
+    // if (arrayLocal2.casa == "1st House") {
+    //     switch (arrayLocal2.regente) {
+    //         case "Ari":
+    //             document.getElementById("ascendente1").value = 'aries';
+    //             break;
+    //         case "Tau":
+    //             document.getElementById("ascendente1").value = 'tauro';
+    //             break;
+    //         case "Aqu":
+    //             document.getElementById("ascendente1").value = 'acuario';
+    //             break;
+    //         case "Cap":
+    //             document.getElementById("ascendente1").value = 'capricornio';
+    //             break;
+    //         case "Sco":
+    //             document.getElementById("ascendente1").value = 'escorpio';
+    //             break;
+    //         case "Can":
+    //             document.getElementById("ascendente1").value = 'cancer';
+    //             break;
+    //         case "Pis":
+    //             document.getElementById("ascendente1").value = 'piscis';
+    //             break;
+    //         case "Aqu":
+    //             document.getElementById("ascendente1").value = 'acuario';
+    //             break;
+    //         case "Leo":
+    //             document.getElementById("ascendente1").value = 'leo';
+    //             break;
+    //         case "Gem":
+    //             document.getElementById("ascendente1").value = 'geminis';
+    //             break;
+    //     }
+    // }
 
 
+    var arraySignos1 = ["aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis"];
+    var arraySignos2 = ["tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries"];
+    var arraySignos3 = ["geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro"];
+    var arraySignos4 = ["cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis"];
+    var arraySignos5 = ["leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer"];
+    var arraySignos6 = ["virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo"];
+    var arraySignos7 = ["libra", "escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo"];
+    var arraySignos8 = ["escorpio", "sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra"];
+    var arraySignos9 = ["sagitario", "capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio"];
+    var arraySignos10 = ["capricornio", "acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario"];
+    var arraySignos11 = ["acuario", "piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio"];
+    var arraySignos12 = ["piscis", "aries", "tauro", "geminis", "cancer", "leo", "virgo", "libra", "escorpio", "sagitario", "capricornio", "acuario"];
+
+
+
+    if (arrayLocal2.nombre == "Sun") {
+        console.log("ENTRO AL ARRAY LOCAL 2 LLAMADO SOLLLL")
+        console.log(arrayLocal2.regente);
+        var casaActual = parseInt(arrayLocal2.casa);
+        console.log(`Casa actual es: ` + casaActual);
+        var regenteLocal = arrayLocal2.regente;
+        switch (casaActual) {
+            case 1:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "aries";
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "tauro";
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "geminis";
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "cancer";
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "leo";
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "virgo";
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "libra";
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "acuario";
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "piscis";
+                }
+                break;
+            case 2:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                }
+                break;
+            case 3:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                }
+                break;
+            case 4:
+                if (regenteLocal == "Ari") {
+                    console.log("esta entrando en sol casa 4 aries");
+                    console.log(`${arrayLocal2.regente}`);
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                }
+                break;
+            case 5:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                }
+                break;
+            case 6:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    console.log(`entro a este case TAURO ASC SAGITARIO`);
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                }
+                break;
+            case 7:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                }
+                break;
+            case 8:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                }
+                break;
+            case 9:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                }
+                break;
+            case 10:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                }
+                break;
+            case 11:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                }
+                break;
+            case 12:
+                if (regenteLocal == "Ari") {
+                    document.getElementById("ascendente1").value = "aries";
+                    break;
+                } else if (regenteLocal == "Tau") {
+                    document.getElementById("ascendente1").value = "geminis";
+                    break;
+                } else if (regenteLocal == "Gem") {
+                    document.getElementById("ascendente1").value = "cancer";
+                    break;
+                } else if (regenteLocal == "Can") {
+                    document.getElementById("ascendente1").value = "leo";
+                    break;
+                } else if (regenteLocal == "Leo") {
+                    document.getElementById("ascendente1").value = "virgo";
+                    break;
+                } else if (regenteLocal == "Vir") {
+                    document.getElementById("ascendente1").value = "libra";
+                    break;
+                } else if (regenteLocal == "Lib") {
+                    document.getElementById("ascendente1").value = "escorpio";
+                    break;
+                } else if (regenteLocal == "Sco") {
+                    document.getElementById("ascendente1").value = "sagitario";
+                    break;
+                } else if (regenteLocal == "Sag") {
+                    document.getElementById("ascendente1").value = "capricornio";
+                    break;
+                } else if (regenteLocal == "Cap") {
+                    document.getElementById("ascendente1").value = "acuario";
+                    break;
+                } else if (regenteLocal == "Aqu") {
+                    document.getElementById("ascendente1").value = "piscis";
+                    break;
+                } else if (regenteLocal == "Pis") {
+                    document.getElementById("ascendente1").value = "tauro";
+                    break;
+                }
+                break;
+        }
+    }
 }
+
+var botonClick = document.getElementById("resultadosAPIBoton");
+botonClick.addEventListener('click', function() {
+    resultadosAPI1();
+});

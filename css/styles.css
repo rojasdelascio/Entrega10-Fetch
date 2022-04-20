@@ -13,9 +13,108 @@
   height: 100%;
   grid-area: mainCA;
   display: grid;
-  grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "tablaplanetas" "resultado" "paper" "resultadosanteriores";
-  grid-template-rows: 0.15fr 0.3fr 3fr auto 0fr auto 0.8fr;
+  grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "resultadosexternos" "tablaplanetas" "resultado" "paper" "resultadosanteriores";
+  grid-template-rows: 0.15fr 0.3fr 3fr auto auto 0fr auto 0.8fr;
   grid-template-columns: 100%; }
+
+.resultadosExternos {
+  background-color: rgba(0, 133, 250, 0.844); }
+  .resultadosExternos__div__regentes__titulo {
+    font-family: "Work Sans", sans-serif;
+    font-size: 5rem; }
+  .resultadosExternos__div__regentes__div2__titulo {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__regentes__div2__UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__titulo {
+    font-family: "Work Sans", sans-serif;
+    font-size: 5rem; }
+  .resultadosExternos__div__titulo2 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 5rem; }
+  .resultadosExternos__div__conjunciones__titulo {
+    font-family: "Work Sans", sans-serif;
+    font-size: 5rem; }
+  .resultadosExternos__div__conjunciones__div2__ul {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa1 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa2 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa3 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa4 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa5 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa6 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa7 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa8 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa9 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa10 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa11 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa12 {
+    font-family: "Work Sans", sans-serif;
+    font-size: 4rem; }
+  .resultadosExternos__div__div2__casa1UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa2UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa3UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa4UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa5UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa6UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa7UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa8UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa9UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa10UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa11UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+  .resultadosExternos__div__div2__casa12UL {
+    font-family: "Work Sans", sans-serif;
+    font-size: 3rem; }
+
+.resultadosExternos {
+  grid-area: resultadosexternos; }
 
 .dibujocarta {
   grid-area: paper;

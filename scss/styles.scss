@@ -43,9 +43,153 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
     height: 100%;
     grid-area: mainCA;
     display: grid;
-    grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "tablaplanetas" "resultado" "paper" "resultadosanteriores";
-    grid-template-rows: 0.15fr 0.3fr 3fr auto 0fr auto 0.8fr;
+    grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "resultadosexternos" "tablaplanetas" "resultado" "paper" "resultadosanteriores";
+    grid-template-rows: 0.15fr 0.3fr 3fr auto auto 0fr auto 0.8fr;
     grid-template-columns: 100%;
+}
+
+.resultadosExternos {
+    background-color: rgba(0, 133, 250, 0.844);
+    &__div {
+        &__regentes {
+            &__titulo {
+                font-family: $nombreyapellido-font;
+                font-size: 5rem;
+            }
+            &__div2 {
+                &__titulo {
+                    font-family: $nombreyapellido-font;
+                    font-size: map-get($tam-letra, titulos-planetas);
+                }
+                &__UL {
+                    font-family: $nombreyapellido-font;
+                    font-size: map-get($tam-letra, contenido-planetas);
+                }
+            }
+        }
+        &__titulo {
+            font-family: $nombreyapellido-font;
+            font-size: 5rem;
+        }
+        &__titulo2 {
+            font-family: $nombreyapellido-font;
+            font-size: 5rem;
+        }
+        &__conjunciones {
+            &__titulo {
+                font-family: $nombreyapellido-font;
+                font-size: 5rem;
+            }
+            &__div2 {
+                &__ul {
+                    font-family: $nombreyapellido-font;
+                    font-size: map-get($tam-letra, contenido-planetas);
+                }
+            }
+        }
+        &__div2 {
+            &__casa1 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa2 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa3 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa4 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa5 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa6 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa7 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa8 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa9 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa10 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa11 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa12 {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, titulos-planetas);
+            }
+            &__casa1UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa2UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa3UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa4UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa5UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa6UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa7UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa8UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa9UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa10UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa11UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+            &__casa12UL {
+                font-family: $nombreyapellido-font;
+                font-size: map-get($tam-letra, contenido-planetas);
+            }
+        }
+    }
+}
+
+.resultadosExternos {
+    grid-area: resultadosexternos;
 }
 
 .dibujocarta {

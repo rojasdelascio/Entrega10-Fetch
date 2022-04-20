@@ -318,7 +318,9 @@ function resultadosAPI1() {
             var idsPlanetas2 = ['resultadosExterno__div3__marteUL2', 'resultadosExterno__div3__venusUL2', 'resultadosExterno__div3__saturnoUL2', 'resultadosExterno__div3__mercurioUL2', 'resultadosExterno__div3__lunaUL2', 'resultadosExterno__div3__solUL2', 'resultadosExterno__div3__uranoUL2', 'resultadosExterno__div3__neptunoUL2', 'resultadosExterno__div3__jupiterUL2', 'resultadosExterno__div3__plutonUL2'];
             var arrayIdsPlanetas2 = ["marte1", "venus1", "saturno1", "mercurio1", "luna1", "sol1", "urano1", "neptuno1", "pluton1", "jupiter1"];
             var idAscendenteL2 = 'ascendente1';
-            total(idsConjunciones2, idsPlanetas2, idsCasas2, arrayIdsPlanetas2, arrayIdregentes2, arrayIdgrados2);
+            var idscheckbox = ['checkboxmarte2', 'checkboxvenus2', 'checkboxsaturno2', 'checkboxmercurio2', 'checkboxluna2', 'checkboxsol2', 'checkboxurano2', 'checkboxneptuno2', 'checkboxjupiter2', 'checkboxpluton2'];
+
+            total(idsConjunciones2, idsPlanetas2, idsCasas2, arrayIdsPlanetas2, arrayIdregentes2, arrayIdgrados2, idscheckbox);
             cambiarValores(arrayIdregentes2, arrayIdsPlanetas2, arrayIdgrados2, idAscendenteL2);
         })
         .catch(err => console.error(err));
@@ -345,5 +347,6 @@ dibCarta1.addEventListener('click', function() {
     var arrayIdgrados3 = ["gradoMarte1", "gradoVenus1", "gradoSaturno1", "gradoMercurio1", "gradoLuna1", "gradoSol1", "gradoUrano1", "gradoNeptuno1", "gradoPluton1", "gradoJupiter1"];
     var idascendente3 = 'ascendente1';
     var paperid3 = "paper3";
+
     dibujarCarta(paperid3, arrayIdregentes3, arrayIdsPlanetas3, arrayIdgrados3, idascendente3);
 });

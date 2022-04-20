@@ -53,15 +53,19 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
 
 .resultadosExternos {
     background-color: rgba(96, 179, 251, 0.844);
+    padding: 5rem;
     &__div {
         &__regentes {
             &__titulo {
-                font-family: $nombreyapellido-font;
+                @include titulos;
                 font-size: 5rem;
+                position: relative;
+                right: 0%;
             }
             &__div2 {
                 &__titulo {
-                    font-family: $nombreyapellido-font;
+                    font-family: $contenido-planetas-font;
+                    text-decoration: underline;
                     font-size: map-get($tam-letra, titulos-planetas);
                 }
                 &__UL {
@@ -71,17 +75,20 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
             }
         }
         &__titulo {
-            font-family: $nombreyapellido-font;
-            font-size: 5rem;
+            @include titulos;
         }
         &__titulo2 {
-            font-family: $nombreyapellido-font;
+            @include titulos;
             font-size: 5rem;
+            position: relative;
+            right: 0%;
         }
         &__conjunciones {
             &__titulo {
-                font-family: $nombreyapellido-font;
+                @include titulos;
                 font-size: 5rem;
+                position: relative;
+                right: 0%;
             }
             &__div2 {
                 &__ul {
@@ -92,51 +99,63 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
         }
         &__div2 {
             &__casa1 {
-                font-family: $nombreyapellido-font;
+                font-family: $contenido-planetas-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa2 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa3 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa4 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa5 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa6 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa7 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa8 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa9 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa10 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa11 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa12 {
                 font-family: $nombreyapellido-font;
+                text-decoration: underline;
                 font-size: map-get($tam-letra, titulos-planetas);
             }
             &__casa1UL {

@@ -117,63 +117,102 @@
   grid-template-columns: 100%; }
 
 .resultadosExternos {
-  background-color: rgba(96, 179, 251, 0.844); }
+  background-color: rgba(96, 179, 251, 0.844);
+  padding: 5rem; }
   .resultadosExternos__div__regentes__titulo {
-    font-family: "Work Sans", sans-serif;
-    font-size: 5rem; }
+    font-family: "Bebas Neue", cursive;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue;
+    font-size: 5rem;
+    position: relative;
+    right: 0%; }
   .resultadosExternos__div__regentes__div2__titulo {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__regentes__div2__UL {
     font-family: "Work Sans", sans-serif;
     font-size: 3rem; }
   .resultadosExternos__div__titulo {
-    font-family: "Work Sans", sans-serif;
-    font-size: 5rem; }
+    font-family: "Bebas Neue", cursive;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue; }
   .resultadosExternos__div__titulo2 {
-    font-family: "Work Sans", sans-serif;
-    font-size: 5rem; }
+    font-family: "Bebas Neue", cursive;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue;
+    font-size: 5rem;
+    position: relative;
+    right: 0%; }
   .resultadosExternos__div__conjunciones__titulo {
-    font-family: "Work Sans", sans-serif;
-    font-size: 5rem; }
+    font-family: "Bebas Neue", cursive;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue;
+    font-size: 5rem;
+    position: relative;
+    right: 0%; }
   .resultadosExternos__div__conjunciones__div2__ul {
     font-family: "Work Sans", sans-serif;
     font-size: 3rem; }
   .resultadosExternos__div__div2__casa1 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa2 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa3 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa4 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa5 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa6 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa7 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa8 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa9 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa10 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa11 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa12 {
     font-family: "Work Sans", sans-serif;
+    text-decoration: underline;
     font-size: 4rem; }
   .resultadosExternos__div__div2__casa1UL {
     font-family: "Work Sans", sans-serif;

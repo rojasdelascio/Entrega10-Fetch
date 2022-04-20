@@ -1,20 +1,9 @@
 //API de planetas
 var i = 0;
-//los event listeners de abajo tienen la función de borrar la información en los resultados cuando haya cambios en los inputs..
-// var cambiosPaises = document.getElementById("paises");
-// cambiosPaises.addEventListener('change', function() { borrarCambios() });
-// var cambiosCiudades = document.getElementById("ciudades");
-// cambiosCiudades.addEventListener('change', function() { borrarCambios() });
-// var cambiosDia = document.getElementById("day");
-// cambiosDia.addEventListener('change', function() { borrarCambios() });
-// var cambiosMes = document.getElementById("month");
-// cambiosMes.addEventListener('change', function() { borrarCambios() });
-// var cambiosAno = document.getElementById("year");
-// cambiosAno.addEventListener('change', function() { borrarCambios() });
-// var cambiosHora = document.getElementById("hora");
-// cambiosHora.addEventListener('change', function() { borrarCambios() });
-// var cambiosMinutos = document.getElementById("minutos");
-// cambiosMinutos.addEventListener('change', function() { borrarCambios() });
+var apretarBoton = document.getElementById("resultadosAPIBoton");
+apretarBoton.addEventListener("click", function() {
+    cont = 0;
+});
 // //fin de event listers
 
 var arrayIdsPlanetas22 = ["marte1", "venus1", "saturno1", "mercurio1", "luna1", "sol1", "urano1", "neptuno1", "pluton1", "jupiter1"];

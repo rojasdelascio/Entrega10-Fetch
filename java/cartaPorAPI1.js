@@ -25,26 +25,6 @@ var idAscendenteL2 = "ascendente1";
 var rectificarCasaMarte = document.getElementById(arrayIdsPlanetas22[0]);
 rectificarCasaMarte.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
 
-// rectificarCasaSaturno.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarCasaVenus = document.getElementById(arrayIdsPlanetas22[1]);
-// rectificarCasaVenus.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarCasaMercurio = document.getElementById(arrayIdsPlanetas22[3]);
-// rectificarCasaMercurio.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarCasaUrano = document.getElementById(arrayIdsPlanetas22[6]);
-// rectificarCasaUrano.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarCasaNeptuno = document.getElementById(arrayIdsPlanetas22[7]);
-// rectificarCasaNeptuno.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarCasaLuna = document.getElementById(arrayIdsPlanetas22[4]);
-// rectificarCasaLuna.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarCasaSol = document.getElementById(arrayIdsPlanetas22[5]);
-// rectificarCasaSol.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarCasaPluton = document.getElementById(arrayIdsPlanetas22[8]);
-// rectificarCasaPluton.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarCasaJupiter = document.getElementById(arrayIdsPlanetas22[9]);
-// rectificarCasaJupiter.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-// var rectificarOnAscendente = document.getElementById(idAscendenteL2);
-// rectificarOnAscendente.addEventListener('change', function() { cambiarValores(arrayIdregentes22, arrayIdsPlanetas22, arrayIdgrados22, idAscendenteL2) });
-
 
 //La funcion de abajo reseteara los cambios, para ser utilizada si el boton es clickeado más de 1 vez sin cambios...
 //..ó para borrar lo anterior si hubo cambios en los inputs
@@ -72,6 +52,118 @@ function borrarCambios() {
 //Funcionalidad 4) Crea un objeto de objetos (con los resultados de la API); que contiene los objetos de todos los planetas. Cada uno se crea con lo obtenido de la API
 //Funcionalidad 5) Se llama a la API. 
 //Funcionalidad 6) Se llama a la funcion ResPlanetasCasas() para obtener los resultados finales en base a lo que respondio la API
+
+var zonahorariaExt = document.getElementById("paises");
+zonahorariaExt.addEventListener('click', function() {
+
+    var zonahorariaInt = document.getElementById("paises").value;
+    switch (zonahorariaInt) {
+        case 'America/Argentina/Buenos_Aires':
+            document.getElementById("lat").value = parseInt(-34.61);
+            document.getElementById("long").value = parseInt(-58.37);
+            document.getElementById("ciudades").value = "Buenos_Aires";
+            break;
+        case 'America/Argentina/Cordoba':
+            document.getElementById("lat").value = parseInt(-31.41);
+            document.getElementById("long").value = parseInt(-64.18);
+            document.getElementById("ciudades").value = "Cordoba";
+            break;
+        case 'America/Argentina/Mendoza':
+            document.getElementById("lat").value = parseInt(-32.88);
+            document.getElementById("long").value = parseInt(-68.85);
+            document.getElementById("ciudades").value = "Mendoza";
+            break;
+        case 'America/Argentina/Catamarca':
+            document.getElementById("lat").value = parseInt(-28.416);
+            document.getElementById("long").value = parseInt(-65.80);
+            document.getElementById("ciudades").value = "Catamarca";
+            break;
+        case 'America/Argentina/Jujuy':
+            document.getElementById("lat").value = parseInt(-22.72);
+            document.getElementById("long").value = parseInt(-65.69);
+            document.getElementById("ciudades").value = "Jujuy";
+            break;
+        case 'America/Argentina/Tucuman':
+            document.getElementById("lat").value = parseInt(-26.828);
+            document.getElementById("long").value = parseInt(-65.21);
+            document.getElementById("ciudades").value = "Tucuman";
+            break;
+
+        case 'America/Mexico_City':
+            document.getElementById("lat").value = parseInt(19.42);
+            document.getElementById("long").value = parseInt(-99.12);
+            document.getElementById("ciudades").value = "Mexico_City";
+            break;
+        case 'America/Monterrey':
+            document.getElementById("lat").value = parseInt(25.67);
+            document.getElementById("long").value = parseInt(-100.30);
+            document.getElementById("ciudades").value = "Monterrey";
+            break;
+        case 'America/Chihuahua':
+            document.getElementById("lat").value = parseInt(29.989);
+            document.getElementById("long").value = parseInt(-107.55);
+            document.getElementById("ciudades").value = "Chihuahua";
+            break;
+        case 'America/Montevideo':
+            document.getElementById("lat").value = parseInt(-34.90);
+            document.getElementById("long").value = parseInt(-56.18);
+            document.getElementById("ciudades").value = "Montevideo";
+            break;
+        case 'America/Caracas':
+            document.getElementById("lat").value = parseInt(10.50);
+            document.getElementById("long").value = parseInt(-66.93);
+            document.getElementById("ciudades").value = "Caracas";
+            break;
+        case 'America/Bogota':
+            document.getElementById("lat").value = parseInt(4.61);
+            document.getElementById("long").value = parseInt(-74.07);
+            document.getElementById("ciudades").value = "Bogota";
+            break;
+        case 'America/El_Salvador':
+            document.getElementById("lat").value = parseInt(13.77);
+            document.getElementById("long").value = parseInt(-89.20);
+            document.getElementById("ciudades").value = "El_Salvador";
+            break;
+        case 'America/Guatemala':
+            document.getElementById("lat").value = parseInt(14.56);
+            document.getElementById("long").value = parseInt(-90.52);
+            document.getElementById("ciudades").value = "Guatemala";
+            break;
+        case 'Europe/Madrid':
+            document.getElementById("lat").value = parseInt(40.53);
+            document.getElementById("long").value = parseInt(-3.47);
+            document.getElementById("ciudades").value = "Madrid";
+            break;
+        case 'Europe/Paris':
+            document.getElementById("lat").value = parseInt(48.85);
+            document.getElementById("long").value = parseInt(2.35);
+            document.getElementById("ciudades").value = "Paris";
+            break;
+        case 'Europe/Berlin':
+            document.getElementById("lat").value = parseInt(52.52);
+            document.getElementById("long").value = parseInt(13.40);
+            document.getElementById("ciudades").value = "Berlin";
+            break;
+        case 'Europe/Rome':
+            document.getElementById("lat").value = parseInt(41.90);
+            document.getElementById("long").value = parseInt(12.49);
+            document.getElementById("ciudades").value = "Rome";
+            break;
+    }
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
 
 function resultadosAPI1() {
     var responseAPI = '';
@@ -328,7 +420,7 @@ function resultadosAPI1() {
 //Fin funcionalidad 5.
 //Fin funcion total
 
-const dibTabla1 = document.getElementById("dibujarcarta2");
+const dibTabla1 = document.getElementById("dibujartabla1");
 //el script de abajo ejecutara la función cuando perciba un click en el boton con id "dibujartabla"
 dibTabla1.addEventListener('click', function() {
     var arrayIdsPlanetas2 = ["marte1", "venus1", "saturno1", "mercurio1", "luna1", "sol1", "urano1", "neptuno1", "pluton1", "jupiter1"];

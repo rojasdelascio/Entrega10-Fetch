@@ -807,3 +807,82 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
     font-size: map-get($tam-letra, boton);
     padding: 2px;
 }
+
+//Solo en calcu API
+#nombreapellidoyfechaAPI {
+    padding: 30px;
+}
+
+#divdatos {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    div {
+        padding: 10px;
+    }
+}
+
+#textofecha {
+    font-size: 2.5rem;
+    width: 90%;
+}
+
+#nombre {
+    height: 6rem;
+}
+
+#apellido {
+    height: 6rem;
+}
+
+#lat {
+    width: 12rem;
+    height: 6rem;
+}
+
+#long {
+    width: 12rem;
+    height: 6rem;
+}
+
+#ciudades {
+    height: 6rem;
+}
+
+#paises {
+    height: 6rem;
+}
+
+#day {
+    width: 12rem;
+    height: 6rem;
+}
+
+#month {
+    width: 12rem;
+    height: 6rem;
+}
+
+#year {
+    width: 12rem;
+    height: 6rem;
+}
+
+#hora {
+    width: 12rem;
+    height: 6rem;
+}
+
+#minutos {
+    width: 12rem;
+    height: 6rem;
+}
+
+#dibujarcarta2 {
+    font-size: 1rem;
+}
+
+#dibujartabla1 {
+    font-size: 1rem;
+}

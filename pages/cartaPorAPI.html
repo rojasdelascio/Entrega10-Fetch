@@ -10,6 +10,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@200;400&family=Montserrat:wght@300&family=Mulish:wght@200;400&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bitter:wght@200;400&family=Montserrat:wght@300&family=Mulish:wght@200;400&family=Rajdhani&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+
     <title>Calculador por API</title>
     <script src="../AstroChart-master/project/build/astrochart.js"></script>
     <script src="../AstroChart-master/project/build/astrochart.min.js"></script>
@@ -31,16 +33,43 @@
             <p>PD: La latitud y longitud se colocarán solar en base a la región ingresada</p>
         </section>
 
-        <section id="nombreapellidoyfechaAPI" class="nombreapellidoyfecha">
-            <div id="divdatos">
-                <div>
-                    <div>
-                        Nombre <input id="nombre" class="nombreapellidoyfecha__nombre" type="text">
-                    </div>
-                    <div>
-                        Apellido <input id="apellido" class="nombreapellidoyfecha__apellido" type="text">
+        <section class="resultado">
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Resultado</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                        </div>
+                        <div id="texto__resultado" class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+                        </div>
                     </div>
                 </div>
+            </div>
+        </section>
+
+        <section id="nombreapellidoyfechaAPI" class="nombreapellidoyfecha">
+            <div id="divdatos">
+                <h3>Datos</h3>
+                <p>Ingrese sus datos. Recuerde no dejar el nombre vacío; y esperar unos segundos luego de hacer click en "Calcular resultados" para observarlos</p>
+
+                <div>
+                    Nombre <input id="nombre" class="nombreapellidoyfecha__nombre" type="text">
+                </div>
+                <div>
+                    Apellido <input id="apellido" class="nombreapellidoyfecha__apellido" type="text">
+                </div>
+
 
                 <div>
                     <label>Zona Horaria</label>
@@ -90,46 +119,46 @@
                 </select>
                 </div>
 
-                <div>
-                    <div>
-                        Latitude <input id="lat" type="number" disabled>
-                    </div>
-                    <div>
-                        Longitude <input id="long" type="number" disabled>
-                    </div>
-                </div>
 
                 <div>
-                    <div>
-                        Day <input type="number" id="day" value="10">
-                    </div>
-                    <div>
-                        Month <input type="number" id="month" value="5">
-                    </div>
-                    <div>
-                        Year
-                        <input type="number" id="year" value="1990">
-                    </div>
+                    Latitude <input id="lat" type="number" disabled>
                 </div>
+                <div>
+                    Longitude <input id="long" type="number" disabled>
+                </div>
+
+
 
                 <div>
-                    <div>
-                        Hora
-                        <input type="number" id="hora" value="23">
-                    </div>
-                    <div>
-                        Minutos
-                        <input type="number" id="minutos" value="50">
-                    </div>
-
+                    Day <input type="number" id="day" value="10">
                 </div>
+                <div>
+                    Month <input type="number" id="month" value="5">
+                </div>
+                <div>
+                    Year
+                    <input type="number" id="year" value="1990">
+                </div>
+
+
+
+                <div>
+                    Hora
+                    <input type="number" id="hora" value="23">
+                </div>
+                <div>
+                    Minutos
+                    <input type="number" id="minutos" value="50">
+                </div>
+
 
             </div>
             <p id="textofecha">Al colocar una fecha de nacimiento y hora, deberá hacer click en "Calcular Resultados" y observará como se modifican los Select de los planetas, y también como se modifica el DOM en la parte inferior de la página, indicando qué planetas hay
                 en cada casa </p>
-            <button id="resultadosAPIBoton">Calcular Resultados</button>
+            <button type="button" id="resultadosAPIBoton" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Calcular Resultados</button>
             <!-- resultadosAPI1(); borrarCambios() -->
             <!-- prueba carta -->
+
 
         </section>
 
@@ -144,7 +173,7 @@
                 <li class="formcasas__lista__ascendente">
 
                     <li class="formcasas__lista__ascendente">
-                        <input class="formcasas__lista__ascendente__box" type="checkbox" name="ascendente">
+
                         <h3 class="formcasas__lista__ascendente__titulo">Ascendente</h3>
                         <p>El ascendente es el signo en casa 1</p>
                         <select class="formcasas__lista__ascendente__selectcasas" id="ascendente1" name="ascendente">
@@ -789,32 +818,10 @@
             <button onclick="" type="button" id="dibujarcarta2" class="btn btn-primary">Dibujar Carta</button>
         </section>
 
-        <section class="resultado">
-            </button>
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">Resultado</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                        </div>
-                        <div id="texto__resultado" class="modal-body">
-                            ...
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+        <section id="stars" class="resultadosanteriores">
 
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </section>
-
-
 
     </main>
     <footer id="footer">

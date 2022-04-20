@@ -1,6 +1,8 @@
 @import "../scss/index.scss";
 $titulos-planetas-font: 'Montserrat',
 sans-serif;
+$titulos-alt:'Bebas Neue',
+cursive;
 $contenido-planetas-font: 'Work Sans',
 sans-serif;
 $headyfoot-font: 'Bitter',
@@ -16,7 +18,7 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
 }
 
 @mixin titulos {
-    font-family: $headyfoot-font;
+    font-family: $titulos-alt;
     font-size: map-get($tam-letra, titulos);
     padding: 5px;
     position: relative;
@@ -45,12 +47,12 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
     grid-area: mainCA;
     display: grid;
     grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "resultadosexternos" "tablaplanetas" "resultado" "paper" "resultadosanteriores";
-    grid-template-rows: 0.15fr 0.3fr 3fr auto auto 0fr auto 0.8fr;
+    grid-template-rows: 0.15fr 0.3fr 3fr auto auto 0.01fr auto 0.8fr;
     grid-template-columns: 100%;
 }
 
 .resultadosExternos {
-    background-color: rgba(0, 133, 250, 0.844);
+    background-color: rgba(96, 179, 251, 0.844);
     &__div {
         &__regentes {
             &__titulo {
@@ -252,9 +254,20 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
 
 .intro {
     grid-area: intro;
+    padding: 2rem;
     background-color: darkgray;
+    h1 {
+        position: relative;
+        right: -35%;
+    }
+    h3 {
+        position: relative;
+        right: -38%;
+        padding: 1rem;
+    }
     p,
     a {
+        padding: 1rem;
         font-family: $contenido-planetas-font;
         font-size: map-get($tam-letra, intro);
         font-weight: 900;
@@ -289,16 +302,15 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
 }
 
 .titulotradu {
-    font-family: $headyfoot-font;
-    font-size: map-get($tam-letra, titulos);
-    padding: 5px;
+    @include titulos;
+    padding: 3rem;
     position: relative;
-    right: -35%;
+    right: -40%;
     color: aliceblue;
 }
 
 .ptradu {
-    padding: 3px;
+    padding: 1rem;
     width: 85%;
     position: relative;
     right: -10%;
@@ -357,6 +369,8 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
 
 .resultado {
     grid-area: resultado;
+    display: hidden;
+    background-color: rgba(1, 1, 131, 0.55);
 }
 
 #botoncalculofinal {
@@ -822,11 +836,21 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
     div {
         padding: 10px;
     }
+    h3 {
+        position: relative;
+        right: -50%;
+        @include titulos;
+    }
+    p {
+        color: rgb(162, 162, 160);
+    }
 }
 
 #textofecha {
+    padding: 2rem;
     font-size: 2.5rem;
     width: 90%;
+    color: rgb(162, 162, 160);
 }
 
 #nombre {
@@ -881,9 +905,23 @@ $tam-letra:(titulos: 5rem, titulos-planetas:4rem, contenido-planetas:3rem, heady
 }
 
 #dibujarcarta2 {
-    font-size: 1rem;
+    font-size: map-get($tam-letra, boton);
+    position: relative;
+    right: -40%;
 }
 
 #dibujartabla1 {
-    font-size: 1rem;
+    font-size: map-get($tam-letra, boton);
+    position: relative;
+    right: -40%;
+}
+
+#stars {
+    background-image: URL("../images/stars.jpg");
+}
+
+#resultadosAPIBoton {
+    font-size: map-get($tam-letra, boton);
+    position: relative;
+    right: -40%;
 }

@@ -113,11 +113,11 @@
   grid-area: mainCA;
   display: grid;
   grid-template-areas: "intro" "nombreapellidoyfecha" "formcasas" "resultadosexternos" "tablaplanetas" "resultado" "paper" "resultadosanteriores";
-  grid-template-rows: 0.15fr 0.3fr 3fr auto auto 0fr auto 0.8fr;
+  grid-template-rows: 0.15fr 0.3fr 3fr auto auto 0.01fr auto 0.8fr;
   grid-template-columns: 100%; }
 
 .resultadosExternos {
-  background-color: rgba(0, 133, 250, 0.844); }
+  background-color: rgba(96, 179, 251, 0.844); }
   .resultadosExternos__div__regentes__titulo {
     font-family: "Work Sans", sans-serif;
     font-size: 5rem; }
@@ -219,7 +219,7 @@
   grid-area: paper;
   background-color: rgba(0, 0, 225, 0.392); }
   .dibujocarta__titulo {
-    font-family: "Bitter", serif;
+    font-family: "Bebas Neue", cursive;
     font-size: 5rem;
     padding: 5px;
     position: relative;
@@ -240,7 +240,7 @@
   font-size: 2.3rem;
   font-weight: 900; }
   .resultadosanteriores__titulo {
-    font-family: "Bitter", serif;
+    font-family: "Bebas Neue", cursive;
     font-size: 5rem;
     padding: 5px;
     position: relative;
@@ -273,9 +273,18 @@
 
 .intro {
   grid-area: intro;
+  padding: 2rem;
   background-color: darkgray; }
+  .intro h1 {
+    position: relative;
+    right: -35%; }
+  .intro h3 {
+    position: relative;
+    right: -38%;
+    padding: 1rem; }
   .intro p,
   .intro a {
+    padding: 1rem;
     font-family: "Work Sans", sans-serif;
     font-size: 2rem;
     font-weight: 900;
@@ -290,7 +299,7 @@
   font-size: 3rem;
   font-weight: 900; }
   .nombreapellidoyfecha__titulo {
-    font-family: "Bitter", serif;
+    font-family: "Bebas Neue", cursive;
     font-size: 5rem;
     padding: 5px;
     position: relative;
@@ -308,15 +317,19 @@
       padding: 10px; }
 
 .titulotradu {
-  font-family: "Bitter", serif;
+  font-family: "Bebas Neue", cursive;
   font-size: 5rem;
   padding: 5px;
   position: relative;
   right: -35%;
+  color: aliceblue;
+  padding: 3rem;
+  position: relative;
+  right: -40%;
   color: aliceblue; }
 
 .ptradu {
-  padding: 3px;
+  padding: 1rem;
   width: 85%;
   position: relative;
   right: -10%;
@@ -355,7 +368,7 @@
     position: relative;
     right: -20%; }
   .tablaplanetas__titulo {
-    font-family: "Bitter", serif;
+    font-family: "Bebas Neue", cursive;
     font-size: 5rem;
     padding: 5px;
     position: relative;
@@ -370,7 +383,9 @@
     margin: 3rem; }
 
 .resultado {
-  grid-area: resultado; }
+  grid-area: resultado;
+  display: hidden;
+  background-color: rgba(1, 1, 131, 0.55); }
 
 #botoncalculofinal {
   position: relative;
@@ -740,7 +755,7 @@
     .resultadosanteriores__div1__inputapellido {
       height: 6rem; }
   .resultadosanteriores__titulo {
-    font-family: "Bitter", serif;
+    font-family: "Bebas Neue", cursive;
     font-size: 5rem;
     padding: 5px;
     position: relative;
@@ -781,10 +796,23 @@
   flex-wrap: wrap; }
   #divdatos div {
     padding: 10px; }
+  #divdatos h3 {
+    position: relative;
+    right: -50%;
+    font-family: "Bebas Neue", cursive;
+    font-size: 5rem;
+    padding: 5px;
+    position: relative;
+    right: -35%;
+    color: aliceblue; }
+  #divdatos p {
+    color: #a2a2a0; }
 
 #textofecha {
+  padding: 2rem;
   font-size: 2.5rem;
-  width: 90%; }
+  width: 90%;
+  color: #a2a2a0; }
 
 #nombre {
   height: 6rem; }
@@ -827,7 +855,19 @@
   height: 6rem; }
 
 #dibujarcarta2 {
-  font-size: 1rem; }
+  font-size: 3rem;
+  position: relative;
+  right: -40%; }
 
 #dibujartabla1 {
-  font-size: 1rem; }
+  font-size: 3rem;
+  position: relative;
+  right: -40%; }
+
+#stars {
+  background-image: URL("../images/stars.jpg"); }
+
+#resultadosAPIBoton {
+  font-size: 3rem;
+  position: relative;
+  right: -40%; }
